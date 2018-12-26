@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Screen Output</title>
+	</head>
+	<body>
+		<p>
+		저는 안보여요~
+		Title1: A Simple JavaScript Example for Screen Output
+		</p>
+		
+		<script>
+			var title1 = "채식주의자";
+			var title2 = "종의 기원";
+			var title3 = "소년이 온다.";
+			
+			var list = '';
+			
+			list += "<table border=1>";
+			list += "<caption>베스트셀러</caption>";
+			list += "<tr>";
+			list += "<th>순위</th>";
+			list += "<th>제목</th>";
+			list += "</tr>";
+			list += "<tr> <td> 1 </td> <td> " + title1 + " </td> </tr>";
+			list += "<tr> <td> 2 </td> <td> " + title2 + " </td> </tr>";
+			list += "<tr> <td> 3 </td> <td> " + title3 + " </td> </tr>";
+			list += "</table>";
+			
+			/*
+			 - body의 내용을 다시 쓰기 때문에 앞의 <p>태그 내용이 나오지 않습니다.
+			 - script가 head에 있다면 아무것도 나오지 않습니다.
+			   body가 생성되기 전에 body의 속성을 이용했기 때문입니다.
+			*/
+			
+			document.body.innerHTML = list;
+		</script>
+		
+		<p>
+		Title2: A Simple JavaScript Eaxmple for Screen Output
+		</p>
+	</body>
+</html>

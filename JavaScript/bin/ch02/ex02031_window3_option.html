@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		// IE에서 실행해 보세요(보기-도구 모음-상태표시줄)
+		/*
+		 형식 : open(URL, name, option)
+		 	URL : 팝업창으로 보여줄 문서
+		 	name : 팝업창의 이름(특별한 이름 : _blank, _self ..)
+			option : 옵션(하나의 문자열안에 콤마로 속성들을 구분해서 작성)
+			
+			옵션 이름			설명				입력할 수 있는 값
+			width		새 윈도우 너비				픽셀 값
+			height		새 윈도우 높이				필셀 값
+			menubar		메뉴 유무				yes, no, 1, 0
+			status		상태 표시줄의 유무		yes, no, 1, 0
+			resizable	화면 크기 조절 가능 유무	yes, no, 1, 0
+			location	주소 입력창의 유무		yes, no, 1, 0
+			left		스크린상의 윈도우 x좌표		픽셀 값
+			top			스크린상의 윈도우 y좌표		픽셀 값
+		*/
+		//변수를 선언합니다.
+			window.status="하하:옵션 추가합니다.";
+			var child =
+				window.open('ex02020_문서 객체 제거.html',
+							'_blank',
+							'width=300, height=200, menubar=1, status=yes, resizable=yes, location=0');
+			//_self : 현재 페이지에서 열립니다.
+			//_blank : 새창에서 열립니다. (기본)
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,13 @@
+package ex4_4_local_variable_block;
+//블럭 안에서 선언된 변수를 블럭 밖에서 잘못 사용한 예
+public class DecExample4 {
+
+	public static void main(String[] args) {
+		{
+			int num = 10;
+		}
+	
+		System.out.println(num); // error : num cannot be resolved to a variable
+	
+	}
+}

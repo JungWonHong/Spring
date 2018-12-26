@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>표의 레이아웃 지정</title>
+		<style>
+			#books caption { font-size: 14pt; font-weight: bold;
+							 margin: 0.5em }
+			#books { table-layout: auto; width: 90%;
+					 border: 1px solid black; }
+			/* table-layout: auto (각 열의 크기를 자동으로 계산)
+			   width: 90% : 화면 크기의 90%로 설정
+			*/
+			tr:hover { background: yellow }
+		</style>
+	</head>
+	<body>
+		<table id="books">
+			<caption>추천 도서 테이블</caption>
+			<thead>
+				<tr>
+					<th>작가</th>
+					<th>책제목</th>
+					<th>출판사</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>월터아이작슨</td>
+					<td>스티브잡스</td>
+					<td>민음사</td>
+				</tr>
+			
+				<tr>
+					<td>흥부와 놀부</td>
+					<td>선과 악</td>
+					<td>좋은출판사</td>
+				</tr>
+			
+				<tr>
+					<td>괴테</td>
+					<td>파우스트</td>
+					<td>교학사</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

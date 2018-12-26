@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 브라우저 크기를 화면에 일치시키는 방법
+			  크롬에서 해보세요.
+		-->
+		<!-- ~By()형태의 메소드는 현재 윈도를 기준으로 상대적으로 속성을 변화하는 메서드이고
+			 ~To()형태의 메소드는 절대적인 기준으로 속성을 변화하는 메소드입니다. 
+		-->
+		<script>
+			//변수를 선언합니다.
+			var child = window.open('', '', 'width=300, height=200');
+			var width = screen.width;
+			var height = screen.height;
+			
+			child.moveTo(0, 0);			   //window를 절대적 위치로 이동합니다.
+			child.resizeTo(width, height); //window 크기를 가로 width,
+										   //세로 height로 지정합니다.
+										   
+			//1초마다 함수를 실행합니다.
+			setInterval(function () {
+				child.resizeBy(-20, -20); //window크기를 상대적으로 지정합니다.
+				child.moveBy(10, 10); 	  //window위치를 상대적으로 이동합니다.
+			}, 1000);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

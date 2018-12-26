@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			* {
+				margin: 5px; padding: 5px;
+				border: 3px solid black;
+			}
+			
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				//a태그를 선택하면 부모 노드 h1에도 영향을 미쳐 배경색이 빨간색으로 변합니다.
+				//즉, a태그 선택시 h1태그의 이벤트가 전달 됩니다.
+				$('a').click(function(event){
+					$(this).css('background-color', 'blue');
+					event.preventDefault();//a태그 기본 이벤트 제거 합니다.
+											//즉, 이동이 되지 않습니다.
+				});
+				
+				$('h1').click(function(event){
+					$(this).css('background-color', 'red');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>
+			<a href="http://www.naver.com">Naver</a>	h1태그
+		</h1>
+	</body>
+</html>

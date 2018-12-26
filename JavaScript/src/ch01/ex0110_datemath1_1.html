@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	<script>
+	/*  Date 객체
+		- 컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+		- 메서드의 종류
+		  getFullYear() - 연도 (yyyy)
+		  getMonth() - 월(0:1월 ~ 11:12월)
+		  getDate() - 일
+		  getDay() - 요일(0:일요일 ~ 6:토요일)
+		  getHours() - 시간
+		  getMinutes() - 분
+		  getSeconds() - 초
+		  getTime() - 1970년 1월 1일 부터 경과된 시간을 밀리초로 구함
+		  getMilliseconds() - 밀리초(1/1000초)를 리턴
+		  toLocaleString() - 객체의 시간 정보를 local 표현의 문자열로 리턴
+	   예) var today = new Date();
+	     var start = new Date(2017, 2, 23); //2017년 3월 23일의 날짜 정보를
+	*/	
+		//시스템의 현재 날짜로 초기화된 Date객체를 생성합니다.
+		var today = new Date();
+	    var y4 = today.getFullYear(); //네자리 년도
+	    var m = today.getMonth() + 1;
+	    var d = today.getDate();
+	    var day = today.getDay();
+	   
+	    document.write("오늘 날짜: " + y4 + "년 " + m + "월 " + d + "일");
+	    document.write("<br>");
+	    
+	    document.write("현재 시간: " + today.getHours() + "시 " 
+	    		+ today.getMinutes() + "분 " + today.getSeconds() + "초");
+	    document.write("<br>");
+	    
+	    document.write(today.toLocaleString() + "<br>");
+	    
+		var start = new Date();
+		//1970년1월1일 이후 현재까지의 시간을 천분의 1초 단위로 구함(ms)
+		var t1 = start.getTime();
+		
+		var sum = 0;
+		for (i = 1; i <= 1000000; i++)
+			sum += i;
+		
+		var end = new Date();
+		var t2 = end.getTime();
+		
+		document.write("1부터 1000000까지 더하는데 걸리는 시간 : " + (t2 - t1) + "ms <br>");
+		
+		document.write("<hr>");
+		
+		//Math 객체 - 수학과 관련된 속성과 메서드를 갖는 객체이다.
+		//Math.PI = 3.141592653589793
+		document.write("sin(60도) = " + Math.sin(Math.PI / 3) + "<br>");
+		
+		//Math.ceil(x) : x보다 크거나 같은 가장 작은 정수를 리턴한다.
+		document.write("ceil(4.3) 올림 = " + Math.ceil(4.3) + "<br>");
+		
+		//Math.floor(x) : x보다 작거나 같은 가장 큰 정수를 리턴
+		document.write("floor(4.5) 내림 = " + Math.floor(4.5) + "<br>");
+		
+		//Math.round(x) : x를 반올림하여 리턴
+		document.write("round(4.5) 반올림 = " + Math.round(4.5) + "<br>");
+	</script>	
+	</body>
+</html>

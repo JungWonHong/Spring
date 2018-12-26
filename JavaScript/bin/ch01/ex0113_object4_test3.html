@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div {margin: 0 auto; width: 600px;}
+			table {width:100%; border-collapse: collapse;}
+			table th {background-color: #FFC4EB;}
+			table th,td {border: 1px solid #BDBDBD; 
+			           text-align: center}
+		</style>
+	</head>
+	<body>
+		<script>
+			var saram = new Object();
+			var htmllist = "";
+			var prptList = "";
+
+			saram.name = "나최고";
+			saram.age = 25;
+			saram.ki = 170.2;
+			saram.blood = "A";
+			saram.address = "서울시 강남구";
+			saram.display = function(){
+				for(var p in saram){ //객체 saram의 모든 property를 차례대로 p에 저장
+					switch(p){
+					case "age":
+						prptList += "<tr><td>" + "saram." + p + "</td><td>" + saram[p] + "세</td></tr>";
+						break;
+					case "ki":
+						prptList += "<tr><td>" + "saram." + p + "</td><td>" + saram[p] + "cm</td></tr>";
+						break;
+					case "blood":
+						prptList += "<tr><td>" + "saram." + p + "</td><td>" + saram[p] + "형</td></tr>";
+						break;
+					case "address":
+					case "name":
+						prptList += "<tr><td>" + "saram." + p + "</td><td>" + saram[p] + "</td></tr>";
+						break;
+						
+					}
+				}
+				
+				htmllist += "<h3>A Simple JvaScript Example for Control and Using Object</h3>";
+				htmllist += "<div><table>";
+				htmllist += "<caption>신상 정보</caption>";
+				htmllist += "<tr><th>항목(속성:property)</th> <th>내용(값:value)</th>";
+				htmllist += prptList;			
+				htmllist += "</table></div>";
+				
+				document.body.innerHTML = htmllist;
+			}
+			saram.display();
+			
+		</script>
+	</body>
+</html>

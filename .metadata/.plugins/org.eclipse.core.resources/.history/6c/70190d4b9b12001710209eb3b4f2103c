@@ -1,0 +1,17 @@
+package ex4_9_assignment_op;
+
+public class AssignmentExample {
+
+	public static void main(String[] args) {
+		
+		char ch = '가';
+		System.out.println(ch);
+		
+		int num = ch;	//'가'의 unicode값
+		System.out.println(num);
+		
+		num = ch + 1;
+		System.out.printf("%c", num);
+	}
+
+}

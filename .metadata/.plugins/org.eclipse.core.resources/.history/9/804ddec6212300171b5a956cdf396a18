@@ -1,0 +1,28 @@
+package ex11_5_Calendar;
+
+import java.util.Calendar;
+
+public class Calendar2_1 {
+
+	public static void main(String[] args) {
+		Calendar today = Calendar.getInstance();
+		
+		int year = today.get(Calendar.YEAR);
+		int month = today.get(Calendar.MONTH) + 1;
+		int day = today.get(Calendar.DAY_OF_MONTH);
+		int am_pm = today.get(Calendar.AM_PM);
+		int hour = today.get(Calendar.HOUR);
+		int minute = today.get(Calendar.MINUTE);
+		int second = today.get(Calendar.SECOND);
+		int day_of_week = today.get(Calendar.DAY_OF_WEEK);
+		
+		System.out.print(year+"년"+month+"월"+day+"일");
+		if(am_pm==0)
+			System.out.print(" 오전");
+		else
+			System.out.print(" 오후");
+		System.out.print(hour+"시"+minute+"분"+second+"초");
+
+	}
+
+}

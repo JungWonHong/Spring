@@ -1,0 +1,5 @@
+package ex9_12_enum;
+
+public enum Season {
+
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체의 내부 추가 - html() 메소드
+			  매개변수에 콜백함수 사용예	
+		-->
+		<script>
+			$(document).ready(function() {
+				$('div').html(function(index){
+					return '<h1>Header-' + index + '</h1>';
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

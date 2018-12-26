@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>CSS Access using JavaScript</title>
+
+<style>
+
+button {
+
+	width: 70px;
+
+	height: 25px;
+
+	margin: 10px 0
+
+}
+
+</style>
+
+ 
+
+</head>
+
+<body>
+
+ 
+
+	<div id="outerBox"
+
+		style="background: blue; width: 550px; height: 300px;">
+
+ 
+
+		<div id="innerBox"
+
+			style="background: yellow; width: 450px; height: 200px; position: absolute; left: 50px; top: 50px;">
+
+ 
+
+			<img id="img1" src="image/image1.png" width="100px"
+
+				style="position: absolute; left: 50px; top: 45px; visibility: visible;">
+
+ 
+
+			<img id="img2" src="image/image2.png" width="100px"
+
+				style="position: absolute; left: 175px; top: 45px; visibility: visible;">
+
+ 
+
+			<img id="img3" src="image/image3.png" width="100px"
+
+				style="position: absolute; left: 300px; top: 45px; visibility: visible;">
+
+		</div>
+
+ 
+
+	</div>
+
+ 
+
+ 
+
+	Outer Box:
+
+	<button>Red</button>
+
+	<button>Green</button>
+
+	<button>Blue</button>
+
+	<button>Gray</button>
+
+	<button>White</button>
+
+	<br /> Inner Box:
+
+	<button>Red</button>
+
+	<button>Green</button>
+
+	<button>Blue</button>
+
+	<button>Gray</button>
+
+	<button>White</button>
+
+ 
+
+</body>
+
+<script>
+
+	var btns = document.getElementsByTagName("button");
+	for (var i = 0; i < btns.length; i++) {
+		(function(i) {
+			btns[i].addEventListener("click", change)
+			function change() {
+				if (i < 5) {
+					var outer = document.getElementById('outerBox');
+					outer.style.backgroundColor = btns[i].childNodes[0].nodeValue;
+				} else {
+					var inner = document.getElementById('innerBox');
+					inner.style.backgroundColor = btns[i].childNodes[0].nodeValue;
+				}
+			}
+		})(i);
+
+	}
+
+ 
+
+</script>
+
+</html>

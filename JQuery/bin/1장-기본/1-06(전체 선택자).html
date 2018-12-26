@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 전체 선택자 (*) : HTML 페이지에 있는 모든 문서 객체를 선택하는 선택자
+			 css(스타일속성 이름, 속성 값) 메서드 - 스타일 속성 이름에 대해 속성 값을 적용
+		 -->
+		<script>
+			$(document).ready(function(){
+				$('*').css('border', '1px solid black');
+			});
+			
+			jQuery(document).ready(function(){
+				$('h1').css('background', 'green');
+			});
+			
+			$(function(){
+				$('*').css('color', 'yellow');
+			});
+		</script>
+	</head>
+	<body>
+		<h1>JQuery - 나는 노란색</h1>
+	</body>
+</html>

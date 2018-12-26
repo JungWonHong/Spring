@@ -1,0 +1,33 @@
+<!-- ex02034_history.html 
+     실행 순서 :  1. 마지막페이지로 이동 클릭
+            2. <- 클릭
+            3. "이전페이지로 이동" 클릭
+            4. -> 클릭 
+            5. "다음페이지로 이동" 클릭
+     -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>history 객체 : 웹 브라우저에 기록되어 있는 히스토리 정보를 제어하는 객체이다.</title>
+</head>
+<body>
+ <h1>두번째 페이지</h1>
+ <p><a href="ex02020_문서 객체 제거.html">마지막페이지로 이동</a></p>
+ <input type="button" value="이전페이지로 이동" 
+        onclick="history.back();"/>
+ 
+ <!-- history.back();   이전 페이지 이동  -->
+ 
+ <input type="button" value="다음페이지로 이동" 
+        onclick="history.go(1);"/>
+ <!-- history.go(1); : 다음 페이지 이동 
+      history.go(-1); : 이전 페이지 이동
+      history.go(-2): 전전 페이지 이동     
+ -->
+ 
+ <input type="button" value="forward버튼" 
+        onclick="history.forward();"/>
+ <!-- history.forward(); : 다음 페이지 이동    -->
+</body>
+</html>

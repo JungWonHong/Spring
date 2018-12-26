@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<!-- 문제점 : p태그를 클릭하면 마우스 커서의 좌표에 네 개의 태그가 있으므로 네 개의
+                       태그에서 동시에 이벤트가 발생합니다. 
+    1.  자바스크립트의 이벤트 전달 순서는 이벤트 버블링 방식으로 자식 노드에서 부모 노드 
+                  순으로  이벤트를 발생하는 것을 의미합니다.      
+    2. 이벤트 버블링과 반대되는 개념으로 이벤트 캡쳐링이 있습니다.
+               캡쳐링은 부모 노드에서 자식 노드 순으로 실행되는 것입니다.   
+       
+          이벤트 전달을 막는 방법                     
+         이벤트 객체의 cancelBubble 속성을 true로 변경하거나    
+         이벤트 객체의 stopPropagation()메서드를 사용합니다. -->
+  <style>
+     div, h1, p {border : 3px solid black;}  
+  </style>
+</head>
+<body>
+   <div class='item' id='외부div'>
+     <div class='item' id='내부div'>
+        <h1 class='item' id='h1'>
+           <p class='item' id='Paragraph'>Paragraph</p>
+        </h1>
+     </div>
+   </div>
+</body>
+</html>
+ 
+<script>
+ var items = document.querySelectorAll('.item');//선택자로 선택되는 모든 문서 객체를 배열로 가져온다.
+                              //querySelector(선택자) - 선택자로 가장 처음 선택되는 문서 객체를 가져온다.
+ function something(e){
+	 alert(e.currentTarget.id); 
+	 //if(e.currentTarget.id == '내부div')
+	   e.stopPropagation();  //stop(중지) Propagation(전파)
+ }                           // 35라인이 주석이면  id가 '외부div'만 이벤트 발생
+ 
+ for (var i=0; i<items.length ;i++){
+	 var ev = items[i];    
+	 ev.addEventListener('click', something,  true); 
+ }
+</script>

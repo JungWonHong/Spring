@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <script src="../js/jquery-3.2.1.js"></script>
+    <!--1.$(selector).on(eventName, function(event){})
+        2.$(selector).on(object)
+    -->
+    <script>
+     $(document).ready(function (){
+        /*
+         -이벤트를 연결합니다.
+         on()메서드의 첫 번째 매개변수는 이벤트 이름이고(click)
+     	     두 번째 매개변수에 이벤트 리스너를 입력합니다.
+       	   여기서 사용된 this는 이벤트가 발생한 객체를 의미합니다.
+         h1태그를 click이벤트에 연결하고 이벤트 발생 시 이벤트 발생 객체에
+         '+' 글자를 추가합니다.
+        */
+        $('h1').on('click', function(){
+          $(this).html(function(index, html){
+             return html + '+';
+          });
+           
+        });
+     });
+     
+    </script>
+    
+    
+</head>
+<body>
+   <h1>Header(0)</h1>
+   <h1>Header(1)</h1>
+   <h1>Header(2)</h1>
+</body>
+</html>

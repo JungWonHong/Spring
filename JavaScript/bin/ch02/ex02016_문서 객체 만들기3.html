@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>INDEX</title>
+		<!--	문서 객체 만들기(3) 
+				innerHTML 속성 이용하기
+		-->
+		<script>
+			window.onload = function(){
+				//변수를 선언합니다.
+				var output = '';
+				output += '<ul>';
+				output += '	<li>JavaScript</li>';
+				output += '	<li>jQuery</li>';
+				output += '	<li>Ajax</li>';
+				output += '</ul>';
+				
+				//innerHTML 속성에 문자열을 할당합니다.
+				//innerHTML 속성은 태그의 내부를 의미한다.
+				document.body.innerHTML = output;
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

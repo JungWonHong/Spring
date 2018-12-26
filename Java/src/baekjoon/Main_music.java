@@ -1,0 +1,41 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main_music {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] music = new int[8];
+		for (int i = 0; i < music.length; i++)
+			music[i] = sc.nextInt();
+
+		check(music);
+		
+		sc.close();
+	}
+
+	static void check(int[] music) {
+		int asc = 0;
+		int des = 0;
+		
+		for (int i = 0; i < music.length - 1; i++) {
+			if (music[i] < music[i + 1]) {
+				asc++;
+				continue;
+			} else if (music[i] > music[i + 1]) {
+				des++;
+				continue;
+			} else
+				break;
+		}
+		
+		if(asc == 7)
+			System.out.println("ascending");
+		else if(des == 7)
+			System.out.println("descending");
+		else
+			System.out.println("mixed");
+		
+	}
+
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			.high-light {
+				background: yellow;
+			}
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!--  jQuery 배열 관리
+				addClass() 메서드 : 문서 객체에 class 속성을 추가하는 메서드입니다.
+				removeClass() 메서드 : 문서 객체에 class 속성을 제거하는 메서드입니다.-->
+		<script>
+			$(document).ready(function() {
+				$('h1').addClass('high-light');
+			})
+		</script>
+	</head>
+	<body>
+		<h1>item - 0</h1>
+		<h1>item - 1</h1>
+		<h1>item - 2</h1>
+		<h1>item - 3</h1>
+		<h1>item - 4</h1>
+	</body>
+</html>

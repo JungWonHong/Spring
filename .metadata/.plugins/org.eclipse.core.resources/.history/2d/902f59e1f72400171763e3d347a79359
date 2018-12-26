@@ -1,0 +1,28 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		/*Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt(); //테스트케이스
+		int[] R = new int[T]; //반복횟수
+		String[] S = new String[T]; //입력문자열
+		String[] SO = new String[T];
+		
+		for(int i=0;i<T;i++){
+			R[i] = sc.nextInt();
+			S[i] = sc.next();
+		}
+		
+		for(int i=0;i<T;i++){
+			for(int j=0;j<R[i];j++){
+				
+			}
+		}
+		
+		
+		sc.close();*/
+		
+	}
+}

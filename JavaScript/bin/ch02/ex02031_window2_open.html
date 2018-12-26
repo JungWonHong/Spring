@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- 
+		- window 객체
+			: 미리 정의된 객체로 자바스크립트가 실행되고 있는 웹브라우저 창을 나타낸다.
+			브라우저 기반 자바스크립트의 최상위 객체이다.
+		- open() 메소드
+			: 새로운 창을 열수 있는 메소드
+			형식) open(URL, name, option)
+				URL : 팝업창으로 보여줄 문서 또는 웹페이지 URL
+				name : 팝업창의 이름(생략 가능)
+				option : 옵션(생략 가능)
+			반환값 : 새롭게 작성된 윈도우 참조, 호출이 실패했을 경우는 null
+		- close() : 열려 있는 창을 닫는 메소드
+		 -->
+		<script>
+			function open_window(){
+				var url = window.prompt("원하는 URL 주소를 입력하시오",
+										"http://www.naver.com");
+				//데이터가 문자열인 경우 문자가 '하나 이상'이면 참, 빈 문자열('')이면 거짓을 리턴
+				if(url)
+					win = window.open(url);
+				
+				//window.open(); //빈페이지 안닫힘
+			}
+		</script>
+		<button onclick="open_window();">새로운 창(탭 윈도우)을 엽니다.</button>
+		<button onclick="win.close();">연 창을 닫습니다.</button>
+	</body>
+</html>

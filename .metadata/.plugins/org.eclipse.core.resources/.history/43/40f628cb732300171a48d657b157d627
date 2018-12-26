@@ -1,0 +1,24 @@
+package baekjoon;
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Main {
+//세 수를 곱한 수의 각 자리수에 해당하는 숫자의 개수를 저장하기 위한 1차원 배열을 선언하여 문제를 해결해봅니다
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		int C = sc.nextInt();
+		int result = A*B*C;
+		int [] cnt = new int[10];
+		
+		for(int i=0;i<;i++){
+			
+		}
+		
+		for(int i=0;i<cnt.length;i++)
+			System.out.println(cnt[i]);
+	}
+
+}

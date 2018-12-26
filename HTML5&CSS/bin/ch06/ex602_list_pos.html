@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>목록에 글머리 위치 지정</title>
+		<style>
+			/*  list-style-position 속성 : 글머리 기호 위치 지정
+				outside : 글머리 기호가 콘텐츠 박스 바깥쪽에 위치(기본)
+				inside  : 글머리 기호가 콘텐츠 박스 안쪽에 위치
+			*/
+			ul.outside-list { list-style-position: outside }
+			ul.inside-list { list-style-position: inside }
+			li.usa { list-style-image: url("flag_usa.gif") }
+			li.kor { list-style-image: url("flag_kor.gif") }
+			p { font-weight: bold }
+		</style>
+	</head>
+	<body>
+		<h3>과목별 추천도서 목록</h3>
+		<ul class="outside-list">
+			<p>흥부와 놀부</p>
+				<li class="kor">제비</li>
+				<li class="usa">흥부</li>
+				<li class="usa">부자</li>
+		</ul>
+		<ul class="inside-list">
+			<p>파우스트</p>
+				<li class="kor">요한 볼프강 괴테</li>
+				<li class="kor">'멈춰라 너 정말 아름답구나!'</li>
+				<li class="usa">불완전한 존재</li>
+		</ul>
+	</body>
+</html>

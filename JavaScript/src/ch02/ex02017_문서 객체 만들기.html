@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 문서 객체 만들기(3)
+			textContent 속성 이용하기
+			textContent : 저장한 글자 그대로 출력됩니다.
+		-->
+		<script>
+			window.onload = function(){
+				//변수를 선언합니다.
+				var output = '';
+				output += '<ul>';
+				output += '	<li>JavaScript</li>';
+				output += '	<li>jQuery</li>';
+				output += '	<li>Ajax</li>';
+				output += '</ul>';
+				
+				//textContent 속성에 문자열을 할당합니다.
+				document.body.textContent = output;
+				document.body.textContent += '<h1>Document Object Model</h1>';
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

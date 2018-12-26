@@ -1,0 +1,30 @@
+package report_0404;
+
+public class Saram_make {
+
+	public static void main(String[] args) {
+		Saram father = new Saram("È«¿ÏÇ¥", 75, 173);
+		Saram mother = new Saram("ÀåÈñÁ¤", 60, 162, 58);
+		Saram sister = new Saram("È«¾Æ¶ó", 48, 164, 30, "AB");
+		Saram hjw = new Saram("È«Á¤¿ø", 68);
+
+		father.age = 57;
+		father.blood = "A";
+		mother.blood = "B";
+
+		PrintSaram(father);
+		PrintSaram(mother);
+		PrintSaram(sister);
+		PrintSaram(hjw);
+
+	}
+
+	static void PrintSaram(Saram a) {
+		System.out.println("ÀÌ¸§:" + a.name);
+		System.out.println("¸ö¹«°Ô:" + a.w + "kg");
+		System.out.println("Å°:" + a.ki + "cm");
+		System.out.println("³ªÀÌ:" + a.age + "¼¼");
+		System.out.println("Ç÷¾×Çü:" + a.blood + "Çü");
+		System.out.println();
+	}
+}

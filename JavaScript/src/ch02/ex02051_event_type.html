@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Event Handling : 모든 브라우저 작동</title>
+		<script>
+		//이벤트 핸들러(리스너)-특정 이벤트가 발생했을 때 실행하고자 하는 자바스크립트 함수나 코드
+		//함수 호출시 인자값으로 event를 보낸다.
+		
+		/*
+			이벤트 객체의 속성과 메소드
+			1. type : 현재 발생한 이벤트의 종류를 나타내는 문자열
+			2. target : 이벤트를 발생시킨 객체(태그)
+			3. currentTarget : 현재 이벤트 리스너를 실행하고 있는 DOM 객체
+			4. preventDefault() : 이벤트의 디폴트 행동을 취소시키는 메소드
+		*/
+		function myEvent(e) {
+				var message = "이벤트 종류는" + e.type + "입니다.\n";
+					message += "이벤트를 발생시킨 객체(태그)는 " + e.target.tagName + "입니다.\n";
+					message += "현재 이벤트를 실행하고 있는 객체는" + e.currentTarget.tagName + "입니다.\n";
+				
+				alert(message);
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 
+		이벤트가 발생하면 브라우저는 발생한 이벤트에 관련된 다양한 정보를 담은 이벤트 객체를
+		만들어 이벤트 리스너에 전달한다.
+		이벤트 객체 전달받는 3가지 방식
+		1. 이름을 가진 이벤트 핸들러(리스너)의 경우
+			function f(e){//매개변수 e에 이벤트 객체를 전달받음, e는 생략 가능
+			
+			}
+			obj.onclick = f;
+			
+		2. 익명 함수의 경우 : 첫번째 매개변수를 통해 이벤트 객체를 전달 받는다.
+			obj.onclick = function(e) { //매개변수 e에 이벤트 객체를 전달받음, e는 생략 가능
+			
+		3. HTML 태그의 리스너의 경우 : event라는 이름으로 전달 된다.
+			onclick = "myEvent(event)"
+		 -->
+		<!-- 이벤트 속성 : onclick,
+			  이벤트 속성값에 이벤트 핸들러 함수 등록(연결)하는 방식
+		 -->
+		<input type="button" value="버튼" onclick="myEvent(event)"/>
+	</body>
+</html>

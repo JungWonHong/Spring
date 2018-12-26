@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 속성 선택자 : input[type="text"] =>
+			input태그 중 type이 text인 문서 객체를 선택합니다.
+			val()메서드는 매개변수를 입력하면 input 태그의 value 속성을 지정하고
+			매개변수를 입력하지 않으면 value 속성을 검사하여 값을 반환합니다. -->
+		<script>
+			$(document).ready(function(){
+				$('input[type="text"]').val('Hello jQuery..!');
+				alert($('input[type="text"]').val())
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" value="저요?"><br>
+		<input type="password"><br>
+		<input type="radio"><br>
+		<input type="checkbox"><br>
+		<input type="file">
+	</body>
+</html>

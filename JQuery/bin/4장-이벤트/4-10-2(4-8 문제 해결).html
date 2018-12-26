@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			* {
+				margin: 5px; padding: 5px;
+				border: 3px solid black;
+			}
+			
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- event.stopPropagation();
+			 event.preventDefault();
+			 두 가지 메서드를 jQuery에서는 return false로 적용합니다. -->
+		<script>
+			$(document).ready(function(){
+				$('a').click(function(event){
+					$(this).css('background-color', 'blue');
+					return false;
+				});
+				
+				$('h1').click(function(event){
+					$(this).css('background-color', 'red');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>
+			<a href="http://www.naver.com">Naver</a>	h1태그
+		</h1>
+	</body>
+</html>

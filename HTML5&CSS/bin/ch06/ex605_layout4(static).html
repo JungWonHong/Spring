@@ -1,0 +1,27 @@
+<!-- static : 문서의 흐름대로 배치합니다. left나 top속성을 사용해서
+			  요소의 위치를 입의대로 지정할 수 없습니다. -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>위치/크기 지정 속성:static</title>
+		<style>
+			div { width: 100px;
+				  height: 100px;
+				}
+				
+			#box1 { 
+					position: static;
+					background-color: red;
+			}
+			#box2 {
+					position: static;
+					background-color: blue; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id=box1></div>
+		<div id=box2></div>
+	</body>
+</html>

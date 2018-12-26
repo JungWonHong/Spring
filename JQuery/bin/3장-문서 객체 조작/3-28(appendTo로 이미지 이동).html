@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체 이동
+			 $(A).appendTo(B) : A를 B의 뒷부분에 추가합니다. -->
+		<style>
+			img { width: 100px;
+				  height: 100px }
+		</style>
+		<script>
+			$(document).ready(function(){
+				//첫번째 이미지를 body태그의 뒷부분으로 이동시킵니다.
+				$('img').first().appendTo('body');
+			});
+		</script>
+	</head>
+	<body>
+		<img src="Chrysanthemum.jpg"/>
+		<img src="Desert.jpg"/>
+		<img src="Hydrangeas.jpg"/>
+		<img src="Jellyfish.jpg"/>
+		<img src="Koala.jpg"/>
+	</body>
+</html>

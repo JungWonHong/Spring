@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>표의 캡션위치 지정</title>
+		<style>
+			#books, th, td { border: 1px solid black; }
+			#books { border-collapse: collapse; 
+					 margin: 5px auto;
+					 caption-side: bottom; 
+				 	 text-align: center;
+					 width: 90%;}
+			tr { height: 50px;}
+			#books>caption { font-size: 14pt; font-weight: bold;
+							 margin: 0.5em; }
+			thead { background-color: gray;
+					color: yellow;}
+			
+			/* tbody 요소내의 홀수 <tr>의 배경색 지정 */
+			tbody tr:nth-child(2n+1)/* (odd) */ 
+					{ background-color: lightgreen; }
+			
+			/* tbody 요소내의 짝수 <tr>의 배경색 지정 */
+			tbody tr:nth-child(2n)/* (even) */ 
+					{ background-color: aliceblue; }	
+			/* 
+			tbody tr td:last-child::after, 
+			tfoot tr td:last-child::after { content: "원";}	
+			 */
+			 /* 
+			 부정 선택자
+			 예) 선택자:not(선택자)
+			  */
+			table:not(thead) tr td:last-child:after{ content: "원"}	
+			tbody tr:hover { background: pink; }
+		</style>
+	</head>
+	<body> 
+ 		 <table  id="books">
+  		  <caption>추천 도서 테이블</caption>
+  		  <thead>
+    		  <tr>
+    		    <th>이름</th> <th>제목</th> <th>가격</th>
+   		   </tr>
+ 		   </thead> 
+   		 <tfoot>
+  		    <tr>
+   		     <td colspan=2>총액 </td><td>60000</td>
+  		  </tfoot>  
+  		  <tbody>
+   		   <tr>
+   		     <td>월터아이작슨</td> <td>스티브잡스</td> <td>15000</td>
+     		 </tr>
+    		  <tr>
+   		     <td>흥부와 놀부</td> <td>선과 악</td> <td>20000</td>
+   		   </tr>
+   		   <tr>
+   		     <td>괴테</td> <td>파우스트</td> <td>25000</td>
+   		   </tr>
+  		  </tbody> 
+  		</table>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 함수를 리턴하는 함수 -->
+		<script>
+			function returnFunction(){
+				return function (){
+					alert('Hello Function .. !');
+				};
+			}
+			
+			/* 
+			var func = returnFunction();
+			func();
+			 */
+			//함수를 호출
+			returnFunction()();
+			//returnFunction()함수를 호출하면 함수가 리턴됩니다.
+			//리턴된 함수를 호출하기 위해 ()를 한번 더 사용합니다.
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

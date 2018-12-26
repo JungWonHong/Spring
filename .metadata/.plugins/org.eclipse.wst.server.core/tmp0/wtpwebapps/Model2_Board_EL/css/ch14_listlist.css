@@ -1,0 +1,7 @@
+@CHARSET "EUC-KR";
+table{margin:0 auto; width:800px}
+th{height:30px;background:yellow}
+td{font-family:µ¸À½; font-size:14; height:36px}
+td:nth-child(2n+1), .center{text-align:center}	  
+.h30{height:30px}
+.lime{background:lime} 	

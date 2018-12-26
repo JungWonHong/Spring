@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			var i = 0;
+			function zz(){
+				i++;
+				var today = new Date();
+				document.open();
+				document.write(today.toLocaleString());
+				document.close();
+				if(i==10)
+					clearInterval(id);
+			}
+			id = setInterval(zz, 1000);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

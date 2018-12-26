@@ -1,0 +1,19 @@
+package report_no6;
+
+public class multi_table {
+
+	public static void main(String[] args) {
+		int multi[][] = new int[9][];
+		
+		for(int i = 0;i<9;i++){
+			System.out.println((i+1)+"´Ü");
+			
+			for(int j = 0;j<9;j++){
+				multi[i][j] = i*j;
+				System.out.print((i+1)+" x "+(j+1)+"="+multi[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+}

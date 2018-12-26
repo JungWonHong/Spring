@@ -1,0 +1,26 @@
+package report_no2;
+
+public class Hongjungwon {
+
+	public static void main(String[] args) {
+		String name = "홍정원";
+		int f_num;
+		double l_eye = 0.3, r_eye = 0.4;
+		String f_food = "집밥";
+		String f_excs = "웨이트트레이닝";
+		char f_ch = 'H';
+		boolean sing = true;
+		
+		f_num = 7;
+		
+		System.out.println("이름 : " + name);
+		System.out.println("좋아하는 숫자 : " + f_num);
+		System.out.println("좌, 우 시력 : " + l_eye + ", " + r_eye);
+		System.out.println("좋아하는 음식 : " + f_food);
+		System.out.println("좋아하는 운동 : " + f_excs);
+		System.out.println("좋아하는 알파벳 : " + f_ch);
+		System.out.println("당신은 노래를 좋아하나요? " + sing);
+		
+	}
+
+}

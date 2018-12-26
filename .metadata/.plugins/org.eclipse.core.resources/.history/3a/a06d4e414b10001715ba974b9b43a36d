@@ -1,0 +1,10 @@
+package ex3_2_variable;
+
+public class variable2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

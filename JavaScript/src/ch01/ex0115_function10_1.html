@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 지역 변수 output은 함수 test()함수를 호출할 때 생성됩니다.
+			  변수 output은 지역 변수이므로 함수가 종료될 때 사라져야 합니다.
+			  그러나 해당 변수가 이후에도 활용될 가능성이 있으므로 자바스클비트는
+			  변수를 제거하지 않고 남겨둡니다.
+			  이런 현상을 클로저라고 부릅니다.
+			  리턴된 함수 자체를 클로저라고 부르기도 합니다.
+			  또는 살아남은 지역 변수 output을 크롤저라고 부르기도 합니다. -->
+		<script>
+			function test(name) {
+				var output = 'Hello ' + name + ' ..!';
+				return function() {
+					alert(output);
+				};
+			}
+			
+			test('JavaScript')();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

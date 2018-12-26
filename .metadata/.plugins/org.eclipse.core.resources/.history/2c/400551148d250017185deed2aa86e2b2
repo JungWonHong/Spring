@@ -1,0 +1,21 @@
+package report_0420;
+
+public class Rectangle {
+	int width, height;
+
+	Rectangle(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	public boolean equals(Object obj) {
+		if(obj != null && obj instanceof Rectangle)
+			return (width == ((Rectangle)obj).width) && (height == ((Rectangle)obj).height);
+		else
+			return false;
+	}
+
+	public String toString() {
+		return "가로는 " + width + ", 세로는 " + height;
+	}
+}

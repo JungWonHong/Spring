@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			body{margin: 50px auto; width: 500px}
+			table{margin: 20px auto; 
+				border-collapse: separate; 
+				text-align: center}
+			tr{height: 50px}
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- jQuery 함수 필터 선택자
+			요소:eq(n) : n번째 위치하는 문서 객체를 선택합니다. -->
+		<script>
+			$(document).ready(function(){
+				$('tr:eq(0)').css('background', '#000000') //배경색 - 검정색
+							 .css('color', '#FFFFFF'); //글자색 - 흰색
+				$('tr:eq(1)>td:eq(0)').css('background', '#ff0000');
+				//$('td:eq(0)').css('background', '#ff0000');
+				//$('tfoot td:eq(1)').css('background', 'red');
+				//$('tr:eq(3)>td:eq(2)').css('background', '#00ff00');
+				$('td:eq(5)').css('background', '#00ff00');
+			});
+		</script>
+	</head>
+	<body>
+		<table>
+			<caption>추천 도서 표</caption>
+			<thead>
+				<tr>
+					<th>책제목</th>
+					<th>작가</th>
+					<th>가격</th>
+				</tr>
+			</thead><!-- 표의 헤더 영역부분 -->
+			<tfoot>
+				<tr>
+					<th>총</th>
+					<td>2권</td>
+					<td>30,000원</td>
+				</tr>
+			</tfoot><!-- 표의 푸터 영역부분 -->
+			<tbody>
+				<tr>
+					<th>스티브잡스</th>
+					<td>월터아이작슨 저, 안진환 역</td>
+					<td>25,000원</td>
+				</tr>
+				<tr>
+					<th>나를 지키는 말 88</th>
+					<td>손화신, 쌤앤파커스</td>
+					<td>25,000원</td>
+				</tr>
+				<tr>
+					<th>언어의 마술사</th>
+					<td>해냄인터내셔널</td>
+					<td>25,000원</td>
+				</tr>
+			</tbody><!-- 표의 내용 영역부분 -->
+		</table>
+	</body>
+</html>

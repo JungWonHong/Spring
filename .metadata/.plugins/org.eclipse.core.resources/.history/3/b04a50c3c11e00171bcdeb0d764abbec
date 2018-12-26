@@ -1,0 +1,30 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        int out = 0;
+        int a, b, c;
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+        
+        if(a>=b){
+            if(a<=c)
+                out = a;
+        }
+        else if(a<b){
+            if(b<=c)
+                out = b;
+        }
+        else
+            out = c;
+        
+        System.out.print(out);
+        sc.close();
+	}
+
+}

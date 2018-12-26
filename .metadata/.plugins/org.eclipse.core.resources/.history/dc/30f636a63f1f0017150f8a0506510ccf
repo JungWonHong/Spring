@@ -1,0 +1,31 @@
+package report_0412;
+
+public class RefTypeExample {
+
+	public static void main(String[] args) {
+		Account obj1 = new Account("111-11-111111", "이순신", 5000);
+		Account obj2 = new Account("222-22-222222", "유관순", 7000);
+		Account obj3 = new CheckingAccount("111-22-33333333", "홍길동", 10, "4444-5555-6666-7777");
+		Account obj4 = new Account("333-33-333333", "최고다", 6000);
+		printAccountInfo(obj1);
+		printAccountInfo(obj2);
+		printAccountInfo(obj3);
+		printAccountInfo(obj4);
+
+	}
+
+	static void printAccountInfo(Account obj) {
+		System.out.println("계좌번호:" + obj.accountNo);
+		System.out.println("예금주 이름:" + obj.ownerName);
+		System.out.println("잔액:" + obj.balance);
+
+		if(obj instanceof CheckingAccount){
+			//CheckingAccount obj1 = (CheckingAccount)obj;
+			System.out.println("카드번호: " + ((CheckingAccount)obj).cardNo);
+		}
+		
+
+		System.out.println();
+	}
+
+}

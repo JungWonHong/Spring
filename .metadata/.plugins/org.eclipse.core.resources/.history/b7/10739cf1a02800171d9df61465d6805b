@@ -1,0 +1,10 @@
+package ex15_4_HashMap;
+
+public class HashTableExample1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

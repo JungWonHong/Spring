@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>테두리의 종류</title>
+		<style>
+			h4 { font-family:"Consolas", "돋움", serif;
+				 margin-left: 12px; margin-bottom: 20pt; }
+			p { font-family:"Consolas", "돋움", serif;
+				font-size: 10pt }
+				
+			/* padding(내부공백), margin(외부공백)은 위, 오른쪽, 아래, 왼쪽
+				4가지의 값을 갖는다.
+				예1) padding의 값을 위 오른쪽 아래 왼쪽 모두 10px 적용하려면
+					padding: 10px 10px 10px 10px; 또는 padding: 10px;작성한다.
+					
+				예2) padding: 10px 5px;
+					의미) 위, 아래는 10px가 적용되고 오른쪽, 왼쪽은 5px가 적용된다.
+					
+				예3) padding: 10px 7px 8px;
+					의미) 위 10px가 적용되고 오른쪽, 왼쪽은 7px가 적용되고
+						 아래는 8px가 적용된다.
+						 
+				border: 2px solid green;위, 오른쪽, 아래, 왼쪽 모두 같은 속성값으로 적용
+				 의미 : 굵기 스타일 색상
+			*/
+			
+			/* inline요소인 span태그에 width와 text-align을 주기위해
+			   inline-block속성으로 변경 */
+			span{ display: inline-block; width: 300px; text-align: center }
+			#t1 { margin: 8px; padding: 16px 22px 16px 22px;
+				  border: 2px solid green }
+			
+			#t2 { margin: 8px; padding: 16px 16px 16px 20px;
+				  border: 2px dotted green }
+			
+			#t3 { margin: 8px; padding: 16px 16px 16px 20px;
+				  border: 2px dashed green }
+			
+			#t4 { margin: 8px; padding: 16px 16px 16px 20px;
+				  border: 4px double green }
+			
+			#t5 { margin: 8px; padding: 14px 14px 14px 14px;
+				  border: 10px inset green }
+			
+			#t6 { margin: 8px; padding: 14px 10px 14px 10px;
+				  border: 10px outset green }
+			
+			#t7 { margin: 8px; padding: 14px 12px 14px 15px;
+				  border: 10px ridge green }
+				  
+			#t8 { margin: 8px; padding: 14px 12px 14px 12px;
+				  border: 10px groove green }	  
+		</style>
+	</head>
+	<body>
+		<h4 id="tt">border-style</h4>
+		<p><span id="t1"> solid(실선)</span>
+		   <span id="t2"> dotted(점선)</span><br/>
+		   <span id="t3"> dashed(굵은점선)</span>
+		   <span id="t4"> double(이중실선)</span>
+		</p>
+		
+		<p>&nbsp;<br>&nbsp;</p>
+		
+		<p><span id="t5"> inset(내용이 잠긴 느낌의 입체선 모양)</span>
+		   <span id="t6"> outset(내용이 튀어나온 느낌의 입체선 모양)</span><br/>
+		   <span id="t7"> ridge(볼록하게 나온 액자 테두리 모양)</span>
+		   <span id="t8"> groove(오목하게 들어간 액자 테두리 모양)</span>
+		</p>
+	</body>
+</html>

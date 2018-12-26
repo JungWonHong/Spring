@@ -1,0 +1,10 @@
+package report_0413;
+
+public interface Lendable {
+	enum State{ STATE_BORROWED, STATE_NORMAL}
+	
+	//public abstract 생략가능(알아서 붙여줌)
+	void checkOut(String borrower, String date); // 대출한다.
+	
+	void checkIn(); // 반납한다.
+}

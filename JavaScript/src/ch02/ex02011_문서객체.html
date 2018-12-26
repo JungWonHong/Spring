@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>INDEX</title>
+		<!--문서 객체 모델(DOM - Document Object Model)은 넓은 의미로
+			웹브라우저가 HTML페이지를 인식하는 방식이고
+			좁은 의미로 document 객체와 관련된 객체의 집합입니다.
+			문서 객체 모델을 사용하면 HTML 페이지에 태그를 추가, 수정, 제거할 수 있습니다.
+			
+			자바스크립트에서 이용할 수 있는 객체로 만들면 '문서 객체'입니다.
+			
+			window.onload의 의미 - window 객체가 로드가 완료되고 자동으로 할당한 함수를
+								실행합니다.
+		  - HTML페이지에 존재하는 모든 태그가 화면에 올라가는 순간이 로드가 완료되는 순간입니다.
+		  - window 객체의 onload속성을 의미하며 문서 객체의 속성 중 on으로 시작하는 속성을
+		  	이벤트 속성이라고 합니다. 이 속성에는 함수를 할당해야 합니다.
+		  => 이렇게 window 객체의 onload속성 함수 자료형을 할당하는 것을 "이벤트를 연결한다"
+		  	 라고 합니다.
+		  => 이벤트 이름 또는 이벤트 타입(Type)은 load 이고
+		  => 이벤트 속성은 onload 이고
+		  => 이벤트 리스너 또는 이벤트 핸들러는 이벤트 속성에 할당한 함수입니다.
+		-->
+		<!-- 
+			DOM 트리 : 브라우저는 HTML 페이지를 로드하면서 HTML 태그의 포함관계에 따라 
+					 DOM 객체들을 트리 구조로 만드는데 이것을 DOM 트리라고 합니다.
+			DOM 트리의 루트는 document 객체입니다.
+		-->
+		<script>
+		 	window.onload = function(){
+			   //여기서 headerobject 객체를 문서 객체라고 합니다.
+			   //getElementByid()메서드는 DOM트리에서 id 속성값이 'header'인 DOM객체
+			   //id속성값이 'herder'인 객체가 없으면 null을 리턴합니다.
+			   //같은값을 가진 객체가 여러개 있다면 HTML페이지에 가장 먼저 나오는 개체를 리턴합니다 
+			    var headerobject = document.getElementById('header');   
+			 };
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

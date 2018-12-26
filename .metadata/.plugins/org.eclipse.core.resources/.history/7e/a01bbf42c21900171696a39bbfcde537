@@ -1,0 +1,19 @@
+package report_no10;
+
+public class Wallet {
+	static int money;
+
+	// »ý¼ºÀÚ
+	Wallet(String name) {}
+	
+	// µ·À» ³Ö´Â´Ù.
+	void setMoney(int money) {
+		Wallet.money += money;
+	}
+
+	// µ·À» ²¨³½´Ù.
+	void getMoney(int money) {
+		Wallet.money -= money;
+	}
+
+}

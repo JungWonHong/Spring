@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- text() 메소드 : 문서 객체 내부의 글자와 관련된 기능을 수행합니다.
+		 형식)
+		 	1. $(selector).text();	- 선택자의 텍스트 노드의 값을 가져옵니다.
+		 	2. $(selector).text(value); - 선택자의 텍스트 노드의 값을 변경합니다.
+		 	3. $(selector).text(function(index, text){});
+		  -->
+		<script>
+			$(document).ready(function(){
+				//변수를 선언합니다.
+				$('h1').text(function(index, text){
+					if(index==1)
+						result = text;
+				});
+				
+				alert(result);
+				/* 
+				$('h1').each(function(index){
+					if(index==1)
+						alert($(this).text());
+				});
+				*/
+				/*
+				var result = $('h1').eq(1).text();
+				alert(result);
+				*/
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header-0</h1>
+		<h1>Header-1</h1>
+		<h1>Header-2</h1>
+	</body>
+</html>

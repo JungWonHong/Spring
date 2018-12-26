@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- remove(): 문서 객체를 제거합니다. -->
+		<script>
+			$(document).ready(function() {
+				$('h1').first()
+					   .remove();//h1태그 중 첫 번째 문서 객체를 제거합니다.
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header-0</h1>
+		<h1>Header-1</h1>
+	</body>
+</html>

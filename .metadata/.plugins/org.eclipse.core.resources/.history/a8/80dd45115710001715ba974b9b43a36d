@@ -1,0 +1,10 @@
+package ex4_2_local_variable_error;
+
+public class DecExample2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>prompt : 사용자로부터 입력 받을 수 있는 대화 샂아</title>
+	</head>
+	<body>
+		<script>
+			var input = prompt('숫자를 입력해주세요.', '숫자');
+			var result1 = input + 10;
+			
+			document.write(result1 + '<br>');
+			document.write(typeof(input) + ': ' + input + '<br>'); //string
+			document.write(typeof(result1) + ': ' + result1 + '<br>');
+			
+			//다른 자료형을 숫자로 변환하기 위한 Number()함수를 사용
+			var numberInput = Number(input);
+			document.write('Number() 사용 후 : ' + 
+				typeof(numberInput) + ': ' + numberInput + '<br>');
+			
+			var result2 = numberInput + 10;
+			document.write(result2 + '<br>');
+			
+			document.write("true를 Number 함수에 적용하면 : " + Number(true) + "<br>");
+			document.write("false를 Number 함수에 적용하면 : " + Number(false) + "<br>");
+			
+			//다른 자료형을 문자열로 변환하기 위한 String()함수
+			var result3 = String(numberInput) + 10;
+			document.write('String() 사용 후 : ' + typeof(result3)
+					+ ': ' + result3);
+		</script>
+	</body>
+</html>

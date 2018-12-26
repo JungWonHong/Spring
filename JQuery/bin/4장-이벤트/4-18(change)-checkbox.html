@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- type속성이 checkbox와 radio인 input 태그의 상태를 변경하는
+			이벤트는 change 입니다. -->
+		<script>
+/* 			$(document).ready(function(){
+				$('#all-check').change(function(){
+					if($(this).is(':checked')){
+						//체크 상태를 확인할 때 입력 객체는 checked 속성을 확인합니다.
+						$('#check-item')
+							.children()//check-item의 자식 노드찾기
+							.filter('input:checkbox')
+							.attr('checked', 'checked');
+							//체크 상태를 바꿀 때 사용하는 메서드입니다.
+					} else {
+						$('#check-item')
+							.children()
+							.removeAttr('checked');
+					}
+				});
+			}); */
+			
+			$(document).ready(function(){
+				$('#all-check').change(function(){
+					//체크 상태를 확인
+					if($(this).is(':checked')){
+						$('#check-item')
+							.children()//check-item의 자식 노드찾기
+							.prop('checked', true);
+							//체크 상태를 바꿀 대 사용하는 메서드입니다.
+					} else {
+						$('#check-item')
+							.children()
+							.prop('checked', false);
+					}
+				});
+			}); 
+			
+/*   			$(document).ready(function(){
+				$('#all-check').change(function(){
+					var state = $(this).is(':checked');
+					//체크  상태를 확인할 때 입력 객체는 checked 속성을 확인합니다.
+					if(state){
+						$('div>input').each(function(){
+							this.checked = true;
+						})
+					} else {
+						$('div>input').each(function(){
+							this.checked = false;
+						})
+					}
+				})
+			});   */
+			
+/*  			$(document).ready(function(){
+				$('#all-check').change(function(){
+					if($(this).is(':checked')){
+						//체크 상태를 확인할 때 입력 객체는 checked 속성을 확인합니다.
+						$('div>input').attr('checked','checked');
+					} else {
+						$('div>input').removeAttr('checked');
+					}
+				});
+			});  */
+			
+/*  		 	$(document).ready(function(){
+				$('#all-check').change(function(){
+					var checked = $(this).is(':checked');
+					if(checked)
+						$('input:checkbox').attr('checked', true); //prop
+					else 
+						$('input:checkbox').attr('checked', false); //prop
+				});
+			});  */
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" id="all-check">
+		<label>All</label>
+		<div id="check-item">
+			<input type="checkbox">
+			<label>A Option</label>
+			<input type="checkbox">
+			<label>B Option</label>
+			<input type="checkbox">
+			<label>C Option</label>
+		</div>
+	</body>
+</html>

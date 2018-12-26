@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			cur = new Date();
+			document.write(cur.toLocaleString());
+			setInterval(function(){
+				cur = new Date();
+				document.body.innerHTML = cur.toLocaleString();
+			}, 1000);
+			//질문 : 0104에서는 헤드에서 하면 오류떠서 안되는데 여기서는 되는 이유.
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

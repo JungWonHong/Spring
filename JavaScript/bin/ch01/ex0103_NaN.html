@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 변수의 특성 : NaN</title>
+		<script>
+			//복소수를 표현할 수 없다.
+			var number = Math.sqrt(-3);
+			alert(number); //에러 메시지 NaN(Not a Number)출력
+			
+			//Number('A') - 다른 자료형을 숫자로 바꿀 때 사용하는 함수로 숫자로
+			//				구성된 문자가 아니기 때문에 NaN 출력
+			alert(Number('A')); //NaN(Not a Number)
+			
+			//Number(true)=>1, Number(false)=>0을 리턴
+			alert(Number(true));
+			alert(Number(false));
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

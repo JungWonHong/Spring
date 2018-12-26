@@ -1,0 +1,17 @@
+package ex5_3_while;
+
+public class WhileExample1 {
+
+	public static void main(String[] args) {
+		int cnt = 0;
+
+		while (cnt < 10) {
+			System.out.println(cnt);
+			//cnt++;
+			cnt+=2;
+		}
+
+		System.out.println("Done.");
+	}
+
+}

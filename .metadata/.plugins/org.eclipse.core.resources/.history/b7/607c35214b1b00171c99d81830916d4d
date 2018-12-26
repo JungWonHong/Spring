@@ -1,0 +1,23 @@
+package ex8_3_super_constructor;
+//은행 계좌 클래스를 상속받는 직불 계좌 클래스
+//은행 계좌클래스(Account)         - 슈퍼클래스(상속을 해주는 클래스)
+//직불 계좌클래스(CheckingAccount) - 서브클래스(상속을 받는 클래스)
+public class CheckingAccount extends Account {
+	String cardNo; // 직불카드 번호
+	
+	//에러해결:
+	//컴파일러는 생성자 안에 슈퍼 클래스의 생성자 호출문이 있으면
+	//no-arg constructor
+	public CheckingAccount(String accountNo, String ownerName, int balance, String cardNo) {
+		//파라미터 3개의 슈퍼 클래스 생성자 호출문 
+		super(accountNo, ownerName, balance);  //CheckingAccount.java와 비교.
+		this.cardNo = cardNo;		
+	}
+	
+	int pay(String cardNo, int amount) throws Exception { 
+		if (!cardNo.equals(this.cardNo) || (balance < amount))
+			throw new Exception("지불이 불가능합니다.");       
+		return withdraw(amount);
+	}
+
+}

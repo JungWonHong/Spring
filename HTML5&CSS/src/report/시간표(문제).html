@@ -1,0 +1,87 @@
+<!-- 테이블 테스트 문제 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"> 
+	<title>스타일시트 선언 방법 - 1. 내부 스타일시트 선언</title>
+	<style>
+	  /*
+	    조건)
+	    0. style만 이용해서 그림과 같이 완성합니다. 
+	    1. 테이블은 화면 중앙에 위치합니다.
+	    2. 글자 정렬은 모두 가운데 정렬입니다.
+	    3. 색상은 skyblue
+	    4. 1px 실선의 검은색을 border로 설정합니다.
+	  */
+		h1, table {text-align: center;}
+		table{ margin: 0 auto; }
+		table, th, td { border: 1px solid black;}
+		th {background-color: skyblue; width: 150px}
+		tr:hover {background:green}
+		td:active {color:red}
+	</style> 
+</head>
+<body>
+    <h1>시간표</h1>
+     <table>
+	   <tr>
+		<th>교시</th>
+		<th>월</th>
+		<th>화</th>
+		<th>수</th>
+		<th>목</th>
+		<th>금</th>
+	  </tr>
+	  <tr class="tr">
+		<td>1</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td rowspan="3">자료구조와알고리즘</td>
+		<td>&nbsp;</td>
+		<td rowspan="3">모바일프로그래밍</td>
+	  </tr>
+	  <tr>
+		<td>2</td>
+		<td>&nbsp;</td>
+		<td rowspan="2">컴퓨터응용</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>3</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>4</td>
+		<td colspan="5">점심시간</td>
+	  </tr>
+	  <tr>
+		<td>5</td>
+		<td rowspan="2">멀티미디어 개론</td>
+		<td rowspan="3">모바일프로그래밍</td>
+		<td colspan="2">시사상식</td>		
+		<td rowspan="2">컴퓨터응용</td>
+	  </tr>
+	  <tr>
+		<td>6</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>7</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+	  <tr>
+		<td>8</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	  </tr>
+    </table>
+ </body>
+</html>

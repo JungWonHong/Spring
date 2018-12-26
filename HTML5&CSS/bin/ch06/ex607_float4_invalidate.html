@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>float-적용 후 해제하기</title>
+		<!-- clear 속성을 이용해서 float 속성 무효화 하기
+			 left : 왼쪽 배치 무효화
+			 right : 오른쪽 배치 무효화
+			 both : 왼쪽, 오른쪽 모두 무효화
+			 none : 기본값으로 어디든 float 할 수 있다. -->
+		<style>
+			div { 
+				  width: 100px;
+				  height: 100px;
+				}
+				
+			#box1 { 
+					background-color: red;
+					float: left;
+			}
+			
+			#box2 {
+					background-color: blue; 
+					float: left;
+			}
+			
+			#box3 {
+					background-color: green; 
+					clear: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id=box1></div>
+		<div id=box2></div>
+		<div id=box3></div>
+	</body>
+</html>

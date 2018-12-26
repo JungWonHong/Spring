@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체 추가 선택
+			 add() : 문서 객체를 추가적으로 선택합니다.
+			 
+			 h1태그에 'background' 속성에 'Gray'값,
+			 		'float' 속성에 대해 'left'값 적용하고
+			 h2태그를 추가로 선택해 스타일 속성 'float'에 대해 'left'값을 적용합니다.
+		 -->
+		<script>
+			$(document).ready(function(){
+				$('h1')
+				.css('background', 'Gray')
+				.add('h2')
+				.css('float', 'left');
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header-0</h1>
+		<h2>Header-1</h2>
+		<h1>Header-2</h1>
+		<h2>Header-3</h2>
+		<h1>Header-4</h1>
+	</body>
+</html>

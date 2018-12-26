@@ -1,0 +1,28 @@
+package ex6_1_array;
+
+import java.util.Scanner;
+
+public class ArrayTest02 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("정수 5개를 입력하세요?");
+
+		int num[] = new int[5];
+		int sum = 0;
+
+		for (int i = 0; i < 5; i++) {
+			num[i] = sc.nextInt();
+			sum += num[i];
+		}
+
+		System.out.println("합 = " + sum);
+		System.out.println("평균 = " + sum / 5);
+		
+		sc.close();
+
+	}
+
+}

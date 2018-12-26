@@ -1,0 +1,9 @@
+package report_no8;
+
+public class Natural_sum {
+
+	public static void main(String[] args) {
+
+	}
+
+}

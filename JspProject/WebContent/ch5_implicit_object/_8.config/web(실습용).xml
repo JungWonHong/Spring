@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+ 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+	<display-name>JspProject</display-name><!-- 프로젝트명 적습니다. -->
+	
+	<servlet>
+		<servlet-name>configTest1</servlet-name>
+		<jsp-file>/ch5_implicit_object/_8.config/configTest1.jsp</jsp-file>
+		<!-- 프로젝트명 이후의 경로를 적습니다. -->
+		
+		<!-- 해당 서블릿에서 초기화 파라미터를 설정한 부분입니다. -->
+		<init-param>
+			<param-name>이름</param-name><!-- 초기화 파라미터의 이름입니다. -->
+			<param-value>사랑이</param-value><!-- 초기화 파라미터의 값입니다. -->
+		</init-param>
+		
+		<init-param>
+			<param-name>나이</param-name><!-- 초기화 파라미터의 이름입니다. -->
+			<param-value>20세</param-value><!-- 초기화 파라미터의 값입니다. -->
+		</init-param>
+		
+		<init-param>
+			<param-name>email</param-name><!-- 초기화 파라미터의 이름입니다. -->
+			<param-value>haha@naver.com</param-value><!-- 초기화 파라미터의 값입니다. -->
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>configTest1</servlet-name> <!-- 9번 라인과 일치해야 합니다.-->
+		<url-pattern>/configTest</url-pattern>
+		<!-- 주소 표시줄에 요청으로 전송되어 올 URL을 지정한 부분입니다.
+			 http://localhost:8088/JspProject/configTest로 요청이 들어오면
+			 <jsp-file>/ch5_implicit_object/_8.config/configTest1.jsp</jsp-file>에서
+			 정의된 jsp파일을 실행합니다. 
+		-->
+	</servlet-mapping>
+</web-app>

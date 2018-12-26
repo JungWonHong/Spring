@@ -1,0 +1,10 @@
+@CHARSET "EUC-KR";
+	table{margin:0 auto;width:400px}
+   input{width:95%;height:90%;font-size:15px}
+   input[type=submit]{width:20%}   
+   td{text-align:center; height:40px}   
+   .center{text-align:center}
+   .pad{padding-top:20px}
+   .green{background:lightgreen}
+   .yellow{background:yellow}   
+   td:first{line-height:40px}

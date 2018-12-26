@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+form{text-align:center}
+input{height:30px;width:150px;
+      margin-left:20px;
+      margin-bottom:10px;
+      border-radius:5px;
+      border:1px solid green}
+input:focus{background-color:orange;
+            border:1px solid green}      
+input:last-child{
+	  width:210px;background-color:green;
+	  margin-left:0px;
+	  color:white;height:35px}
+ 
+div{text-align:center}
+	      

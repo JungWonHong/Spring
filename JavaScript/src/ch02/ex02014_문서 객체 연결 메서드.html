@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>INDEX</title>
+		<!--문서객체 만들기(1)
+			문서 객체 연결 메서드
+			appendChild(node) : 객체에 노드를 연결합니다.
+		 -->
+		<script>
+			window.onload = function(){
+				//변수를 선언합니다.
+				var h1 = document.createElement('h1');
+				var textNode = document.createTextNode('Hello DOM');
+				
+				//노드를 연결합니다.
+				//h1 문서 객체에 textNode를 연결합니다.
+				h1.appendChild(textNode);
+				
+				//body 문서 객체에 h1 문서 객체를 연결합니다.
+				document.body.appendChild(h1);
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Property Basic</title>
+     <meta charset="utf-8">
+    <style>
+        .box { 
+            width: 100px; height: 100px;           
+        }
+        
+        .box:nth-child(3n+1) { /* 클래스 box중 첫 번째, 네 번째, 일곱 번째.. 나오는 태그 선택   */
+            background-color: red;      
+        }
+        
+        .box:nth-child(3n+2) {/* 클래스 box중 두 번째, 다섯 번째, 여덟 번째.. 나오는 태그 선택   */
+            background-color: green;
+        }
+        .box:nth-child(3n) { /* 클래스 box중 세 번째, 여섯 번째, 아홉 번째.. 나오는 태그 선택   */
+            background-color: blue;
+        }      
+    </style>
+</head>
+<body>   
+    <div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

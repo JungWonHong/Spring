@@ -1,0 +1,5 @@
+package ex10_10_access_modifier_inheritance;
+
+public class Point {
+
+}

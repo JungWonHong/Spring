@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		꽃으로 바꾸어 주세요<br>
+		<img src = "image/Koala.jpg" id="flower">
+	</body>
+	<script>
+		var changeflower = document.getElementById('flower');
+		function changeflowerf(){
+			changeflower.src = "image/Hydrangeas.jpg";
+			changeflower.width = 512;
+			changeflower.height = 384;
+		};
+		changeflower.addEventListener('click', changeflowerf);
+	</script>
+</html>

@@ -1,0 +1,14 @@
+package ex7_17_static_init;
+
+public class StaticInitializerExample1 {
+
+	public StaticInitializerExample1() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

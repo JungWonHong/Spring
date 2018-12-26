@@ -1,0 +1,38 @@
+package ex3_2_variable;
+
+public class variable1 {
+
+	public static void main(String[] args) {
+		
+		//정수형 변수
+		byte b = 10;     //1바이트(작은 범위의 값을 저장하기에 유용합니다)
+		short s = 100;   //2바이트
+		int i = 1000;    //4바이트
+		long l = 10000L; //8바이트(l 또는 L을 숫자 뒤에 붙입니다)
+		
+		System.out.println("b=" + b);
+		System.out.println("s=" + s);
+		System.out.println("i=" + i + " l=" + l);
+		
+		//실수형 변수
+		float ft = 3.14f;   //f 나 F를 숫자 뒤에 붙입니다
+		double d = 42.195d; //d 나 D를 숫자 뒤에 붙이거나 생략할 수 있습니다
+		System.out.println("f=" + ft + " d=" + d);
+		
+		//문자형 변수
+		char c1 = 'A'; // 2byte 이기 때문에 유니코드 사용가능
+		char c2 = '@';
+		char c3 = '홍';
+		System.out.println("c1=" + c1 + " c2=" + c2 + " c3=" + c3);
+		
+		//char cerror='AB'; //2byte 두 글자 입력하면 에러
+		
+		//논리형 변수
+		boolean b1 = true;
+		boolean b2 = false;
+		System.out.println("b1은 참인 " + b1);
+		System.out.println("b2는 거짓인 " + b2);
+
+	}
+
+}

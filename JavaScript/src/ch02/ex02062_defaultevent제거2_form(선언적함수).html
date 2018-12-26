@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>a태그 디폴트 이벤트 제거하기</title>
+		<script>
+			function go() {
+				var hoho_value = document.getElementById('hoho');
+				
+				if(hoho_value.value == "하하") {
+					alert('이동할 수 없습니다.');
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="hoho" type="text"><br>
+		<a href="http://www.naver.com" onclick="return go();">
+		입력 상자에 "하하"를 입력하면 네이버로 이동 안되요~</a>
+	</body>
+</html>

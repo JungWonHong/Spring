@@ -1,0 +1,17 @@
+package baekjoon;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	static void d(){
+		int[] N = new int[100];
+		for(int i = 0;i<100;i++){ //비교할 수를 저장할 배열
+			N[i] = i+1;
+		}
+	}
+
+}

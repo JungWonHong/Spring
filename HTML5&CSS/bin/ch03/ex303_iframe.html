@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>iframe 사용 예제</title>
+	</head>
+	<body>
+		<h3>과목별 참고도서 목록</h3>
+		<ol>
+			<li>해리포터와 마법사의 돌</li>
+			<ul>
+				<li>
+				<a href = "http://book.naver.com/bookdb/book_detail.nhn?bid=10961795" target = "intro">
+				조앤 K. 롤링</a></li>
+				<li>감사합니다.</li>
+				<li>고맙습니다.</li>
+			</ul>
+			<li>행복의 조건</li>
+			<ul>
+				<li>상도</li>
+				<li>
+				<a href = "http://book.naver.com/bookdb/book_detail.nhn?bid=7318739" target = "intro2">
+				최인호 장편 소설</a></li>
+			</ul>
+		</ol>
+		<dl>
+			<dt>지정도서</dt>
+			<dd>도서관에 여러권 비치되어 있으며 항상 열람 가능</dd>
+		</dl>
+		<p>
+		<!-- src의 값이 없는 경우나 src 속성이 없는 경우 iframe영역이 빈 상태의 프레임 윈도우
+			 name 속성 : 프레임 윈도우의 이름으로 target 속성 값으로 사용
+			 width 속성 : 프레임의 폭(픽셀 값, 기본값 300)
+			 height 속성 : 프레임의 높이(픽셀 값, 기본값 150)
+			 참고) 네이버, 아마존 등은 iframe으로 연결할 수 없도록 하고 있다.
+		-->
+			<iframe src="" name = "intro" width = "420" height = "400"></iframe>
+			<iframe name = "intro2" width = "420" height = "400"></iframe>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+package report_0418;
+
+import java.util.*;
+import java.text.*;
+
+public class DateFormatWorld {
+
+	public static void main(String[] args) {
+		GregorianCalendar calendar = new GregorianCalendar();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd (E) aa hh:mm");
+		
+		
+
+	}
+
+}

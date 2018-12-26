@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!--
+		document.write()사용시 주의점
+		- HTML 문서가 로드되어 출력이 모두 이루어지고 나면 document객체가 닫히기 때문에
+		  더 이상 HTML 텍스트를 출력할 수 없다.
+		  document 객체가 닫힌 후 document.write()가 실행되면 브라우저는 document 객체에
+		  담긴 현재 문서를 지우고 빈 document를 새로 연다. 
+		- 현재 브라우저 윈도우에 출력된 HTML문서를 지워버리고 새로운 내용을 출력하려면
+		  document.open()을 호출하여 document 객체를 열어야 한다. -> HTML 문서 작성
+		  -> document.close()을 호출하여 document 객체를 닫는다.
+		 -->
+		<script>
+			document.write('저에요~')
+		</script>
+	</head>
+	<body>
+		<p onclick="document.write('p 태그를 클릭합니다.')">저를 클릭해보세요</p>
+	</body>
+</html>

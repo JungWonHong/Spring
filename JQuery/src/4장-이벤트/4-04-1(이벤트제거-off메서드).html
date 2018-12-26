@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 이벤트 연결 제거
+			 off() : 이벤트를 제거합니다. -->
+		<script>
+			$(document).ready(function(){
+				//이벤트를 연결합니다.
+				$('h1').click(function(){
+					//출력합니다.
+					alert("이벤트가 발생했습니다.");
+					$(this).html('CLICK'); //this : 이벤트가 발생한 객체입니다.
+					
+					//이벤트를 제거합니다.
+					$(this).off(); //'CLICK'로 바뀐 곳은 클릭해도 이벤트가 발생하지 않습니다.
+				}); //click end
+			});//ready end
+		</script>
+	</head>
+	<body>
+		<h1>Header(0)</h1>
+   		<h1>Header(1)</h1>
+   		<h1>Header(2)</h1>
+	</body>
+</html>

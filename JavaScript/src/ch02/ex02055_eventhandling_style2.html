@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Event Handling</title>
+</head>
+<body>
+
+<script>
+  //이벤트 핸들러 - 특정 이벤트가 발생했을 때 실행하고자 하는 자바스크립트 함수나 코드
+    function add() {
+       var n1 = document.getElementById("op1");
+       var n2 = document.getElementById("op2");
+       var result = document.getElementById("result");
+       result.value = Number(n1.value) + Number(n2.value); //parseInt(n1.value) + parseInt(n2.value);
+       result.style.backgroundColor = 'orange';
+    }
+  
+ 
+</script>
+
+<form>
+    <input id="op1" type="text" size="2" onclick="this.style.border='1px solid red';"/> +
+    <input id="op2" type="text" size="2" onclick="this.style.border='1px solid green';"/>    
+    <input type="button" value="=" onclick="add();"/>
+    <!-- 이벤트 속성  : onclick, 
+                 이벤트 속성값에 이벤트 핸들러 함수 등록(연결)하는 방식 -->
+    
+    <input id="result" type="text" size="2"/>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+

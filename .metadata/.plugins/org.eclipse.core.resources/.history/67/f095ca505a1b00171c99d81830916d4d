@@ -1,0 +1,28 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		if (N >= 1 && N <= 10000) {
+			
+			for(int i=N;i>0;i--){
+				System.out.print(i);
+				int sum = 0;
+				sum+=i;
+			}
+			System.out.println(sum);
+			
+			
+		}
+		else
+			System.out.println("입력값 범위초과");
+		
+		sc.close();
+	}
+
+}

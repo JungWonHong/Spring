@@ -1,0 +1,10 @@
+package ex15_5_HashSet;
+
+public class HashSet2_Generics_add_print {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- display: none은 span의 영역을 차지하지 않습니다. -->
+		<style>
+			span { visibility: hidden; color: blus; }
+		</style>
+		<script src="../../js/jquery-3.2.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					if($('span').css('visibility')=='hidden'){
+						$('span').css('visibility', 'visible');
+					} else{
+						$('span').css('visibility', 'hidden');
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>다음 빈 곳에 숨은 단어?
+			<button>show/hide</button>
+		</h3>
+		<hr>
+		<ul>
+			<li>HTML is HyperText (<span>Markup</span>) Language
+			<li>CSS is Cascading  (<span>Style</span>) Sheet.
+		</ul>
+	</body>
+</html>

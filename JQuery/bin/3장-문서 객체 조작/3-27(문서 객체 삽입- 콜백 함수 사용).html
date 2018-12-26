@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				//변수를 선언합니다.
+				var content = [
+					{ name: '홍길동', region: '서울특별시 강서구'},
+					{ name: '임꺽정', region: '서울특별시 광진구'},
+					{ name: '손오공', region: '미국 메사추세츠'}
+				];
+				
+				//문서 객체를 추가합니다.
+				//각각의 div태그에 다른 내용을 입력하기 위해 배열을 사용합니다.
+				$('div').append(function(index){
+					//변수를 선언합니다.
+					var item = content[index];
+					var output = '';
+					output += '<h1>' + item.name + '</h1>';
+					output += '<h2>' + item.region + '</h2>';
+					return output;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

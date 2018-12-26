@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script>
+			//객체 생성 방법
+			//1. new 연산자 이용하기
+			//var saram = new Object(); //사용자 정의 객체 생성
+			
+			//2. 객체 리터럴(콜론으로 구별되는 property와 값의 쌍으로 쉼표로 분리된 목록) 이용하기
+			var saram = {
+				'name'	: "나최고",
+				"age"	: 25	,
+				ki		: 170.2 ,
+				blood	: 'A'	,
+				address	: '서울시 강남구'
+			};
+			
+			//출력 방법 : 객체.속성
+			document.write(saram.name + "<br>");
+			document.write(saram.age + "<br>");
+			document.write(saram.ki + "<br>");
+			document.write(saram.blood + "<br>");
+			document.write(saram.address + "<br><hr>");
+			
+			//출력 방법 : with 사용한 경우
+			//형식) with(객체){}
+			with(saram){
+				document.write(name + "<br>");
+				document.write(age + "<br>");
+				document.write(ki + "<br>");
+				document.write(blood + "<br>");
+				document.write(address + "<br><hr>");
+			}
+			
+			//출력 방법: 객체["속성"]
+			document.write(saram["name"] + "<br>");
+			document.write(saram["age"] + "<br>");
+			document.write(saram['ki'] + "<br>");
+			document.write(saram['blood'] + "<br>");
+			document.write(saram["address"] + "<br><hr>");
+			
+			//출력 방법 : for문 이용
+			for(var p in saram){ //객체 saram의 모든 property를 차례대로 p에 저장
+				document.write(p + ":" + saram[p] + "<br>");
+			}
+			
+			//property 삭제
+			delete saram.address;
+			document.write("<hr>");
+			for(var p in saram){
+				document.write(p + ":" + saram[p] + "<br>");
+			}
+			
+		</script>
+	</body>
+</html>

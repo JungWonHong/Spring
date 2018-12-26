@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="">
+			<input id="username" type="text" value="사용자의 이름"/>
+		</form>
+		
+		<script>
+			//getElemetnById() 메소드를 이용해서 원하는 요소 객체에 접근할 수 있다.
+			var dom = document.getElementById("username");
+			
+			//input 요소의 value속성값으 자바스크립트에서 dom.value와 같은 방법으로 읽는다.
+			alert(dom.value);
+			
+			var newValue = prompt("Type new value of text box", "");
+			//dom.value에 newValue변수값을 대입함으로써 <input>요소의
+			//value속성 값을 변경시킬 수 있다.
+			dom.value = newValue;
+		</script>
+	</body>
+</html>

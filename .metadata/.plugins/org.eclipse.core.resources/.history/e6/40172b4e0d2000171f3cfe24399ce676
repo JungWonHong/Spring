@@ -1,0 +1,22 @@
+package report_0413;
+
+public interface Lendable {
+	public enum State {
+		STATE_BORROWED(1), STATE_NORMAL(0);
+		final private int check;
+
+		private State(int check) {
+			this.check = check;
+			System.out.println(check);
+		}
+
+		int value() {
+			return check;
+		}
+	}
+
+	// public abstract 생략가능(알아서 붙여줌)
+	void checkOut(String borrower, String date); // 대출한다.
+
+	void checkIn(); // 반납한다.
+}

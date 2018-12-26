@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- show() 메서드 : 문서 객체를 크게 하며 보여줍니다.
+			 hide() 메서드 : 문서 객체를 작게 하며 사라지게 합니다.
+			 toggle(speed)메서드 : show()메서드와 hide()메서드를 번갈아 실행합니다.
+			 speed : 밀리초 단위의 숫자나 문자열 slow(600ms), normal(400ms),
+			 		 fast(200ms) 를 입력합니다. -->
+		<script>
+			//이벤트를 연결합니다.
+			$(document).ready(function(){
+				//이벤트를 연결합니다.
+				$('button').click(function(){
+					//간단한 효과를 적용합니다.
+					$('.page').toggle('slow');
+					//$('.page').hide('slow');
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<button>Toggle Show</button>
+		<div class="page">
+			<h1>졸린가요?</h1>
+			<p>밤에 푹~ 주무세요</p>
+		</div>
+	</body>
+</html>

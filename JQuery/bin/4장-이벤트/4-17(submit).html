@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 입력 양식(input태그, textarea)에서 발생하는 알림을 처리할 경우
+			 입력 양식 이벤트를 사용합니다.
+			 change : 입력 양식의 내용을 변경할 때 발생합니다.
+			 		  (type 속성이 checkbox와 radio인 경우)
+			 submit : submit 버튼을 누를 때 발생합니다.  -->
+		<script>
+			$(document).ready(function(){
+				$('#my-form').submit(function(event){
+					//입력 양식의 value를 가져옵니다.
+					var id = $('#name').val();
+					var pw = $('#password').val();
+					
+					//출력합니다.
+					alert(id + " : " + pw);
+					//return false; //나중에 꼬일때 이게 안먹힐수도 있음.
+					
+					//기본 이벤트를 제거합니다.
+					event.preventDefault();
+					//입력 양식의 유효성 검사할 때 기본 이벤트를 제거하여 확인합니다.
+					//주석이 있는 경우와 없는 경우 값 전달을 확인해 보세요
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form id="my-form" action="4-07(trigger()-이벤트 강제 발생).html">
+			<table>
+				<tr>
+					<td>이름: </td>
+					<td><input type="text" name="name" id="name"></td>
+				</tr>
+				<tr>
+					<td>비밀번호: </td>
+					<td><input type="password" name="password" id="password"></td>
+				</tr>
+			</table>
+			<input type="submit" value="제출">
+		</form>
+	</body>
+</html>

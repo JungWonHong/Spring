@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>키프레임 애니메이션</title>
+		<!-- 애니메이션 도중의 주요 장면을 중간 상태에 해당하는 키프레임으로 설정하고 난 후
+			  원하는 객체에 이미 작성된 키프레임을 애니메이션으로 지정하면 된다.
+			  키프레임의 설정은 @keyframes 규칙으로 작성하며 진행비율을 %나 
+			 from 및 to로 지정한다. -->
+		<style>
+			/* W3C의 로고의 움직임을 w3cMove라는 이름의 키프레임으로 작성 */
+			@keyframes w3cMove { /* 크롬과 사파리에서 -webkit-로 시작하는 속성이름으로 구현되어 있다.
+									-o-로 시작하는 속성이름은 오페라에서 구현되어 있고
+									-moz-는 파이어폭스이다. */
+				from { background: yellow; left: 20px; }
+				to { background: lime; left: 200px; }
+			}
+			
+			/* 제목줄의 움직임은 sway라는 이름의 키프레임으로 작성 */
+			@keyframes sway { 
+				0% { background: white; left: 20px;}
+				25% { background: yellow; top: 70px; left: 150px; }
+				50% { background: lime; top 70px; left: 280px; }
+				75% { background: yellow; top: -10px; left: 150px; }
+			}
+			
+			/* animation-name : 애니메이션이름(@keyframes의 name 지정);
+			   animation-duration : 1회 애니메이션 시간;
+			   animation-iteration-count : 애니메이션 반복 횟수
+			   							(숫자 또는 infinite인 경우 무한 반복)
+			      위의 문장들을 한번에 작상하면 다음과 같다.
+			   animation : 애니메이션이름 시간 반복횟수
+			*/
+			#w3c_anim { animation: w3cMove 6s; position: relative; }
+			#title { animation: sway 6s; position: relative; }
+		</style>
+	</head>
+	<body>
+		<h3>5.5 새로운 문서 표준 <span id="title">HTML5</span></h3>
+		<img src="W3C_logo.gif" id="w3c_anim" width="72" height="40">
+		<p>
+		현재 W3C에서 표준안 개발을 하고 있는 HTML5는 차세대 웹문서 표준안으로 많은 관심이
+		집중되고 있다.
+		특히, 표준안 개발에 마이크로소프트, 모질라, 애플, 구글, 오페라 등 대다수 
+		웹브라우저 개발사가 참여하고 있고, 그동안의 웹 기술의 발전을 많이 반영하여
+		모바일을 포함한 차세대 웹서비스 개발의 주요 기술로 주목받고 있다. 
+		</p>
+	</body>
+</html>

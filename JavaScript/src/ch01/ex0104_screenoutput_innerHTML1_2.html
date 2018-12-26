@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Screen Output</title>
+	</head>
+	<body>
+		<p>
+		저는 보여요~
+		Title1: A Simple JavaScript Example for Screen Output
+		</p>
+		
+		<script>
+			var title1 = "채식주의자";
+			var title2 = "종의 기원";
+			var title3 = "소년이 온다.";
+			
+			var list = '';
+			
+			list += "<table border=1>";
+			list += "<caption>베스트셀러</caption>";
+			list += "<tr>";
+			list += "<th>순위</th>";
+			list += "<th>제목</th>";
+			list += "</tr>";
+			list += "<tr> <td> 1 </td> <td> " + title1 + " </td> </tr>";
+			list += "<tr> <td> 2 </td> <td> " + title2 + " </td> </tr>";
+			list += "<tr> <td> 3 </td> <td> " + title3 + " </td> </tr>";
+			list += "</table>";
+			
+			/* 
+			var statement = document.body.innerHTML;
+			document.body.innerHTML = statement + list; */
+			document.body.innerHTML += list;
+		</script>
+		<p>
+		Title2: A Simple JavaScript Eaxmple for Screen Output
+		</p>
+	</body>
+</html>

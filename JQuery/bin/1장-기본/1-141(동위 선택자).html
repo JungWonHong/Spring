@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('li + li').css('color', 'red');
+			});
+		</script>
+	</head>
+	<body>
+		<div> 동위 선택자 (+): 형제 지간 </div>
+		<div>
+			<ul>
+				<li>Apple</li>
+				<li>Bag</li>
+				<li>Cat</li>
+				<li>Dog</li>
+				<li>Elephant</li>
+			</ul>
+		</div>
+		<div>
+			<p> 하하 저는 적용이 안되나요?
+		</div>
+	</body>
+</html>

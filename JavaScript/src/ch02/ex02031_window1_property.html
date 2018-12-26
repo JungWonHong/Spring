@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 브라우저 기반 내장 객체(BOM:Browser Object Model)
+			1. window : 미리 정의된 객체로 자바스크립트가 실행되고 있는 웹브라우저 창을
+						나타낸다.
+						브라우저 기반 자바스크립트의 최상위 객체이다.
+			2. document : window객체의 속성으로 HTML 문서 전체를 나타내는 객체이다.
+			3. location : 주소 정보를 제어하는 객체이다.
+			4. history : 웹 브라우저에 기록되어 있는 히스토리 정보를 제어하는 객체이다.
+			5. navigator : 웹 브라우저의 종류를 판별해 주는 객체이다.
+			
+			alert(), confirm(), prompt()도 window객체에서 제공하는 메소드로
+			"windo."이 생략된 것이다.
+		 -->
+		<script>
+			//출력합니다.
+			var output = '';
+			for(var key in window){
+				output += '●' + key + ': ' + window[key] + '\n';				
+			}
+			alert(output); //window.alert(output);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

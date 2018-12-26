@@ -1,0 +1,146 @@
+1491783381022	Rename type 'CheckingAccount2'
+1491783384876	Rename type 'CheckingAccount'
+1491783389113	Rename type 'CheckingAccount3'
+1491783579886	Rename package 'report_no2'
+1491783586262	Rename package 'report_no3'
+1491783591915	Rename package 'report_no4'
+1491783596939	Rename package 'report_no5'
+1491783601050	Rename package 'report_no6'
+1491783608150	Rename package 'report_no7'
+1491783616357	Rename package 'report_no8'
+1491783634476	Rename package 'report_no9'
+1491783787680	Copy compilation unit
+1491784635332	Copy compilation unit
+1491784800151	Copy compilation unit
+1491785044123	Rename type 'Account'
+1491785368206	Rename type 'Account2'
+1491785382610	Copy compilation unit
+1491785412440	Copy compilation unit
+1491786607679	Copy compilation unit
+1491793634448	Rename package 'ex4_1_local_variable'
+1491793642394	Rename package 'ex4_2_local_variable_error'
+1491793647363	Rename package 'ex4_3_local_variable_order'
+1491793651642	Rename package 'ex4_4_local_variable_block'
+1491793659330	Rename package 'ex4_8_arithmetic_op'
+1491793663383	Rename package 'ex4_8_concate_op'
+1491793667551	Rename package 'ex4_9_assignment_op'
+1491793687371	Rename package 'ex7_3_two_constructor'
+1491793691374	Rename package 'ex7_5_default_contructor'
+1491793698186	Rename package 'ex7_6_constructor_call'
+1491793703238	Rename package 'ex7_7_field'
+1491793708044	Rename package 'ex7_8_final_field'
+1491793714483	Rename package 'ex7_8_private_field'
+1491793723937	Rename package 'ex7_1_object'
+1491794002284	Rename package 'ex8_1_inheritance'
+1491794006905	Rename package 'ex8_2_constructor'
+1491794010861	Rename package 'ex8_3_super_constructor'
+1491794017176	Rename package 'ex8_4_overriding'
+1491794022244	Rename package 'ex8_5_super_method'
+1491794026343	Rename package 'ex8_6_final_class'
+1491794031015	Rename package 'ex8_7_final_method'
+1491794035550	Rename package 'ex8_8_abstract_class'
+1491794040810	Rename package 'ex8_9_abstract_method'
+1491794046682	Rename package 'ex8_9_inheritance_example'
+1491795105664	Delete element
+1491795740809	Copy compilation unit
+1491795751039	Copy compilation unit
+1491795799841	Copy compilation unit
+1491795814488	Delete element
+1491795815660	Copy compilation unit
+1491795839260	Copy compilation unit
+1491795963453	Rename type 'CheckingAccount2'
+1491802157267	Rename package 'report_no13'
+1491869084653	Rename package 'report_no12'
+1491869098917	Rename package 'report_no11'
+1491869114070	Rename package 'report_no10'
+1491869176473	Rename package 'report_no09'
+1491869208343	Rename package 'report_no08'
+1491869239704	Rename package 'report_no07'
+1491869250174	Rename package 'report_no06'
+1491869259242	Rename package 'report_no05'
+1491869267581	Rename package 'report_no04'
+1491869277441	Rename package 'report_no03'
+1491869289768	Rename package 'report_no02'
+1491871452017	Copy compilation unit
+1491871453432	Copy compilation unit
+1491871455467	Copy compilation unit
+1491874455616	Copy compilation unit
+1491874458284	Copy compilation unit
+1491874478574	Copy compilation unit
+1491875928348	Copy compilation unit
+1491880972327	Copy compilation unit
+1491880980580	Copy compilation units
+1491881738516	Copy compilation unit
+1491883627398	Copy compilation unit
+1491883822189	Copy compilation unit
+1491884602740	Copy compilation unit
+1491884617739	Copy compilation unit
+1491884910393	Copy compilation unit
+1491884933393	Copy compilation unit
+1491888467284	Delete element
+1491960064654	Copy compilation units
+1491960151147	Copy compilation unit
+1491961287954	Copy compilation unit
+1491961296625	Copy compilation unit
+1491961416394	Copy compilation unit
+1491961528534	Copy compilation unit
+1491962300043	Copy compilation unit
+1491966751479	Copy compilation unit
+1491966995082	Copy compilation unit
+1491968651810	Copy compilation unit
+1491969027375	Copy compilation units
+1491970154776	Copy compilation unit
+1491970563924	Copy compilation unit
+1491971021192	Copy compilation unit
+1491971135788	Copy compilation unit
+1491971258731	Delete element
+1491971260335	Delete element
+1491971269675	Copy compilation units
+1491971277529	Copy compilation unit
+1491971285480	Rename type 'RefTypeExample9'
+1491972417259	Rename type 'Main'
+1491973641574	Copy compilation units
+1491976615140	Rename type 'Main'
+1491976935640	Rename type 'Main_self'
+1492041920692	Delete element
+1492044788450	Rename type 'Main'
+1492046171532	Copy compilation unit
+1492047142062	Copy compilation unit
+1492047320609	Copy compilation unit
+1492047326123	Rename type 'NewExample'
+1492048071125	Rename package 'ex9_2_null'
+1492048077080	Rename package 'ex9_3_upcasting'
+1492048082079	Rename package 'ex9_3_upcasting_field'
+1492048086520	Rename package 'ex9_3_upcasting_override'
+1492048091607	Rename package 'ex9_4_downcasting_error'
+1492048096920	Rename package 'ex9_7_instanceof'
+1492048101604	Rename package 'ex9_8_enum_need'
+1492048107410	Rename package 'ex9_9_enum'
+1492056654887	Rename type 'Main'
+1492058641541	Copy compilation unit
+1492058708187	Copy compilation unit
+1492058839314	Copy compilation unit
+1492058842817	Delete element
+1492058997064	Copy compilation unit
+1492059008465	Copy compilation unit
+1492059023254	Rename type 'PackageExample3'
+1492060102960	Delete element
+1492060108273	Copy compilation units
+1492061904046	Delete elements
+1492062097273	Delete element
+1492062374153	Delete elements
+1492132744539	Copy compilation unit
+1492132781461	Delete element
+1492133731406	Delete element
+1492134538096	Copy compilation units
+1492134541519	Delete element
+1492134558526	Copy compilation unit
+1492134566169	Rename type 'PackageExample5'
+1492135219408	Copy compilation unit
+1492143918860	Copy compilation unit
+1492143937978	Copy compilation unit
+1492144801203	Copy compilation unit
+1492146570538	Copy compilation unit
+1492147573375	Copy compilation unit
+1492147615204	Copy compilation unit
+1492147666715	Rename type 'StringExample6_1'

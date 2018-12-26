@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체의 내부 추가 - html() 메소드
+			  html()메서드에서 사용된 함수의 두 번째 매개 변수 html은
+			   원래 있던 HTML의 내용을 의미합니다.
+		-->
+		<script>
+			$(document).ready(function() {
+				$('h1').html(function(index, html){
+					return '★' + html + index + '★';
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header</h1>
+		<h1>Header</h1>
+		<h1>Header</h1>
+	</body>
+</html>

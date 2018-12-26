@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>추가된 입력 요소 예제</title>
+	</head>
+	<body>
+		<form oninput="result.value=parseInt(price.value)*parseInt(number.value) + '원' ">
+			<fieldset>
+				<legend><h3>도서 구입 요청</h3></legend>
+				도서명 : <input type="text" name="book_name" list="book_list">
+				<datalist id="book_list">
+					<option value="멀티미디어배움터" label="30,000">
+					<option value="인터넷배움터" label="34,000">
+					<option value="컴퓨터와 IT 기술의 이해" label="28,000">
+				</datalist>
+				<p>
+				선호도 : 1 <input type="range" min="1" max="5" value="3"> 5
+				
+				<p>
+				가격 : <input type="number" min="0" value="10000" 
+							step="100" name="price">&nbsp;원
+				<p>
+				권수 : <input type="number" min="0" value="0"
+							step="1" name="number">&nbsp;권
+				<p>
+				합계 : <output name="result"></output> <!-- 계산 결과 출력하기 위한 태그-->
+				
+				<p>
+				<input type="submit" value="구입">
+			</fieldset>			
+		</form>
+	</body>
+</html>
+<!-- 
+	oninput="result.value=parseInt(price.value)*parseInt(number.value)
+	==>input 태그에 값을 입력할 때 마다 이벤트 발생
+	1. result.value : name='result'인 output태그의 값을 의미
+	2. parseInt(price.value) 함수 :
+	   name='price'인 input태그의 값을 정수형으로 바꾸어주는 함수
+	3. parseInt(num.value) 함수 :
+	   name='number'인 input태그의 값을 정수형으로 바꾸어주는 함수
+-->

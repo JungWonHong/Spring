@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			// 함수를 생성
+			function callTenTimes(callback){
+				for (var i = 0; i < 3; i++) {
+					callback();
+				}
+			}
+			
+			//변수를 선언
+			callTenTimes(function(){
+				alert('함수 호출');
+			});
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

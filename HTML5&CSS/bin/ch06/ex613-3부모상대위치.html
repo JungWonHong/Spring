@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			.box {
+				width: 100px; height: 100px;
+				position: absolute;
+			}
+			.box:nth-child(1) {
+				background-color: red;
+				left: 10px; top: 10px;
+				z-index: 100;
+			}
+			.box:nth-child(2) {
+				background-color: green;
+				left: 50px; top: 50px;
+				z-index: 10;
+			}
+			.box:nth-child(3) {
+				background-color: blue;
+				left: 90px; top: 90px;
+				z-index: 1;
+			}
+			/*  absolute 값을 갖는 요소는 자신의 부모 혹은 조상 요소중에 relative 속성이 있는
+				것을 찾아 그 객체를 좌표의 기준으로 삼습니다.
+				만약 부모 중에 position이 relative 속성이 없으면 가장 위의 태그인 body태그를
+				기준으로 삼습니다. */
+			body>div { /* body요소의 자손 div */
+					   border: 3px solid black;
+					   height: 100px; width: 400px;
+					   position: relative; }
+		</style>
+	</head>
+	<body>
+		<h1>저는 h1태그 입니다.</h1>
+		<div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<h1>저는 h1태그 입니다.</h1>
+	</body>
+</html>

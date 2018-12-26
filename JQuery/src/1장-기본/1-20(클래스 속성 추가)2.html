@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			.high-light {
+				background: yellow;
+			}
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				var h = $('h1'); //문서에 존재하는 h1태그를 모두 가져옵니다.
+				for(i=0;i<h.length;i++){
+					document.write(h[i].innerHTML + "<br>");
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<h1>item - 0</h1>
+		<h1>item - 1</h1>
+		<h1>item - 2</h1>
+		<h1>item - 3</h1>
+		<h1>item - 4</h1>
+	</body>
+</html>

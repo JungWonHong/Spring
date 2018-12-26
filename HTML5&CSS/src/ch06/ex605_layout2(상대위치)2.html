@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>위치/크기 지정 속성</title>
+		<style>
+			div { width: 100px;
+				  height: 100px;
+				  background-color: red;
+				  display: inline-block;
+				  border: 1px solid lightgray;
+				}
+				
+			#box1:hover { 
+					position: relative; /* 상대위치 */
+					/* 수평 좌표 : 부모 요소(body) 원래 위치에서 오른쪽 30px 이동 배치 */
+					left: 30px;
+					
+					/* 수직 좌표 : 부모 요소(body) 원래 위치에서 아래로 50px 이동 배치 */
+					top: 50px;
+					background-color: green;
+			}
+			#box2:hover { 
+					position: relative; /* 상대 위치 */
+					right: 20px; /* 수평 좌표 : 원래 위치에서 왼쪽으로 20px 이동 배치 */
+					bottom: 20px; /* 수직 좌표 : 원래 위치에서 위로 20px 이동 배치 */
+					background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>상대위치</h3>
+		<div></div>
+		<div></div>
+		<div id=box1></div>
+		<div id=box2></div>
+	</body>
+</html>

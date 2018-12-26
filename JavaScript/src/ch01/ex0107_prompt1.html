@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>prompt : 사용자로부터 입력 받을 수 있는 대화 상자</title>
+	</head>
+	<body>
+		<script>
+		/*  prompt()함수는 문자열만 입력받을 수 있다.
+			형식 result = prompt(message, value)
+			● result는 사용자가 입력 한 텍스트가 포함된 문자열입니다.
+			● message는 사용자에게 표시 할 텍스트 문자열입니다.
+			  이 매개 변수는 선택적이며 프롬프트 참에 표시 할 내용이 없으면 생략 할 수 있습니다.
+			● value는 텍스트 입력 필드에 표시되는 기본값을 포함하는 문자열입니다. 
+		*/
+			var answer = prompt("서적 제목을 입력해 주세요.", 
+								"완벽하지 않은 것들에 대한 사랑");
+			document.write("Answer = " + answer + "<br/>");
+		</script>
+	</body>
+</html>

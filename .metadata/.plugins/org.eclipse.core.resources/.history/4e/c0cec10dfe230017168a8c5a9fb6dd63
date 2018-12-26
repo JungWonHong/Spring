@@ -1,0 +1,23 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] music = new int[8];
+		for(int i=0;i<music.length;i++)
+			music[i] = sc.nextInt();
+
+		System.out.println(check(music));
+		
+		sc.close();
+	}
+	
+	static String check(int[] music){
+		
+		
+		return "ascending";
+	}
+
+}

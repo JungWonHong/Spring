@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>유효성 검사</title>
+		<style>
+			body{
+				width: 777px;
+				margin: 20px auto;
+			}
+			
+			fieldset {
+				padding: 50px;
+				width: 600px;
+			}
+			
+			label {
+				color: #0c78a5; width: 70px;
+				display: inline-block;
+			}
+			
+			input {
+				display: inline-block;
+				border-radius: 3px;
+				border: 1px solid green;
+				height: 23px;
+				margin-bottom: 5px;
+			}
+			
+			textarea {
+				border-radius: 3px;
+				border: 1px solid green;
+			}
+			
+			select {
+				height: 23px; border-radius: 3px;
+				border: 1px solid lime;
+			}
+			
+			input[type="submit"], input[type="reset"] {
+				background: skyblue;
+				width: 245px; height: 30px;
+			}
+			
+			input[type="button"] {
+				background-color: orange; height: 23px;
+			}
+		</style>
+		<script>
+			//ID 중복 검사 부분
+			function idcheck(){
+				var id = document.getElementById("id");
+				if(id.value == ''){ // ID를 입력하지 않았을 경우
+					alert("ID를 입력하세요");
+					id.focus();
+				} else { // ID를 입력했을 경우
+					// var ref = "idcheck.jsp?id=" + id.value; //값을 넘겨서 DB와 비교할때 사용
+					var ref = "idcheck.html"; //사용자가 입력한 방식을 get방식으로 넘깁니다.
+					window.open(ref, "idcheck", "width=300, height=250"); //팝업창
+					//팝업창에 idcheck.html의 결과가 나타납니다.
+				}
+			}
+			
+			//우편 검색
+			function post(){
+				window.open("post.html", "post", "width=400, height=300");
+			}
+			
+			//select 태그에서 선택한 도메인 설정하는 부분
+			function domain1(){
+				var sel = document.getElementById("sel");
+				var domain = document.getElementById("domain");
+				if(sel.value == ""){ //직접 선택된 경우
+					domain.readOnly = false;
+					domain.value="";
+					domain.focus();
+				} else { //option 중에서 선택한 경우
+					domain.readOnly = true; //수정 불가
+					domain.value = sel.value; //sel.options[sel.selectedIndex].value;
+				}
+			}
+			
+			function move(){
+				var jumin1 = document.getElementById("jumin1");
+				var jumin2 = document.getElementById("jumin2");
+				
+				//주민번호 앞자리 6자리인 경우
+				if(jumin1.value.length == 6){
+					if(!isNaN(jumin1.value)){	//6자리가 숫자인 경우
+						jumin2.focus();
+					} else { 					//6자리가 숫자가 아닌 경우
+						alert("숫자로 입력하세요.");
+						jumin1.value = ''; //앞자리 모두 초기화
+						jumin1.focus();	   //앞자리에 포커스 준다.
+					}
+				}
+				
+				//주민번호 뒷자리 7자리인 경우
+				if(jumin2.value.length == 7){
+					if(isNaN(jumin2.value)){	 //7자리에 문자가 있는 경우
+						alert("숫자로 입력하세요.");
+						jumin2.value = ''; //뒷자리 모두 초기화
+						jumin2.focus();	   //뒷자리에 포커스 준다.
+					}
+				}
+			}
+			
+			
+			//회원가입 버튼 클릭했을 경우
+			function check(){
+				//id 공백 유효성 검사
+				var id = document.getElementById("id");
+					id.focus();
+					return false;
+				}
+				
+				//비밀번호 공백 유효성 검사
+				var pass = document.getElementById("pass");
+				if(pass.value == ""){
+					alert("비밀번호를 입력 하세요");
+					pass.focus();
+					return false;
+				}
+				
+				//주민번호 앞자리 공백 유효성 검사
+				var jumin1 = document.getElementById("jumin1");
+				if(jumin1.value == ""){
+					alert("주민번호 앞자리를 입력 하세요");
+					jumin1.focus();
+					return false;
+				}
+				
+				//주민번호 앞자리 6자리 유효성 검사
+				if(jumin1.value.length != 6){
+					alert("주민번호 앞자리 6자리를 입력하세요");
+					jumin1.value = "";
+					jumin1.focus();
+					return false;
+				}
+				
+				//주민번호 앞자리 숫자 유효성 검사
+				if(isNaN(jumin1.value)){  //숫자가 아닌경우
+					alert("주민번호 앞자리는 숫자만 입력 가능합니다.");
+					jumin1.value = "";
+					jumin1.focus();
+					return false;
+				}
+				
+				//주민번호 뒷자리 공백 유효성 검사
+				var jumin2 = document.getElementById("jumin2");
+				if(jumin2.value == ""){
+					alert("주민번호 뒷자리를 입력 하세요");
+					jumin2.focus();
+					return false;
+				}
+				
+				//주민번호 뒷자리 7자리 유효성 검사
+				if(jumin2.value.length != 7){
+					alert("주민번호 뒷자리 7자리를 입력하세요");
+					jumin2.value = "";
+					jumin2.focus();
+					return false;
+				}
+				
+				//주민번호 뒷자리 숫자 유효성 검사
+				if(isNaN(jumin2.value)){ //숫자가 아닌경우
+					alert("주민번호 뒷자리는 숫자만 입력 가능합니다.");
+					jumin2.value = "";
+					jumin2.focus();
+					return false;
+				}
+				
+				//E-Mail 공백 유효성 검사				
+				var email = document.getElementById("email");
+				if(email.value == ""){
+					alert("E-Mail id를 입력 하세요");
+					email.focus();
+					return false;
+				}
+				
+				//domain 공백 유효성 검사
+				var domain = document.getElementById("domain");
+				if(domain.value == ""){
+					alert("E-Mail 도메인을 입력 하세요");
+					domain.focus();
+					return false;
+				}
+				
+				
+				//라디오 버튼 선택 유효성 검사
+				var gender1 = document.getElementById("gender1");
+				var gender2 = document.getElementById("gender2");
+				if(gender1.checked==false && gender2.checked==false){
+					alert("남, 여 중에서 1개를 선택 하세요.");
+					return false;
+				} 
+				
+				//체크 박스 선택 유효성 검사(취미 2개 이상)
+				var hobby = new Array();
+				var cnt = 0;
+				for(var i=0;i<5;i++)
+					hobby[i] = document.getElementById("hobby" + (i+1));
+				
+				for(var i=0;i<5;i++){
+					if(hobby[i].checked)
+						cnt++;
+				}
+				if(cnt<2){
+					alert("2개 이상 취미를 선택 하세요.");
+					return false;
+				}
+				
+				//우편번호 앞자리 공백 유효성 검사
+				var post1 = document.getElementById("post1");
+				if(post1.value == ""){
+					alert("우편번호 앞자리 입력하세요");
+					post1.focus();
+					return false;
+				}
+				
+				//우편번호 뒷자리 공백 유효성 검사
+				var post2 = document.getElementById("post2");
+				if(post2.value == ""){
+					alert("우편번호 뒷자리 입력하세요");
+					post2.focus();
+					return false;
+				}
+				
+				//주소 공백 유효성 검사
+				var address = document.getElementById("address");
+				if(address.value == ""){
+					alert("주소를 입력하세요");
+					address.focus();
+					return false;
+				}
+				
+				//자기소개 공백 유효성 검사
+				var intro = document.getElementById("intro");
+				if(intro.value == ""){
+					alert("자기소개를 입력하세요");
+					intro.focus();
+					return false;
+				}
+			}
+		</script>
+	</head>
+  	<body> 
+    	<fieldset>
+     		<legend>유효성 검사</legend>
+            <form name=myform  method=get  action=send.html  id=myform  onsubmit="return check()">                  
+            
+	            <label>ID</label>    
+	            <input  type=text size=10 name=id id=id>
+	            <input  type=button value="ID중복검사" onClick="idcheck()">
+	            <br>
+	            <label>비밀번호</label>
+	            <input type=password name=pass id=pass>
+	            <br>
+	            <label>주민번호</label>
+	            <input type=text size=6 maxlength=6 name=jumin1 id=jumin1 onKeyup="move()">
+	            &nbsp;-&nbsp;
+	            <input type=text size=7 maxlength=7 name=jumin2 id=jumin2 onKeyup="move()">
+				<br>
+				<label>E-Mail</label>
+	            <input type=text name=email id=email>
+	            @
+	            <input type=text name=domain id=domain>
+	            
+	            <select name=sel id=sel onChange="domain1()" >
+	            	<option value="">직접입력</option>
+	            	<option value="naver.com">naver.com</option>
+	            	<option value="daum.net">daum.net</option>
+	            	<option value="nate.com">nate.com</option>
+	            	<option value="gmail.com">gmail.com</option>
+	            </select>
+	            <br>
+	            <label>성별</label>
+	            <input type=radio name=gender value=m id=gender1>남자
+	            <input type=radio name=gender value=f id=gender2>여자
+	 			<br>
+	            <label>취미</label>
+	            <input type=checkbox name=hobby id=hobby1 value="공부">공부
+	            <input type=checkbox name=hobby id=hobby2 value="게임">게임
+	            <input type=checkbox name=hobby id=hobby3 value="운동">운동
+	            <input type=checkbox name=hobby id=hobby4 value="등산">등산
+	            <input type=checkbox name=hobby id=hobby5 value="낚시">낚시
+				<br>
+	            <label>우편번호</label>
+	            <input type=text size=3 maxlength=3 name=post1 id=post1>
+	            &nbsp;-&nbsp;
+	            <input type=text size=3 maxlength=3 name=post2 id=post2>
+	            <input type=button value="우편검색" onclick="post()">
+	            <br>
+	            <label>주소</label>
+	            <input type=text size=50 name=address id=address>
+				<br>
+	            <label>자기소개</label>
+	            <textarea rows=10 cols=75 name=intro id=intro></textarea>
+	
+	    		<input type=submit value="회원가입">
+	    		<input type=reset value="취소">
+  			 </form>
+		</fieldset>
+	</body>
+</html>

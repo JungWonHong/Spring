@@ -1,0 +1,38 @@
+<!-- 화면을 가로로 줄여보세요 -->
+<!-- ex608_overflow.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>overflow 속성 : 콘텐츠 박스의 크기보다 텍스트의 양이 많을 경우 처리 방법</title>
+		<style>
+					/* 초과된 콘텐츠가 박스의 아래쪽에 이어서 나타난다. */
+			#intro1 { overflow: visible;
+					  float: left; width: 24%; height: 140px;
+					  border: medium double black;}
+			
+					/* 초과된 콘텐츠가 잘려서 안보인다. */
+			#intro2 { overflow: hidden;
+					  float: left; width: 24%; height: 140px;
+					  border: medium double black;}
+			
+					/* 스크롤 바를 이용해서 볼 수 있다. */
+			#intro3 { overflow: scroll;
+					  float: left; width: 24%; height: 140px;
+					  border: medium double black;}
+			
+					/* 스크롤 바를 이용해서 볼 수 있다. */		  
+			#intro4 { overflow: auto;
+					  float: left; width: 24%; height: 140px;
+					  border: medium double black;}
+		</style>
+	</head>
+	<body>
+		<h3>5.5 새로운 문서 표준 HTML5</h3>
+		<p id="intro1">[visible] 표준안 개발에 대다수 웹브라우저 개발사가 참여하고 있고, 그동안의 웹 기술의 발전을 많이 반영하여 모바일을 포함한 차세대 웹서비스 개발의 주요 기술로 주목받고 있다.</p>
+		<p id="intro2">[hidden] 표준안 개발에 대다수 웹브라우저 개발사가 참여하고 있고, 그동안의 웹 기술의 발전을 많이 반영하여 모바일을 포함한 차세대 웹서비스 개발의 주요 기술로 주목받고 있다.</p>
+		<p id="intro3">[scroll] 표준안 개발에 대다수 웹브라우저 개발사가 참여하고 있고, 그동안의 웹 기술의 발전을 많이 반영하여 모바일을 포함한 차세대 웹서비스 개발의 주요 기술로 주목받고 있다.</p>
+		<p id="intro4">[auto] 표준안 개발에 대다수 웹브라우저 개발사가 참여하고 있고, 그동안의 웹 기술의 발전을 많이 반영하여 모바일을 포함한 차세대 웹서비스 개발의 주요 기술로 주목받고 있다.</p>
+		
+	</body>
+</html>

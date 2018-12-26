@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#check-item').change(function(event){
+					alert($(event.target).val());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="check-item">
+			<input type="radio"	name="hoho" value="A">
+			<label>A Option</label>
+			<input type="radio"	name="hoho" value="B">
+			<label>B Option</label>
+			<input type="radio"	name="hoho" value="C">
+			<label>C Option</label>
+		</div>
+	</body>
+</html>

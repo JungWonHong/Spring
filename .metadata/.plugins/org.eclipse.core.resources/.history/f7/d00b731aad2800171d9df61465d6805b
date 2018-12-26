@@ -1,0 +1,21 @@
+package ex15_5_HashSet;
+
+import java.util.HashSet;
+
+public class HashSet2_Generics_lotto {
+
+	public static void main(String[] args) {
+		// HashSet 객체 생성
+		HashSet<Integer> set = new HashSet<Integer>();
+
+		for (int i = 0; i < 6; i++)
+			set.add((int) (Math.random() * 45 + 1));
+
+		System.out.println("저장된 데이터의 수 = " + set.size());
+
+		// set 객체가 보관하고 있는 데이터 객체 출력
+		System.out.println(set);
+
+	}
+
+}

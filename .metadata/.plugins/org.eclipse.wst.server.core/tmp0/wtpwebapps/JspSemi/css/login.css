@@ -1,0 +1,63 @@
+@CHARSET "EUC-KR";
+form, body {
+    font-family: 'Lato', sans-serif;
+    background: #353535;
+    color: #FFF;
+   	text-align:center;
+}
+
+h1 {
+  color: #F7CA18;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* table list */
+table  {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    border-top:0;
+    margin-top:20px;
+ 	margin : 0 auto; 
+/* 	text-align:center; */
+}
+
+.member-check {
+	text-align:center
+}
+.join-tr {
+	text-align:center
+}
+input[type=text] {
+	border-radius: 5px;
+	border: 1px solid silver;
+	height: 25px;
+}
+
+input[type=password] {
+	border-radius: 5px;
+	border: 1px solid silver;
+	height: 25px;
+}
+
+tr,td{
+	height: 40px;
+}
+ 
+form {
+	padding: 200px;
+} 
+input[type=submit]{
+background-color: #F7CA18;
+border-radius: 5px;
+border : 0px;
+padding : 5px;
+margin-left : 10px;
+height : 50px;
+width : 70px;
+}
+
+.mrng-60-top{
+color:#F7CA18;
+}

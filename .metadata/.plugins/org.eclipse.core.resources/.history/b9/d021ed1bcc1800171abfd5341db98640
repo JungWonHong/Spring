@@ -1,0 +1,10 @@
+package report_no8;
+
+public class Method_max_min {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

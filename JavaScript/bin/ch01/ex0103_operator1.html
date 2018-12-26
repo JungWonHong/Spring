@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 변수의 특성 : 묵시적 형 변환</title>
+		<!-- 묵시적(암시적 형 변환)
+			 1. 숫자형 + 문자형 => 문자형
+			 2. 불린형 + 문자형 => 문자형
+			 3. 불린형 + 숫자형 => 숫자형
+		-->
+		<script>
+			//숫자와 문자열 자료형 변환
+			var a = "3";
+			var b = 2;
+			
+			// c값은 (b+5)계산된 후 문자열 3을 연결
+			var c = b + 5 + a;
+			
+			// d값은 "3"+"2"="32", 문자열 연산(Concatenation)
+			// 문자와 숫자를 덧셈 연산시 숫자는 문자열로 변환 후 문자열을 연결한다.
+			var d = a + b + 1;
+			document.write("c = " + c + "<br/>"); //c = 73
+			document.write("d = " + d + "<br/>"); //d = 321
+			document.write('Number("3") + 2 = ' + (Number(a) + b) + "<br/>");
+			
+			var a = true;
+			document.write("a + 1 = " + (a + 1) + "<br/>");
+			document.write("false + 1 = " + (false + 1) + "<br/>");
+			
+			
+			document.write("a + '10' = " + (a + '10') + "<br/>");
+			document.write("false + '10' = " + (false + '10') + "<br/>");
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

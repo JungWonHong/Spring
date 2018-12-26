@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../../js/jquery-3.2.1.js"></script>
+		<!-- 체이닝을 사용해 한 줄로 서로 다른 문서 객체에 스타일을 적용했습니다. -->
+		<script>
+		/* h1의 부모요소 body의 자식들 중에서 2, 4, 6.. 짝수번째 중에서 h1인 태그를 선택한다 */
+			$(document).ready(function(){
+				$('h1').css('background', 'orange')
+					.filter(':nth-child(2n)')
+					.css('color', 'red');
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header-1</h1>
+		<h2>header2-1</h2>
+		<h1>Header-2</h1>
+		<h2>header2-2</h2>
+		<h1>Header-3</h1>
+	</body>
+</html>

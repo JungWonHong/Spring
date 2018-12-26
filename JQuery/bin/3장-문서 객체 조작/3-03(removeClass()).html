@@ -1,0 +1,22 @@
+﻿<!-- 3-3(removeClass()).html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <style>
+      .select{background:orange}
+    </style>
+    <script src="../js/jquery-3.2.1.js"></script>
+   <!--  removeClass()메서드 : 문서 객체의 클래스 속성을 제거합니다. -->
+    <script>
+        $(document).ready(function () {
+            $('h1').removeClass('select');
+        });
+    </script>
+</head>
+<body>
+    <h1 class="item">Header-0</h1>
+    <h1 class="item select">Header-1</h1>
+    <h1 class="item">Header-2</h1>
+</body>
+</html>

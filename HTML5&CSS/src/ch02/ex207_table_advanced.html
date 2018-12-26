@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>표 고급</title>
+	</head>
+	<body>
+		<h1>추천도서 Table</h1>
+		<!-- <table> 요소를 머리말, 본문, 꼬리말로 나누었을 때
+			 1. 머리말에 해당하는 요소 - <thead>
+				<caption> 요소 뒤에 선언하고 <tbody>,<tfoot>,<tr>요소 앞에 선언된다
+				<table>요소에 한 번만 사용한다.
+			 2. 꼬리말에 해당하는 요소 - <tfoot>
+			 	<tbody>요소 앞에 사용한다. 표 내에서 한 번만 사용할 수 있다.
+			 	<tbody>에 들어 있는 내용이 길어 여러 페이지에 걸쳐지게 될 때,
+			 	head와 footer를 각 페이지 마다 위아래로 출력하기 위해서이다.
+			 3. 본문에 해당하는 요소 - <tbody>
+			 	여러번 사용할 수 있는 요소이다.
+		-->
+		<table border = "1">
+			<caption>추천 도서 표</caption> <!-- 표 제목 -->
+			<thead>
+				<tr>
+					<th>책제목</th>
+					<th>작가</th>
+					<th>가격</th>
+				</tr>
+			</thead> <!-- 표의 헤더 영역부분 -->
+			<tfoot>
+				<tr>
+					<th>총</th>
+					<td>2권</td>
+					<td>30,000원</td>
+				</tr>
+			</tfoot> <!-- 표의 푸터 영역부분 -->
+			
+			<tbody>
+				<tr>
+					<th>스티브잡스</th>
+					<td>월터아이작슨 저, 안진환 역</td>
+					<td>25,000원</td>
+				</tr>
+				<tr>
+					<th>나를 지키는 말 88</th>
+					<td>손화신, 쌤앤파커스</td>
+					<td>25,000원</td>
+				</tr>
+			</tbody> <!-- 표의 내용 영역부분 -->
+		</table>
+	</body>
+</html>

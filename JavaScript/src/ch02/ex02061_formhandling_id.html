@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form handling with JavaScript</title>
+<style>
+  *{text-align:center}
+  table{width:500px;margin:0 auto;}  
+  td:first-child{background-color : yellow;}
+  tr:last-child{background-color : green;}
+  tr:last-child>td:first-child{background-color : white;}
+</style>
+<script>
+		function updateAll() {
+/* 			var book1 = document.getElementById("book1").value;
+			var book2 = document.getElementById("book2").value;
+			var book3 = document.getElementById("book3").value;
+			var totNum = document.getElementById("totalNumber");
+			var tot1 = document.getElementById("book1Total");
+			var tot2 = document.getElementById("book2Total");
+			var tot3 = document.getElementById("book3Total");
+			var tot = document.getElementById("totalPrice"); 
+			totNum.value = parseInt(book1) + parseInt(book2) + parseInt(book3);
+			tot1.value = parseInt(book1) * 25000;
+			tot2.value = parseInt(book2) * 27000;
+			tot3.value = parseInt(book3) * 25000;
+			tot.value = parseInt(tot1.value) + parseInt(tot2.value) + parseInt(tot3.value);
+			*/
+			/* var book = new Array();
+			var tot = new Array();
+			for(var i=0;i<3;i++){
+				book[i] = document.getElementById("book" + (i+1)).value;
+				tot[i] = document.getElementById("book" + (i+1) + "Total"); 
+			}
+			var totNum = document.getElementById("totalNumber");
+			var total = document.getElementById("totalPrice");
+			
+			totNum.value = parseInt(book[0]) + parseInt(book[1]) + parseInt(book[2]);
+			tot[0].value = parseInt(book[0]) * 25000;
+			tot[1].value = parseInt(book[1]) * 27000;
+			tot[2].value = parseInt(book[2]) * 25000;
+			total.value = parseInt(tot[0].value) + parseInt(tot[1].value) + parseInt(tot[2].value);
+			 */
+			 var n1 = document.getElementById("book1").value;
+			 var n2 = document.getElementById("book2").value;
+			 var n3 = document.getElementById("book3").value;
+			 
+			 var p1 = 25000 * n1;
+			 var p2 = 27000 * n2;
+			 var p3 = 25000 * n3;
+			 
+			 document.getElementById("book1Total").value = p1;
+			 document.getElementById("book2Total").value = p2;
+			 document.getElementById("book3Total").value = p3;
+			 
+			 var totalNumber = parseInt(n1) + parseInt(n2) + parseInt(n3);
+			 document.getElementById("totalNumber").value = totalNumber;
+			 var totalPrice = p1 + p2 + p3;
+			 document.getElementById("totalPrice").value = totalPrice;
+			
+		}
+	</script>
+
+
+</head>
+<body>
+	<h2>서적 주문 양식</h2>
+	<form action="ex0201_domtree.html">
+		<table border="1">
+		
+			<tr>
+				<th>책 제목</th>
+				<th>가격</th>
+				<th>수량</th>
+				<th>합계</th>
+			</tr>
+			<tr>
+				<td>채식주의자</td>
+				<td>25,000원</td>
+				<td><input id="book1" type="text" size="2" value="0"
+					onclick="this.select();" /></td>
+					<!-- 이벤트 핸들러를 직접 기술하여 등록방식
+					     this.select()는 각 서적 수량을 표시하는 텍스트 박스를 클릭하면 그 값이 선택되도록 하는 기능을 갖는다.
+					     this는 <input>요소의 DOM을 가리키게 된다. 즉, 자신이 속한 DOM을 가리키는 것이다.-->
+				<td><input id="book1Total" type="text" size="6" value="0" /> 원</td>
+			</tr>
+			<tr>
+				<td>종의 기원</td>
+				<td>27,000원</td>
+				<td><input id="book2" type="text" size="2" value="0"
+					onclick="this.select();" /></td>
+				<td><input id="book2Total" type="text" size="6" value="0" /> 원</td>
+			</tr>
+			<tr>
+				<td>소년이 온다</td>
+				<td>25,000원</td>
+				<td><input id="book3" type="text" size="2" value="0"
+					onclick="this.select();" /></td>
+				<td><input id="book3Total" type="text" size="6" value="0" /> 원</td>
+			</tr>
+			<tr>
+				<td>합계</td>
+				<td>&nbsp;</td>
+				<td><input id="totalNumber" type="text" size="2" value="0" /></td>
+				<td><input id="totalPrice" type="text" size="6" value="0" /> 원</td>
+			</tr>
+		</table>
+		<br /> <input type="button" value="합계계산" onclick="updateAll();" /> <!-- 이벤트 핸들러 함수를 호출하는 방식 -->
+		       <input type="reset" value="초기화" />
+		       <input type="submit" value="제출" />
+	</form>
+
+	
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			.outer {
+				width: 200px;
+				height: 200px;
+				background: orange;
+				padding: 50px;
+				margin: 10px;
+			}
+			
+			.inner {
+				width: 100%;
+				height: 100%;
+				background: red;
+			}
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 
+		 * 너비와 높이, 투명도가 변화
+         1. show( )     : 숨겨진 요소를 화면에 표시한다.  
+         2. hide( )     : 화면의 요소를 화면에서 제거된다. 
+         3. toggle( )   : show( ) 와 hide( )를 반복한다. 
+
+         * 투명도 변화
+         4. fadeIn( )   : 숨겨진 요소를 화면에 표시한다.
+         5. fadeOut( )  : 화면의 요소를 화면에서 표시하지 않게 한다.
+         6. fadeToggle( ): fadeIn( ) 와 fadeOut( )를 반복한다.
+
+         * 높이 변화
+         7. slideDown( ) : 숨겨진 요소를 화면에 표시한다.
+         8. slideUp( )   : 화면의 요소를 화면에서 표시하지 않게 한다.
+         9. slideToggle( ) : slideDown( ) 와 slideUp( )를 반복한다.
+
+         * 마우스 이벤트
+         click : 마우스를 클릭할 때  발생합니다.
+         dbclick : 마우스를 더블 클릭할 때 발생합니다.
+         mousedown : 마우스 버튼을 누를 때 발생합니다.
+         mouseup : 마우스 버튼을 뗄 때 발생합니다.        
+         mousemove : 마우스를 움직일 때 발생합니다.
+         
+         mouseenter :  마우스가 요소의 경계 외부에서 내부로 이동할 때 발생합니다.
+         mouseleave :  마우스가 요소의 경계 내부에서 외부로 이동할 때 발생합니다.
+         
+         mouseover :  마우스 포인터가 선택한 요소 위에 있을 때 발생합니다.
+         mouseout : 마우스 포인터가 요소를 벗어날 때 발생합니다.
+         
+         mouseover, mouseout은 자식 엘리먼트에 접근했을 때도 동작하는 반면, 
+         mouseenter와 mouseleave는 자식 엘리먼트에는 동작하지 않습니다.
+		 -->
+		 <script>
+		 	$(document).ready(function(){
+		 		$('.outer').mouseover(function(){ //이벤트 버블링을 적용 - 내부의 div태그안에 들어가도 이벤트를 발생시킨다.
+		 			$('body').append('<h6>MOUSEOVER</h6>');
+		 		}).mouseenter(function(){ //문서 객체의 안에 있는지 외부에 잇는지 따집니다.
+		 			$('body').append('<h6>MOUSE-ENTER</h6>');
+		 		});
+		 	});
+		 </script>
+	</head>
+	<body>
+		<div class="outer">
+			<div class="inner"></div>
+		</div>
+	</body>
+</html>

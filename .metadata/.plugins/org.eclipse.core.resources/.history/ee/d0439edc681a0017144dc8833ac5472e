@@ -1,0 +1,10 @@
+package ex7_10_in_method_call;
+
+public class MethodExample1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

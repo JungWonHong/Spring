@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="css/ex02062.css" type="text/css" rel="stylesheet">
+		<script>
+			function whenSubmit() {
+				var pass = document.getElementById('pass');
+				var passCheck = document.getElementById('pass-check');
+				var name = document.getElementById('name');
+				
+				//비밀번호가 같은지 확인합니다.
+				if(pass.value == passCheck.value) {
+					if(pass.value != '')
+						alert('성공');
+					else{
+						alert('실패');
+						return false;
+					}
+				} else {
+					alert('다시 입력해주세요.');
+					name.value=''; //초기화하기
+					pass.value='';
+					passCheck.value='';
+					name.focus(); //포커스 주기
+					return false;
+				} //else end
+			} //function end
+		</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>회원가입 폼</legend>
+			<!-- 인라인 모델의 form태그의 onsubmit 이벤트 속성에 return 함수()형태를
+				입력해야 합니다. -->
+			<form onsubmit="return whenSubmit()" 
+				action="ex0201_domtree.html">
+				<label for="name">이름</label>
+				<input type="text" name="name" id="name"><br>
+				<label for="pass">비밀번호</label>
+				<input type="password" name="pass" id="pass"><br>
+				<label for="pass-check">비밀번호 확인</label>
+				<input type="password" id="pass-check"><br>
+				<input type="submit" value="제출">
+			</form>
+		</fieldset>
+	</body>
+</html>

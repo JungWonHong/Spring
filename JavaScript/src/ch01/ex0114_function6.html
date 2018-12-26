@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 자바스크립트에서는 함수도 하나의 자료형이므로 매개변수로 전달할 수 있다.
+			이렇게 매개변수로 전달하는 함수를 콜백함수라고 부른다. -->
+		<script>
+			// 함수를 생성
+			function callTenTimes(callback){
+				// 3회 반복합니다.
+				for (var i = 0; i < 3; i++) {
+					//매개 변수로 전달된 함수를 호출한다.
+					callback();
+				}
+			}
+			
+			//변수를 선언
+			var callback = function(){ //익명 함수로 생성
+				alert('함수 호출');
+			}
+			
+			//함수를 호출
+			callTenTimes(callback);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

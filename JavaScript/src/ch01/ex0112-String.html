@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var a = new String("Boys and Girls");
+		var b = "!!";
+		document.write("a : " + a + "<br>");
+		document.write("b : " + b + "<br><hr>");
+		
+		document.write("a.charAt(0) = " + a.charAt(0) + "<br>");
+		
+		//문자열 a뒤에 문자열 b와 "입니다"를 연결합니다.
+		document.write('a.concat(b, "입니다") = ' + a.concat(b, "입니다.") + "<br>");
+		document.write('a.indexOf("s") = ' + a.indexOf("s") + "<br>");
+		
+		//String 객체의 부분 문자열의 시작 위치를 리턴합니다. 없으면 -1을 리턴합니다.
+		document.write('a.indexOf("And") = ' + a.indexOf("And") + "<br>");
+		
+		document.write('a.indexOf("and") = ' + a.indexOf("and") + "<br>");
+		
+		//인덱스 5부터 7(8-1)까지의 문자열을 가져옵니다.
+		document.write("a.slice(5, 8) = " + a.slice(5, 8) + "<br>");
+		
+		//인덱스 5로부터 3개의 문자열을 가져옵니다.
+		document.write("a.substr(5, 3) = " + a.substr(5, 3) + "<br>");
+		document.write("a.toUpperCase() = " + a.toUpperCase() + "<br>");
+		document.write('a.replace("and", "or") = ' + a.replace("and", "or") + "<br>");
+		document.write("	Javascript	".trim() + "<br><hr>");
+		
+		var sub = a.split(" ");
+		document.write("a를 빈칸으로 분리<br>");
+		for(var i=0; i<sub.length; i++)
+			document.write("sub" + i + " = " + sub[i] + "<br>");
+		
+		document.write("<hr>String 메소드를 실행 후 a와 b 변함 없음<br>");
+		document.write("a : " + a + "<br>");
+		document.write("b : " + b + "<br>");
+	</script>
+</html>

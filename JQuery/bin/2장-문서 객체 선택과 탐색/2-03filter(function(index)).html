@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- filter()메서드의 매개변수에 함수를 넣습니다.
+			이 함수의 매개변수로 index를 갖는데 이 값에 따라 문서 객체를 선택합니다.
+			형식) $(selector).filter(function(index){}); 
+		-->
+		<script>
+			$(document).ready(function(){
+				$('h3').filter(function(index){  //index는 0부터
+					return index%3 == 0; //index가 3의 배수일 경우
+				})
+				.css({
+					background: 'black',
+					color: 'white'
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>Header-0</h3>
+		<h3>Header-1</h3>
+		<h3>Header-2</h3>
+		<h3>Header-3</h3>
+		<h3>Header-4</h3>
+		<h3>Header-5</h3>
+	</body>
+</html>

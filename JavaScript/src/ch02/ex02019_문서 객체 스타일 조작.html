@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			window.onclick = function(){
+				//문서 객체를 가져옵니다.
+				var header = document.getElementById("header");
+				
+				//문서 객체의 스타일을 바꿔줍니다.
+				header.style.border = '2px solid black';
+				header.style.color = 'orange';
+				header.style.fontFamily = 'helvetica';
+				//CSS에서 background-color은 하이픈(-)없애고 끊겨진 단어의 첫 글자를
+				//대문자로 변경하면 됩니다.
+				//background-color	->	backgroundColor
+				header.style.backgroundColor = 'red';
+				
+				/* 같은 의미 - []를 사용할 경우
+				 header.style['border'] = '2px solid black';
+				 header.style['color'] = 'orange';
+				 header.style['fontFamily'] = 'helvetica';
+				 header.style['background-color'] = 'red';
+				*/
+			};
+		</script>
+	</head>
+	<body>
+		<h1 id="header">Header</h1>
+	</body>
+</html>

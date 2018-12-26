@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- trigger() : 이벤트를 강제로 발생 시킵니다.
+			형식) trigger(eventname) 
+		-->
+		<script>
+			$(document).ready(function(){
+				//이벤트를 연결합니다.
+				$('h1').click(function(){
+					$(this).html(function(index, html){
+						return html + '★';
+					})
+				});
+				
+				//1초마다 함수를 실행합니다.
+				//마지막에 위치한 h1태그는 자동으로 1초마다 클릭 이벤트를 실행합니다.
+				var end = setInterval(function(){
+					//$('h1').last().trigger('click');
+					//$('h1').eq(1).trigger('click');
+					$('h1:last').trigger('click');
+				}, 1000);
+				
+				$('#end').click(function(){
+					alert("트리거 종료");
+					clearInterval(end);
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Start: </h1>
+		<h1>Start: </h1>
+		<input type="button" value="트리거 종료" id="end"/>
+	</body>
+</html>

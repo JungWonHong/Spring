@@ -1,0 +1,109 @@
+@CHARSET "EUC-KR";
+
+form, body {
+    font-family: 'Lato', sans-serif;
+    background: #353535;
+    color: #FFF;
+   	text-align:center;
+}
+
+h1 {
+  color: #F7CA18;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* .mrng-60-top{
+	color:#F7CA18;
+} */
+
+/* table list */
+table  {
+	width:800px;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    border-top:0;
+    margin-top:20px;
+ 	margin : 0 auto; 
+/* 	text-align:center; */
+}
+.title {
+	text-align:center;
+}
+table  th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background:#F7CA18;
+    text-align:center;
+}
+table  th {
+	border:0px;
+}
+table  td {
+    padding: 10px;
+    vertical-align: top;
+    text-align:center;
+   /*  border-bottom: 1px solid #ccc; */
+}
+/* title td */
+table  tr{
+	align:center;
+	valign:middle;
+	
+}
+
+/* table admin */
+	.admin-table {
+	width:500px;
+    line-height: 1.5;
+	margin-top : 80px;
+	}
+	.admin-table tr:first-child>td {background: #F7CA18}
+	.admin-table tr {text-align:center;}
+	.admin-table td {
+		height:30px;
+		border-bottom:1px solid silver;
+	}
+	.admin-table a {text-decoration: none}
+
+
+/* table write */
+table.writeboard {
+	width:400px;
+	border:0px; cellpadding:0px; cellspacing:0; 
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top:0;
+  	margin : 20px 10px;
+}
+div.write {
+	width:70px;
+	text-align:center;
+}
+
+
+/* view */
+div.view {
+	width:70px;
+	text-align:center;
+}
+
+/* modify */
+div.modify {
+	width:70px;
+	text-align:center;
+}
+
+/* footer */
+footer {
+  margin-bottom: 0 !important;
+  margin-top: 330px;
+}
+ footer p {
+  margin: 0;
+  padding: 0;
+} 

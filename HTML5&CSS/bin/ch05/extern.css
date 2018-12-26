@@ -1,0 +1,8 @@
+@CHARSET "EUC-KR";
+
+h3 {
+	color: red
+} /* h3 요소의 색상을 빨간색으로 적용 */
+p {
+	font-size: 10pt
+} /* p 요소의 글자크기를 10pt로 적용 */

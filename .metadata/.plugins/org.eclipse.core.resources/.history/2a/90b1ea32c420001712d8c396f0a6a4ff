@@ -1,0 +1,10 @@
+package ex10_10_access_modifier_inheritance;
+
+public class Override_main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

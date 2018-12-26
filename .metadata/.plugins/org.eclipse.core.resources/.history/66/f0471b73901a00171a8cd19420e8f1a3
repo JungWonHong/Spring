@@ -1,0 +1,39 @@
+package report_no11;
+
+public class Student_example2 {
+
+	public static void main(String[] args) {
+		Student[] s = new Student[5];
+		s[0] = new Student("강호동", 85, 60, 70);
+		s[1] = new Student("이승기", 90, 95, 80);
+		s[2] = new Student("유재석", 75, 80, 100);
+		s[3] = new Student("하하", 80, 70, 95);
+		s[4] = new Student("이광수", 100, 65, 80);
+
+		System.out.println("==========   학생별   /  과목별 총점구하기  ==========");
+		System.out.println("\t국어\t수학\t영어\t총점\t평균");
+		for (int i = 0; i < 5; i++)
+			System.out.println(s[i].name + "\t" + s[i].kor + "\t" + s[i].math + "\t" + s[i].eng + "\t" + s[i].getTotal()
+					+ "\t" + s[i].getAverage());
+
+		System.out.println("=============================================");
+
+		int total_kor = 0, total_math = 0, total_eng = 0;
+		for (int i = 0; i < s.length; i++) {
+			total_kor += s[i].kor;
+			total_math += s[i].math;
+			total_eng += s[i].eng;
+		}
+		
+		System.out.println("총점\t" + total_kor + "\t" + total_math + "\t" + total_eng);
+
+		int compare = s[0].total;
+		int cnt = 5;
+		for(int i = 0;i<s.length;i++){
+			if(compare > s[i].total){
+				compare = s[i].total;
+				
+		}
+	}
+
+}

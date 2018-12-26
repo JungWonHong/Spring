@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>도서 대출 예제</title>
+	</head>
+	<body>
+	  <form method = "get" action = "result.html">
+		<fieldset>
+			<legend>도서 예약 대출</legend>
+			성명 : <input type="text" name="p_name" required><br> <!-- required : 공백체크 -->
+			전화 : <input type="tel" name="p_tel" 
+					placeholder="00*-000*-0000"
+					pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" required><br>
+			이메일 : <input type="email" name="p_email" 
+					placeholder="***@***.***" required>
+
+			<p>
+			도서명 : <input type="search" size = "40" 
+						name="book_title" required><br>
+			예약 희망일 : <input type="date" name="date" 
+						min="2013-01-30" required><br>
+			수령 시간 : <input type="time" name="from"
+						min="09:00" max="18:00" required>
+			 에서 <input type="time" name="to"
+			 			min="09:00" max="18:00" required>사이
+			</p>
+			<hr>
+			<input type="submit" value="예약하기">
+		</fieldset>
+	  </form>
+	</body>
+</html>

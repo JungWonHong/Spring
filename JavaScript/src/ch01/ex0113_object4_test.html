@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			table { text-align: center; margin: 0 auto; 
+					border-collapse: collapse;
+					border: solid silver 1px;
+					color: pink;
+					width: 90%;
+			}
+			th { background: pink; color: black; }
+		</style>
+	</head>
+	<body>
+		<script>
+			var saram = {
+				'name'	: "나최고",
+				"age"	: 25	,
+				ki		: 170.2 ,
+				blood	: 'A'	,
+				address	: '서울시 강남구'
+			};
+			
+			document.write("<table border='1'>");
+			document.write("	<caption>신상 정보</caption>");
+			document.write("	<tr>");
+			document.write("		<th>항목(속성: property) </th>");
+			document.write("		<th>내용(값: value) </th>");
+			document.write("	</tr>");
+			
+			for(var p in saram){ //객체 saram의 모든 property를 차례대로 p에 저장
+				document.write("<tr>");
+				document.write("	<td>saram." + p + "</td>");
+				document.write("	<td>" + saram[p]);
+				if(p == "age")
+					document.write("세");
+				else if(p == "ki")
+					document.write("cm");
+				else if(p == "blood")
+					document.write("형");
+				document.write("	</td>");
+				document.write("</tr>");
+			}
+			
+		</script>
+	</body>
+</html>

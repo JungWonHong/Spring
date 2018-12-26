@@ -1,0 +1,10 @@
+@CHARSET "EUC-KR";
+  
+ table{width:400px; margin:0 auto; border: 1px solid}
+ tr > td:first-child{width:40%; background:pink}
+  tr > td:last-child{width:60%; background:skyblue}
+  td{text-align:center; height:35px}
+  input[type-text],input[type=password]{height:30px; width:85%}
+  tr:last-child > td {background:gray}
+  #s, #r{background:pink; border-radius:10px;}
+ 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <meta charset="UTF-8" content="웃어요">
+    <title>문자관련 속성</title>
+    <!-- 
+         text-shadow: 3px 3px 4px grey
+          3px: 수평 그림자 길이값으로 양수이면 박스 오른쪽에 음수이면 박스 왼쪽에 그림자가 나타남
+          3px: 수직 그림자 길이값으로 양수이면 박스 위쪽에 음수이면 박스 아래쪽에 그림자가 나타남 
+          4px :그림자의 흐림 정도로 0이면 그림자가 진하고 숫자가 높을 수록 점점 흐릿해짐(양수만 허용)
+          grey: 색상
+     -->
+    <style>   
+	   h3 { font-family:"맑은고딕" "돋움" san-serif; color: red; text-shadow: 3px 3px 4px grey }  
+       h3::after { content: " (ⓒsblim)"; font-size: 10pt; text-shadow: 1px 1px 12px lime }
+	   p { font-family:"Times New Roman" "돋움" serif; line-height: 10pt} 
+	   #first { text-align:left; letter-spacing: 3pt; word-spacing: 8pt }
+	   #second { text-align:left; text-indent: 2em; letter-spacing: -2pt; word-spacing: 2pt}
+	   #third { text-align:right; }
+	   #fourth { text-align:center; }
+	    #none { text-decoration:none }  /* 앵커태그에 밑줄제거 */
+	   #under { text-decoration:underline }
+	   #over { text-decoration:overline }
+	   #thru { text-decoration: line-through }
+	   #cap { text-transform: capitalize } /* 첫글자를 대문자로  */
+	   #upper { text-transform: uppercase }/* 모든글자를 대문자로  */ 
+	   #lower { text-transform: lowercase } /* 모든글자를 소문자로  */ 
+    </style>  
+  </head>
+  <body>
+    <h3><strong>CSS</strong> 문자관련 속성</h3> 
+    <p id="first">왼쪽정렬, 문자간격 3pt, 단어간격 8pt </p>
+    <p id="second">왼쪽정렬, 들여쓰기 2글자, 문자간격 -2pt, 단어간격 2pt </p>
+	<p id="third">오른쪽정렬, text-decoration : <span id="under"> underline </span>,  
+		<span id="over"> overline </span>,	 <span id="thru"> line-through </span> </p>
+	<p id="fourth">가운데정렬, text-transform : <span id="cap"> capitalize </span>,  
+	<span id="upper"> 대문자로 변환 : uppercase </span> , <span id="lower"> 소문자로 변환 : Lowercase </span></p>
+    <a href="http://www.naver.com">네이버</a><br>
+    <a href="http://www.naver.com" id="none">네이버</a>
+  </body>
+</html>

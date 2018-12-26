@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+ 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+	<display-name>JspProject</display-name><!-- 프로젝트명 적습니다. -->
+	
+	<servlet>
+		<servlet-name>logint</servlet-name> <!-- servlet-name은 중복되지 않게 잘 정해준다. -->
+		<!-- 설정한 페이지에서만 값을 가져올수 있다. application과의 차이! -->
+		<jsp-file>/ch5_implicit_object(내장객체)/_8.config/test/loginSuccess.jsp</jsp-file>
+		<!-- 프로젝트명 이후의 경로를 적습니다. -->
+		
+		<!-- 해당 서블릿에서 초기화 파라미터를 설정한 부분입니다. -->
+		<init-param>
+			<param-name>ID</param-name><!-- 초기화 파라미터의 이름입니다. -->
+			<param-value>jsp</param-value><!-- 초기화 파라미터의 값입니다. -->
+		</init-param>
+		
+		<init-param>
+			<param-name>PW</param-name><!-- 초기화 파라미터의 이름입니다. -->
+			<param-value>jsp</param-value><!-- 초기화 파라미터의 값입니다. -->
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>logint</servlet-name> <!-- 9번 라인과 일치해야 합니다.-->
+		<url-pattern>/loginTest</url-pattern>
+		<!-- http://localhost:8088/JspProject/loginTest -->
+	</servlet-mapping>
+</web-app>

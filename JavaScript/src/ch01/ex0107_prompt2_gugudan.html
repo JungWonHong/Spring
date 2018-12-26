@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>prompt</title>
+	</head>
+	<body>
+		<script>
+		// prompt()함수는 문자열만 입력받을 수 있다.
+			var dan = prompt("단을 입력하세요?");
+		
+			
+			if (dan == null) {
+				alert('취소를 선택하셨군요');
+			} else if (!isNaN(dan)) {
+				document.write("입력 단 = " + dan + "<br>");
+				for (var i = 1; i < 10; i++) {
+					document.write(dan + " x " + i + " = " + (dan * i) + "<br>");
+				}
+			} else if (isNaN(dan)){
+				alert('숫자만 입력 가능합니다.');
+			}
+			
+			document.write(isNaN(100) + "<br>"); //false
+			document.write(isNaN("100") + "<br>"); //false
+			document.write(isNaN("a100") + "<br>"); //true
+		</script>
+	</body>
+</html>

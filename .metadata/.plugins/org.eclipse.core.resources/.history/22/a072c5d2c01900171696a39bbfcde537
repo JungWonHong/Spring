@@ -1,0 +1,18 @@
+package report_no10;
+
+public class Wallet {
+	static int money;
+
+	Wallet(String name) {
+
+	}
+
+	void setMoney(int money) {
+		Wallet.money += money;
+	}
+
+	void getMoney(int money) {
+		Wallet.money -= money;
+	}
+
+}

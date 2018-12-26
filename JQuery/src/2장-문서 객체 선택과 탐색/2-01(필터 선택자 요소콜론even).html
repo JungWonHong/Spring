@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 필터 선택자 사용(요소:even)
+			 h3의 0, 2, 4번째 선택 -->
+		<script>
+			$(document).ready(function(){
+				$('h3:even').css({
+					background: 'black',
+					color: 'white'
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>Header-0</h3>
+		<h3>Header-1</h3>
+		<h3>Header-2</h3>
+		<h3>Header-3</h3>
+		<h3>Header-4</h3>
+		<h3>Header-5</h3>
+	</body>
+</html>

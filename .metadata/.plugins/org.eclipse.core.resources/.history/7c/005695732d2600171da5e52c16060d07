@@ -1,0 +1,37 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String alph = sc.next();
+		int dial[] = new int[alph.length()];
+		
+		for(int i=0;i<alph.length();i++){
+			char ch = alph.charAt(i);
+			if(ch>='A' && ch<='C')
+				dial[i] = 3;
+			else if(ch>='D' && ch<='F')
+				dial[i] = 4;
+			else if(ch>='G' && ch<='I')
+				dial[i] = 5;
+			else if(ch>='J' && ch<='L')
+				dial[i] = 6;
+			else if(ch>='M' && ch<='O')
+				dial[i] = 7;
+			else if(ch>='P' && ch<='S')
+				dial[i] = 8;
+			else if(ch>='T' && ch<='V')
+				dial[i] = 9;
+			else if(ch>='W' && ch<='Z')
+				dial[i] = 10;
+		}
+		
+		int out = 0;
+		for(int i=0;i<dial.length;i++)
+			out += dial[i];
+		
+		sc.close();
+	}
+}

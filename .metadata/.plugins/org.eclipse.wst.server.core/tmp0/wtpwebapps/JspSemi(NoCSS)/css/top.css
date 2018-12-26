@@ -1,0 +1,31 @@
+@CHARSET "EUC-KR";
+
+header {
+	text-align: right;
+	margin: 30px
+}
+
+a {
+	style ="color: #BDC3C7";
+	margin: 5px
+}
+
+a:link {
+	text-decoration: none;
+	color: #BDC3C7;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #BDC3C7;
+}
+
+a:active {
+	text-decoration: none;
+	color: #BDC3C7;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #F7CA18;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Control 와 Loop Statements</title>
+		<style>
+			h2 { text-align: center;
+				 font-weight: lighter;
+				 font-size: 20px;}
+			table { margin: 0 auto; 
+					text-align: center }
+			caption { color: green; font-weight: bold;
+					  font-size: 18px;
+					  margin-bottom: 15px;}
+			tr:first-child { background: silver}
+			th:first-child { width: 100px}
+			th:last-child { width: 400px}
+		</style>
+	</head>
+	<body>
+		<h2> A Simple JavaScript Example for Control
+		 and Loop Statements<br>
+		 1 : "채식주의자" <br>
+		 2 : "종의 기원" <br>
+		 3 : "소년이 온다." <br>
+		  중에서 번호로 선택해 보세요.
+		</h2>
+	</body>
+	<script>
+		document.write("<table border=1>");
+		document.write("<caption> 책 주문 입력 내용 </caption>");
+		document.write("<tr>");
+		document.write("<th> 순번 </th> <th> 제목 </th>");
+		document.write("</tr>");
+		var book1 = "채식주의자";
+		var book2 = "종의 기원";
+		var book3 = "소년이 온다.";
+		
+		var title;
+		var n = prompt("주문할 책 수량을 입력 하세요.", "1");
+		for(i = 0; i < n; i++){
+			var book_list = "1." + book1 + "\n" 
+				+ "2." + book2 + "\n" + "3." + book3;
+			var choice = prompt("책 제목을 번호로 선택하세요...\n"
+					+ book_list, "1");
+			
+			if(choice == "1")
+				title = book1;
+			else if (choice == "2")
+				title = book2;
+			else if (choice == "3")
+				title = book3;
+			else {
+				alert("리스트에 없는 책을 선택하셨습니다.");
+				title = "";
+				/* 리스트에 없는 책을 선택한 경우에는 제목의 td가 빈 상태로 */
+			}
+			
+			document.write("<tr>");
+			document.write("<td>" + (i + 1) + "</td>");
+			document.write("<td>" + title + "</td>");
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</html>

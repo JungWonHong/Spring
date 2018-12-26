@@ -1,0 +1,20 @@
+JSTL xml
+ 1. http://xml.apache.org/xalan-j/ 접속
+ 2. 왼쪽 메뉴 Download/Build 클릭
+ 	-> xalan-j distribution directory. 클릭
+ 3. HTTP에서 선택
+ 	http://apache.mirror.cdnetworks.com/xml/xalan-j
+ 4. the Xalan java download area 선택
+ 5. binaries/ 선택
+ 6. xalan-j_2_7_2-bin.zip 선택
+ 7. 압축을 풀어 xalan.jar 파일을 WEB-INF/lib 폴더에 복사
+ 
+XPath(xml도 원하는 태그나 속성을 쉽게 찾기 위해 path 문법을 만들게 되었고 
+      xpath라 명명 합니다.)
+./author	: 현재 컨텍스트 내에 있는 모든 <author> 요소
+author		: 현재 컨텍스트 내에 있는 모든 <author> 요소
+/bookstore	: <bookstore>요소의 루트 요소
+//author	: 문서에 있는 모든 <author> 요소
+$age		: EL은 ${age}, JSP에서는 <%=age%>의미
+
+//@lang		: lang이라는 이름의 모든 속성을 선택합니다.

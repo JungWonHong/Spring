@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체의 내부 추가
+			 html() : 문서 객체 내부의 글자와 관련된 모든 기능을 수행합니다.
+			 		  (HTML태그인식)
+			 text() : 문서 객체 내부의 글자와 관련된 모든 기능을 수행합니다.
+			 
+			 형식)
+			 	1. $(selector).html(value);
+			 	2. $(selector).html(function(index, html){}); 
+		 -->
+		<script>
+			$(document).ready(function() {
+				$('div').html('<h1>html()메서드 입니다.</h1>');
+			});
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

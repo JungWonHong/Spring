@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- filter(':odd'): h1요소 중 홀수인
+							header-1, header-3, header-5는 빨간색
+			 filter(':even'): 위에서 필터링한 h1태그 중 짝수번째에 해당하는
+			 				header-1, header-5는 하얀색 -->
+		<script>
+			$(document).ready(function(){
+				$('h1').css('background', 'orange')
+					  .filter(':even').css('color', 'white')
+					  .filter(':odd').css('color', 'red')
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header-0</h1>
+		<h1>Header-1</h1>
+		<h1>Header-2</h1>
+		<h1>Header-3</h1>
+		<h1>Header-4</h1>
+		<h1>Header-5</h1>
+	</body>
+</html>

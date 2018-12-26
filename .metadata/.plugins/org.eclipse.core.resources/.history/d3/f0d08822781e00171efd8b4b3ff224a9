@@ -1,0 +1,23 @@
+package report_0411;
+
+public class CPhone implements IFunction {
+
+	@Override
+	public void callSenderReceive() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void canLte() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void tvRemoteController() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

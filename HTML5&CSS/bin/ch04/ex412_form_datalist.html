@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>추가된 입력 요소 예제</title>
+	</head>
+	<body>
+		<!-- IE(X), 크롬(0) -->
+		<form>
+			<h3>월드컵 참가국</h3>
+			참가국 : <input type="text" size="12" list="country">
+			<!-- input태그의 list속성 값과 datalist태그의 id속성 값이 일치해야함 -->
+			<!-- 참가국에서 "스"를 입력하고 커서를 스뒤에 옮겨보세요(자동완성) -->
+			<datalist id="country">
+				<option value="스페인">
+				<option value="스위스">
+				<option value="영국">
+				<option value="독일">
+			</datalist>
+			
+			<input type="submit" value="검색">
+		</form>
+	</body>
+</html>

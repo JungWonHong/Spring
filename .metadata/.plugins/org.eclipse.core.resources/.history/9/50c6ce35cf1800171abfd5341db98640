@@ -1,0 +1,22 @@
+package report_no8;
+
+import java.util.Scanner;
+
+public class Natural_sum {
+
+	static void checkAndSum(int n1, int n2){
+		
+		if(n1>0 && n2>0){
+			
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num1, num2;
+		System.out.println("두 수를 입력하세요?");
+		num1 = sc.nextInt();
+		num2 = sc.nextInt();
+
+	}
+
+}

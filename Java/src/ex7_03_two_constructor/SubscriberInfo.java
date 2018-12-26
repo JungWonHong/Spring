@@ -1,0 +1,36 @@
+package ex7_03_two_constructor;
+
+public class SubscriberInfo {
+	String name, id, password;
+	String phoneNo, address;
+
+	// 3개의 String타입 파라미터를 갖는 생성자 선언
+	//this는 나자신을 가르킨다(주소)
+	SubscriberInfo(String name, String id, String password) {
+		this.name = name;
+		this.id = id;
+		this.password = password;
+	}
+
+	// 5개의 String타입 파라미터를 갖는 생성자 선언
+	SubscriberInfo(String name, String id, String password, String phoneNo, String address) {
+		this.name = name;
+		this.id = id;
+		this.password = password;
+		this.phoneNo = phoneNo;
+		this.address = address;
+	}
+
+	void changePassword(String password) {
+		this.password = password;
+	}
+
+	void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	void setAddress(String address) {
+		this.address = address;
+	}
+
+}

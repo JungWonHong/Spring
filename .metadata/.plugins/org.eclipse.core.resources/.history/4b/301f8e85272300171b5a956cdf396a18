@@ -1,0 +1,52 @@
+package ex11_5_Calendar;
+
+import java.util.Calendar;
+
+public class Calendar2_1 {
+
+	public static void main(String[] args) {
+		Calendar today = Calendar.getInstance();
+
+		int year = today.get(Calendar.YEAR);
+		int month = today.get(Calendar.MONTH) + 1;
+		int day = today.get(Calendar.DAY_OF_MONTH);
+		int am_pm = today.get(Calendar.AM_PM);
+		int hour = today.get(Calendar.HOUR);
+		int minute = today.get(Calendar.MINUTE);
+		int second = today.get(Calendar.SECOND);
+		int day_of_week = today.get(Calendar.DAY_OF_WEEK);
+
+		if (am_pm == 0)
+			System.out.print(year + "년" + month + "월" + day + "일" + " 오전" + 
+		hour + "시" + minute + "분" + second + "초");
+		else
+			System.out.print(year + "년" + month + "월" + day + "일" + " 오후" + 
+		hour + "시" + minute + "분" + second + "초");
+
+		switch (day_of_week) {
+		case 1:
+			System.out.print(" 일요일입니다.");
+			break;
+		case 2:
+			System.out.print(" 월요일입니다.");
+			break;
+		case 3:
+			System.out.print(" 화요일입니다.");
+			break;
+		case 4:
+			System.out.print(" 수요일입니다.");
+			break;
+		case 5:
+			System.out.print(" 목요일입니다.");
+			break;
+		case 6:
+			System.out.print(" 금요일입니다.");
+			break;
+		default:
+			System.out.print(" 토요일입니다.");
+			break;
+		}
+
+	}
+
+}

@@ -1,0 +1,31 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		
+		int x,y,z;
+		
+		for(int i=0;i<3;i++){
+			x = A/100;
+			y = (A%100)/10;
+			z = (A%100)%10;
+			A = 100*z + 10*y + x;
+			
+			x = B/100;
+			y = (B%100)/10;
+			z = (B%100)%10;
+			B = 100*z + 10*y + x;
+		}
+
+		if(A>B)
+			System.out.println(A);
+		else
+			System.out.println(B);
+		sc.close();
+	}
+}

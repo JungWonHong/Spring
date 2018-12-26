@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> CSS Access using JavaScript </title>
+<style>
+  button {width:70px; height:25px; margin:10px 0 }
+</style>
+
+</head>
+<body>
+
+<div id="outerBox" style="background: blue; 
+                          width: 550px; height:300px;" >
+
+<div id="innerBox"
+     style="background: yellow; width: 450px; height:200px;
+            position: absolute; left: 50px; top: 50px;">
+
+    <img id="img1" src="E:/janesJAVA/image/H5_logo.gif" width="100px"
+         style="position: absolute; left: 50px; top: 45px; 
+         visibility: visible;">
+
+    <img id="img2" src="E:/janesJAVA/image/H5_logo.gif" width="100px"
+         style="position: absolute; left: 175px; top: 45px; 
+         visibility: visible;">
+
+    <img id="img3" src="E:/janesJAVA/image/H5_logo.gif" width="100px"
+         style="position: absolute; left: 300px; top: 45px; 
+         visibility: visible;">
+</div>
+
+</div>
+<script>
+
+var outerBox = document.getElementById('outerBox');
+var innerBox = document.getElementById('innerBox');
+
+function outer(color){
+   outerBox.style.backgroundColor = color;
+}
+
+function inner(color){
+ innerBox.style.backgroundColor = color;
+}
+
+</script>
+
+Outer Box:
+<button value="Red" onclick=outer(this.value) >  Red    </button>
+<button value="Green" onclick=outer(this.value)>  Green  </button>
+<button value="BLue" onclick=outer(this.value)>   Blue   </button>
+<button value="Grey" onclick=outer(this.value)>   Gray   </button>
+<button value="White" onclick=outer(this.value)>  White  </button>
+<br />
+
+Inner Box:
+<button value="Red" onclick=inner(this.value)>    Red    </button>
+<button value="Green" onclick=inner(this.value)>  Green  </button>
+<button value="BLue" onclick=inner(this.value)>   Blue   </button>
+<button value="Grey" onclick=inner(this.value)>   Gray   </button>
+<button value="White" onclick=inner(this.value)>  White  </button>
+
+</body>
+</html>

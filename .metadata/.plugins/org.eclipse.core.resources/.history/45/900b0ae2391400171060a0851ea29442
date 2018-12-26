@@ -1,0 +1,11 @@
+package ex6_1_array;
+
+public class ArrayExample1init {
+
+	public static void main(String[] args) {
+		int arr[];			//배열 변수 선언
+		arr = new int[10];	//배열 생성
+
+	}
+
+}

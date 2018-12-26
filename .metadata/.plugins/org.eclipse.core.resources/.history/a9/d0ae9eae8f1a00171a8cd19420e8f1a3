@@ -1,0 +1,30 @@
+package report_no11;
+
+public class Student {
+	String name; //학생이름
+	int kor;	 //국어점수
+	int eng;	 //영어점수
+	int math;	 //수학점수
+	//필드추가
+	int total = getTotal();   //총점
+	int rank;    //등수
+	float avg = getAverage();   //평균
+	
+	Student(String name, int kor, int math, int eng){
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+	
+	int getTotal(){ // 과목 총점
+		return kor+eng+math;
+	}
+	
+	float getAverage() { // 평균 점수
+		float average = (float)getTotal() / 3;
+		int result = (int) (average * 10 + 0.5);
+		return result / 10;
+	}
+	
+}

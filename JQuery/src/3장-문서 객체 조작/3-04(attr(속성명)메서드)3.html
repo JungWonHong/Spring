@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- attr(속성명)메서드 : 속성의 값을 알아낼 수 있습니다.
+		 -->
+		<script>
+			$(document).ready(function(){
+				$('img').each(function(index, item){
+					alert("index = " + index + ", "
+							+ $(item).attr('src'));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="Chrysanthemum.jpg"/>
+		<img src="Desert.jpg"/>
+		<img src="Hydrangeas.jpg"/>
+	</body>
+</html>

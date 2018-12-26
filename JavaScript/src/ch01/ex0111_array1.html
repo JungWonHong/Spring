@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- Array 객체 생성법
+			 1. new 연산자 사용
+			 	var arr = new Array("one", 2, "3", 4, "five");
+			 	
+			 2. 배열 리터널 이용
+			 	var arr = ["one", 2, "3", 4, "five"];
+			 	
+			 * 배열 내부의 데이터는 어떤 형이든 입력이 가능하다. 
+		 -->
+		<!-- Array() 생성자 함수의 매개변수에 따른 차이
+			 1. Array() : 빈 배열을 만듭니다.
+			 2. Array(number) : number만큼 크기의 배열을 만듭니다.
+			 3. Array(any, any, ..., any) : 매개변수를 배열로 만듭니다.
+		 -->
+		<script>
+			//배열을 생성합니다.
+			var array1 = new Array();
+			document.write("var array1 = new Array();의 자료형은 " 
+							+ typeof array1 + "<hr>");
+			
+			var array2 = new Array(5);
+			array2[0] = 1; array2[3] = 10; array2[4] = 11;
+			
+			var array3 = new Array(273, 103, 57, 32);
+			
+			var array4 = [47, 273, 103, 52];
+			
+			//출력합니다.
+			//length : Array객체의 속성으로 배열 요소의 갯수를 알아낸다.
+			document.write("array1 배열 내용 : " + array1 + "<br>" 
+					+ "	배열 크기 : " + array1.length + "<hr>");
+			
+			document.write("array2 배열 내용 : " + array2 + "<br>" 
+					+ "	배열 크기 : " + array2.length + "<hr>");
+			
+			document.write("array3 배열 내용 : " + array3 + "<br>" 
+					+ "	배열 크기 : " + array3.length + "<hr>");
+			
+			document.write("array4 배열 내용 : " + array4 + "<br>" 
+					+ "	배열 크기 : " + array4.length + "<hr>");
+			
+			var array5 = new Array(1, '2', true, function a(){alert('love5');});
+			
+			document.write("array5 배열 내용 : " + array5 + "<br>" 
+					+ "	배열 크기 : " + array5.length + "<hr>");
+			
+			array5[3]();
+			
+			var array6 = [1, '2', true, function a(){alert('love6');}, {}, [1, 2]];
+			document.write("array6 배열 내용 : " + array6 + "<br>" 
+					+ "	배열 크기 : " + array6.length + "<hr>");
+			
+			document.write("배열 내용 : " + array6[5] + "<br>");
+			document.write("배열 내용 : " + array6[5][0] + "<br>");
+			document.write("배열 내용 : " + array6[5][1] + "<br>");
+			array6[3]();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

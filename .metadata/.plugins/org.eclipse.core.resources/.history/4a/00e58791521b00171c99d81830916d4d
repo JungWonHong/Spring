@@ -1,0 +1,27 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		if (N >= 1 && N <= 100) {
+			for (int i = 0; i < N; i++) {
+				//for (int j = N - i - 1; j > 0; j--) {
+					//System.out.print(" ");
+				//}
+				for (int j = 0; j < i + 1; i++)
+					System.out.print("*");
+				System.out.println();
+			}
+
+		} else
+			System.out.println("입력범위를 초과하였습니다.");
+		sc.close();
+	}
+
+}

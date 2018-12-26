@@ -1,0 +1,10 @@
+package ex9_12_enum;
+
+public class EnumExample3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

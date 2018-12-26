@@ -1,0 +1,40 @@
+//한개의 메서드를 이용해서  최대값, 최소값 구하기
+package report_0424;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Method_Test05_maxmin {
+
+	static Map<String, Integer> max_min(int[] data) {
+		Map<String, Integer> ht = new HashMap<String, Integer>();
+
+		int result[] = { data[0], data[0] };
+		for (int i = 1; i < data.length; i++) {
+			if (result[0] < data[i])
+				result[0] = data[i]; // max
+			if (result[1] > data[i])
+				result[1] = data[i]; // min
+		}
+
+		ht.put("최대값", result[0]);
+		ht.put("최소값", result[1]);
+
+		return ht;
+	}
+
+	public static void main(String args[]) {
+		int data[] = new int[5];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수 5개를 입력하세요?");
+		for (int i = 0; i < data.length; i++)
+			data[i] = sc.nextInt();
+
+		Map<String, Integer> m = max_min(data);
+		System.out.println("최대값 = " + m.get("최대값"));
+		System.out.println("최소값 = " + m.get("최소값"));
+
+		sc.close();
+	}
+}

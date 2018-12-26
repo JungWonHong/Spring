@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>  
+  <head>  
+    <meta charset="UTF-8">
+    <title>폰트 및 색상 지정</title>
+    
+    <!--  스타일 시트 작성 시작 -->
+    <style>   
+      body{background: mistyrose;}         
+       h3 {color:red;}/*태그 h3에 color 속성 (글자색)에 red(빨간색)을 적용하라는 의미 */
+      
+       /*태그 p에 font-size 속성 (글자 크기)에 10pt를 적용하라는 의미 */
+       p {font-size:10pt;}
+    </style>          
+    <!-- 스타일 시트 작성 끝 -->  
+     
+    <!-- 셀렉터, 프러퍼티, 값은 대소문자 구분하지 않는다.
+        body, h3, p : 셀렉터(Selector:선택자)
+        background, color, p : 프러퍼티(property:속성)
+        mistyrose, red, 10pt : 프로퍼티에 해당하는 값
+        property와 값은 콜론으로 구분하며 세미콜론(;)으로 구분된다.
+        예) h3{color:red; background:yellow}
+     -->
+  </head>
+  <body>
+    <h3>스타일시트 이해하기</h3> 
+    <p>이 예제는 <strong>CSS</strong>의 개념을 설명합니다.</p>
+    <p>CSS의 길이 단위 정리</p>
+    
+    <h2>절대 단위</h2>
+     <ol>
+       <li>cm : 센티미터</li>
+       <li>mm : 센티미터의 1/10</li>
+       <li>in : 1인치는 2.54cm</li>
+       <li>pt : 1포인트는 1/72인치 </li>
+       <li>pc : 1파이커는 12포인트  </li>
+     </ol>
+     
+     <h2>상대 단위</h2>
+     <ol>
+       <li>px : 1픽셀(Pixels)을 1로 하는 단위로 디스플레이의 해상도에 따라 
+                                크기가 달라진다.</li>
+       <li>%  : 다른 기준이 되는 크기에 대한 비율로 지정</li>
+       <li>em : 기본 글꼴 크기의 상대적 크기로 기본 글꼴 크기의 두 배로 나타내고자 한다면 
+                2em이라고 기술한다. IE경우 1em은 12pt, 16px와 같다. </li>
+       <li>ex : 해당 폰트의 소문자 'x'의 높이를 1로하는 단위 </li>    
+     </ol>
+  </body>
+</html>

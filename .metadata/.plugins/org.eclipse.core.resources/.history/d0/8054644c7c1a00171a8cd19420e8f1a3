@@ -1,0 +1,9 @@
+package ex7_17_static_init;
+
+public class HundredNumbers {
+
+	public HundredNumbers() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

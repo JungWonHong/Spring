@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 문자 객체 만들기(2)
+			 속성 지정하는 방법 예 - 웹 브라우저가 지원하는 태그의 속성 지정하는 방법
+		 -->
+		<script>
+			window.onclick = function(){ //window를 click한 경우  나타낸다.
+				var img1 = document.createElement('img');
+				img1.src = 'image/Penguins.jpg';
+				img1.width = 300;
+				img1.height = 330;
+				//노드를 연결합니다.
+				document.body.appendChild(img1);
+				
+				var img2 = document.createElement('img');
+				img2.src = './image/Chrysanthemum.jpg'; //현재폴더를 기준으로 밑에있는~
+				img2.width = 300;
+				img2.height = 330;
+				
+				document.body.appendChild(img2);
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

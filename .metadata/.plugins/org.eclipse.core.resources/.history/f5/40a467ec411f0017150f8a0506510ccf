@@ -1,0 +1,35 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int C = sc.nextInt(); //테스트케이스
+		
+		
+		for(int i=0;i<C;i++){
+			int N = sc.nextInt(); //테스트케이스별 학생수
+			int [] S = new int[N];
+			int sum = 0;
+			for(int j=0;j<N;j++){
+				sum+=S[j];
+			}
+			
+			double avg = (double)sum / N;
+			int cnt = 0;
+			
+			for(int k=0;k<N;k++){
+				if(S[k]>avg)
+					cnt++;
+			}
+			
+			System.out.printf("%.4f\n", (double)cnt/N);
+		}
+		
+		sc.close();
+
+	}
+
+}

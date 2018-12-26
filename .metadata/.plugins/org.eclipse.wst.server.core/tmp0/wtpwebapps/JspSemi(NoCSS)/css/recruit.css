@@ -1,0 +1,153 @@
+@CHARSET "EUC-KR";
+
+p {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+dd {
+	margin-left: 0px;
+}
+
+body {
+	position: relative;
+	background: #353535;
+	color: #FFF;
+	text-align: center;
+}
+
+.default_layout {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+	clear: both;
+}
+
+/*프리미엄*/
+.premium_banner {
+	margin: 0 auto;
+	width: 980px;
+	overflow: hidden;
+}
+
+.premium_banner ul li.list {
+	float: left;
+	width: 184px;
+	height: 198px;
+	margin: 0 5px 10px;
+	border: 1px #F7CA18 solid;
+}
+
+.premium_banner ul li.list.border2 {
+	border-top: 4px solid #F7CA18;
+	border-bottom: 2px solid #F7CA18;
+	box-sizing: border-box;
+}
+
+.premium_banner ul li.list:hover {
+	border-color: #c4c4c4;
+}
+
+.premium_banner ul li.list:hover .photo p {
+	color: #222;
+}
+
+.premium_banner ul li.list .photo {
+	padding: 10px;
+	border-bottom: 1px #ced1d6 solid;
+	text-align: center;
+}
+
+.premium_banner ul li.list .photo a {
+	display: block;
+	width: 164px;
+	height: 80px;
+	line-height: 80px;
+	vertical-align: middle;
+}
+
+.premium_banner ul li.list .photo img {
+	max-width: 164px;
+	max-height: 70px;
+}
+
+.premium_banner ul li.list .photo p {
+	text-align: center;
+	line-height: 80px;
+	font-size: 23px;
+	color: #bbb;
+}
+
+.premium_banner ul li.list .info_box {
+	padding: 8px 10px;
+	position: relative;
+}
+
+.premium_banner ul li.list .info_box dl {
+	padding-top: 25px;
+}
+
+.premium_banner ul li.list .info_box dt {
+	position: absolute;
+	top: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	width: 160px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.premium_banner ul li.list .info_box dt:hover {
+	background: #fff;
+	width: 164px;
+	overflow: visible;
+	white-space: normal;
+	z-index: 999;
+	border-bottom: 1px solid #F7CA18;
+}
+
+.premium_banner ul li.list .info_box dd {
+	font-size: 13px;
+}
+
+.premium_banner ul li.list .info_box .ib_01 {
+	height: 26px;
+	letter-spacing: -1px;
+	line-height: 26px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.premium_banner ul li.list .info_box .ib_02, .premium_banner ul li.list .info_box .ib_03
+	{
+	display: inline-block;
+	margin-bottom: 5px;
+	letter-spacing: -1px;
+}
+
+.premium_banner ul li.list .info_box .ib_03 {
+	float: right;
+	font-size: 12px;
+}
+
+.premium_banner .more_btn {
+	position: absolute;
+	right: 0px;
+	top: -1px;
+	border-right: 0px;
+}
+
+.premium_banner .more_btn a.common_more {
+	border-right: 0px;
+}
+
+.premium_banner .common_no_data {
+	background-size: 90%;
+}

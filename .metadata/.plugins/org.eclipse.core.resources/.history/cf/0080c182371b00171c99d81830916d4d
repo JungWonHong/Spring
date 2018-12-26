@@ -1,0 +1,28 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		if (N >= 3 && N <= 5000) {
+			if(N % 5 == 0){
+				System.out.println(N/5);
+			}
+			else if(N % 8 == 0){
+				System.out.println((N/8)*2);
+			}
+			else if(N % 5 != 0 && N % 3 == 0){
+				
+			}
+
+		}
+		else
+			System.out.println(-1);
+
+	}
+
+}

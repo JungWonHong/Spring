@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board1">
+	<select id="count" resultType="int">
+		select count(*) from board11
+	</select>
+	
+	<!-- 문법오류
+		1.
+			where rnum >= #{start}
+			==> 해결법 (<![CDATA[ ~ ]]>)
+			where rnum <![CDATA[ >= ]]> #{start}
+			
+			HTML 문서는 '<', '.', '>'와 같은 마크업 문자들을 파싱해서 읽어들이는 구조다.
+			그래서 마크업 문자들을 원래 대로의 의미로 사용하기 위해서
+			'&gt;', '&lt;', '&nbsp;' 등의
+			escape 문자열(escape character)을 이용해야 하는데 문장이 길어지는
+			문제점이 발생하게 된다.
+			이럴 때 사용하는 것이 바로 CDATA 절이다.
+			파서는 <![CDATA[ 와 ]]> 사이의 문장을 단순한 문자 데이터로 인식하게 된다.
+		
+		2. > : &gt;
+		   < : &lt;
+	 -->
+	<select id="list" parameterType="java.util.Map" resultType="BoardBean">
+	<![CDATA[ 
+		select * 
+		from (select rownum rnum, BOARD_NUM, BOARD_NAME,
+				BOARD_SUBJECT, BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF, 
+				BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_READCOUNT, BOARD_DATE
+			  from (select * 
+				    from board11 
+				    order by BOARD_RE_REF desc, BOARD_RE_SEQ asc))  
+		where rnum >= #{start} and rnum <= #{end}
+	]]> 
+	</select>
+	
+	<select id="Detail" parameterType="int" resultType="BoardBean">
+		select * 
+		from board11 
+		where BOARD_NUM = #{input}
+	</select>
+	
+	<select id="BoardWriter" parameterType="int" resultType="BoardBean">
+		select * 
+		from board11 
+		where BOARD_NUM = #{number}
+	</select>
+	
+	<select id="max_num" resultType="int">
+		select board11_seq.currval from dual
+	</select>
+	<!-- jdbcType=VARCHAR : 첨부 파일을 추가 하지 않은 경우 에러 처리해 줍니다.
+		해당 필드가 null인 경우 jdbcType=VARCHAR로 처리하면 null로 설정됩니다.
+		 -->
+	<insert id="insert" parameterType="BoardBean">
+		insert into board11 (BOARD_NUM, BOARD_NAME, BOARD_PASS, 
+					BOARD_SUBJECT, BOARD_CONTENT, BOARD_FILE, 
+					BOARD_RE_REF, BOARD_RE_LEV, BOARD_RE_SEQ, 
+					BOARD_READCOUNT, BOARD_DATE)
+			    values(board11_seq.nextval,#{BOARD_NAME},#{BOARD_PASS},#{BOARD_SUBJECT},
+			    	   #{BOARD_CONTENT},#{BOARD_FILE, jdbcType=VARCHAR},board11_seq.nextval,
+			    	   #{BOARD_RE_LEV},#{BOARD_RE_SEQ},#{BOARD_READCOUNT},sysdate)
+	</insert>
+	
+	<insert id="reply_insert" parameterType="BoardBean">
+		insert into board11 
+				(BOARD_NUM, BOARD_NAME, BOARD_PASS, BOARD_SUBJECT, 
+				BOARD_CONTENT, BOARD_RE_REF, BOARD_RE_LEV, 
+				BOARD_RE_SEQ, BOARD_READCOUNT, BOARD_DATE) 
+				values(board11_seq.nextval,#{BOARD_NAME},#{BOARD_PASS},
+					   #{BOARD_SUBJECT},#{BOARD_CONTENT},#{BOARD_RE_REF},
+			    	   #{BOARD_RE_LEV},#{BOARD_RE_SEQ},#{BOARD_READCOUNT},sysdate)
+	</insert>
+	
+	<update id="reply_update" parameterType="BoardBean">
+		update board11 
+		set BOARD_RE_SEQ = BOARD_RE_SEQ+1 
+		where BOARD_RE_REF = #{BOARD_RE_REF} 
+		  and BOARD_RE_SEQ &gt; #{BOARD_RE_SEQ}
+	</update>
+	
+	<update id="modify" parameterType="BoardBean">
+		update board11 
+		set 
+			BOARD_SUBJECT = #{BOARD_SUBJECT},
+			BOARD_CONTENT = #{BOARD_CONTENT}  
+		where BOARD_NUM = #{BOARD_NUM}
+	</update>
+	
+	<update id="ReadCountUpdate" parameterType="int">
+		update board11 
+		set Board_READCOUNT = BOARD_READCOUNT + 1 
+		where BOARD_NUM = #{number}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from board11
+		where BOARD_NUM = #{number}
+	</delete>
+</mapper>

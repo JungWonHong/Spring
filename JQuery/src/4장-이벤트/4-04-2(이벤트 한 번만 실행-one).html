@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- one() : 이벤트를 한 번씩만 실행합니다. -->
+		<script>
+			$(document).ready(function(){
+				//이벤트를 연결합니다.
+				$('h1').one('click', function(){
+					$(this).html(function(index, html){
+						return html + '+';
+					});
+				});
+			});//ready end
+		</script>
+	</head>
+	<body>
+		<h1>Header(0)</h1>
+   		<h1>Header(1)</h1>
+   		<h1>Header(2)</h1>
+	</body>
+</html>

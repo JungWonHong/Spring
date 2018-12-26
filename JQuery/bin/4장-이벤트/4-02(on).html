@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			.reverse {
+				background: black;
+				color: white;
+			}
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<script>
+		$(document).ready(function(){
+			//이벤트를 연결합니다.
+			$('h1').on('click', function(){
+				$(this).html(function(index, result){
+					return result + '+';
+				});
+			});
+			
+			//이벤트를 연결합니다.
+			//mouseenter:마우스가 객체 영역 안으로 진입하면 reverse 클래스 속성을 추가하고
+			//mouseleave:마우스가 객체 영역 밖으로 빠져나가면 reverse 클래스 속성을 제거합니다.
+			$('h1').on({
+				mouseenter: function(){ $(this).addClass('reverse');},
+				mouseleave: function(){ $(this).removeClass('reverse');}
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h1>Header(0)</h1>
+   		<h1>Header(1)</h1>
+   		<h1>Header(2)</h1>
+	</body>
+</html>

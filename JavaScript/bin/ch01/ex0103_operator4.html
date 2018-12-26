@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>if(데이터)비교</title>
+		<script>
+		//데이터가 숫자인 경우에는 '0'이외의 값은 true, '0'이면 false
+		if(0)
+			alert("if(0) true 입니다.");
+		else
+			alert("if(0) false 입니다.");
+		
+		if(1)
+			alert("if(1) true 입니다.");
+		else
+			alert("if(1) false 입니다.");
+		
+		//데이터가 문자열인 경우에는 문자가 빈 문자열이면 false
+		//문자가 하나 이상이면 true
+		if('')
+			alert("if('') true 입니다.");
+		else
+			alert("if('') false 입니다.");
+		
+		if('호호')
+			alert("if('호호') true 입니다.");
+		else
+			alert("if('호호') false 입니다.");
+		
+		//데이터가 객체인 경우에는 항상 true
+		var a = {};
+		if(a)
+			alert("if(a) true 입니다.");
+		else
+			alert("if(a) false 입니다.");
+		
+		//null인 경우에는 항상 false
+		if(null)
+			alert("if(null) true 입니다.");
+		else
+			alert("if(null) false 입니다.");
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

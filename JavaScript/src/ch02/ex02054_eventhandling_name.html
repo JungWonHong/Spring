@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Event Handling - 이름으로 접근법</title>
+</head>
+<body>
+
+<script>
+  //이벤트 핸들러 - 특정 이벤트가 발생했을 때 실행하고자 하는 자바스크립트 함수나 코드
+    function add() {
+        var a = document.form01.op1.value;
+        var b = document.form01.op2.value;
+        document.form01.result.value = parseInt(a) + parseInt(b);
+    }
+</script>
+
+<form name="form01">
+    <input name="op1" type="text" size="2"/>+
+    <input name="op2" type="text" size="2"/>    
+    <input type="button" value="=" onclick="add();"/>
+    <!-- 이벤트 속성  : onclick, 이벤트 속성값에 이벤트 핸들러 함수 등록(연결)하는 방식 -->
+    
+    <input name="result" type="text" size="2"/>
+</form>
+
+</body>
+</html>

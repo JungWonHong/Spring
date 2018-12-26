@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 2. $(selector).attr(name, function(index, attr){}); -->
+		<script>
+			$(document).ready(function(){
+				$('img').attr('width', 
+						function(index){ //index=0일때 width=100px
+							return (index + 1) * 100; //index=1일때 width=200px
+						});							//index=2일대 width=300px
+			});
+		</script>
+	</head>
+	<body>
+		<img src="Chrysanthemum.jpg"/>
+		<img src="Desert.jpg"/>
+		<img src="Hydrangeas.jpg"/>
+	</body>
+</html>

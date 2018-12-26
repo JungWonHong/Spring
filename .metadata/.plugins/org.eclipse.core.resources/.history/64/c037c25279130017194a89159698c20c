@@ -1,0 +1,52 @@
+package report_no4;
+
+import java.util.Scanner;
+
+/*
+ 2. 두 개의 수와 연산자(+, -, *, /)를 입력받아 처리하는 프로그램
+    조건:
+    1)switch~case문 사용하세요
+    2)연산자는 스트링(String)으로 처리하시고
+      Scanner의 next()메서드를 이용하세요
+ */
+public class Calc_switch {
+
+	public static void main(String[] args) {
+		int num1, num2, result;
+		String op;
+
+		Scanner sc = new Scanner(System.in);
+
+		num1 = sc.nextInt();
+		op = sc.next();
+		num2 = sc.nextInt();
+
+		switch (op) {
+		case "+":
+			result = num1 + num2;
+			System.out.println("입력  : " + num1 + op + num2);
+			System.out.println("결과 : " + result);
+			break;
+		case "-":
+			result = num1 - num2;
+			System.out.println("입력  : " + num1 + op + num2);
+			System.out.println("결과 : " + result);
+			break;
+		case "*":
+			result = num1 * num2;
+			System.out.println("입력  : " + num1 + op + num2);
+			System.out.println("결과 : " + result);
+			break;
+		case "/":
+			result = num1 / num2;
+			System.out.println("입력  : " + num1 + op + num2);
+			System.out.println("결과 : " + result);
+			break;
+		default:
+			System.out.println("연산자를 입력하세요.");
+			break;
+		}
+		
+	}
+
+}

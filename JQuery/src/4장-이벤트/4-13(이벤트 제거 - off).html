@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 새로 생긴 h1태그도 이벤트가 발생합니다. -->
+		<!-- 매개 변수 3개인 on()메서드를 사용합니다. -->
+		<script>
+			$(document).ready(function(){
+				//상위 태그에 이벤트를 연결하고 h1태그를 클릭했을 때의 방식으루 구현
+				$('#wrap').on('click', 'h1', function(){
+					var length = $('h1').length;
+					var targetHTML = $(this).html(); //여기서 this h1태그를 의미
+					$('#wrap')
+					.append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+					
+					//이벤트를 제거합니다.
+					$('#wrap').off('click', 'h1');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>Header1</h1>
+		</div>
+	</body>
+</html>

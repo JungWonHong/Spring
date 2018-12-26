@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		/*
+		-식별자(자바스크립트에서 이름을 붙일 때 사용하는 단어) 규칙
+			* 첫글자는 알파벳, _(언더 스코어), $만 가능
+			1. 예약어는 사용할 수 없다.(break, case, catch, ...)
+			2. 숫자는 첫글자 제외하고 사용가능하다.
+			3. 특수문자는 _와 $만 허용한다.
+			4. 공백 문자를 포함할 수 없다.
+			  예) alpha, _alpha, $alpha, Alpha
+			  
+		-자바스크립트 식별자 종류
+				구분			   단독으로 사용		다른 식별자와 사용
+		 식별자 뒤에 괄호 없는 경우		변수				속성
+		 식별자 뒤에 괄호 있는 경우		함수				메서드
+		 
+		 예) alert('Hello World')  => 함수
+		 	Array.length		  => 속성(length)
+		 	input				  => 변수
+		 	Math.abs(-273)		  => 메소드(abs)
+		*/
+		/*
+		변수의 선언 방식 - 대소문자를 구분함
+		1. var 변수명
+		2. var 변수명 = 변수값;
+		*/
+		/*
+		자바스크립트 자료형
+		string, number, boolean, function, object, undefined
+		자바스크립트 변수는 값이 저장되는 순간 그 자료형이 결정된다.
+		*/
+		//1. string(문자열) - 큰 따옴표 또는 작은 따옴표를 사용해서 문자열을 만든다.
+		var name = "모바일 웹", alias = '자바스크립트';
+		document.write(name + "<br>");
+		document.write(alias + "<br>");
+		/*
+			typeof연산자는 자료형을 확인할 수 있다
+			형식) typeof[(] expression [)]
+			   예) typeof(name) 또는 typeof name 
+		*/
+		document.write(typeof(name) + "<br>");
+		document.write(typeof(alias) + "<br><hr>");
+		document.write(typeof alias + "<br><hr>");
+		
+		//2. number(숫자)
+		var start = 0, end = 123.34;
+		document.write(start + "<br>"); //정수
+		document.write(end + "<br>"); //실수
+		document.write(typeof(start) + "<br>");
+		document.write(typeof(end) + "<br><hr>");
+		
+		//3. boolean(불린)
+		var booleanVar = true;
+		document.write(booleanVar + "<br>");
+		document.write(typeof(booleanVar) + "<br><hr>");
+
+		//4. function(함수)
+		var functionVar = function() { alert("안녕~ 자바스크립트") };
+		document.write(functionVar + "<br>");
+		document.write(typeof(functionVar) + "<br><hr>");
+		
+		//5. object(객체)
+		var objectVar = {};
+		document.write(objectVar + "<br>");
+		document.write(typeof(objectVar) + "<br>");
+		
+		var objectVar2 = new Object();
+		document.write(objectVar2 + "<br>");
+		document.write(typeof(objectVar2) + "<br>");
+		
+		var objectVar2 = null;
+		document.write(objectVar2 + "<br>");
+		document.write(typeof(objectVar2) + "<br><hr>");
+		
+		/*
+		  6. undefined(선언되지 않거나 할당되지 않은 변수를 나타내는 자료형,
+				  	  초기값 없이 선언된 변수는 undefined로 초기화 된다.)	
+		*/
+		var noVar;
+		document.write(noVar + "<br>");
+		document.write(typeof(noVar) + "<br>"); //선언되었지만 값을 할당하지 않은 변수
+		document.write(typeof(a) + "<br>"); //선언되지 않은 변수
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

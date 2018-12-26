@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>다양한 선택 입력</title>
+	</head>
+	<body>
+		<h3>다양한 선택 입력</h3>
+		<form method = "get" action = "result.html">
+			<p>회원여부 :
+				<input type = "radio" name = "member" value = "yes" checked/>회원
+				<input type = "radio" name = "member" value = "no"/>비회원<br>
+			성별 : <input type = "radio" name = "sex" value = "male"/>남성
+				 <input type = "radio" name = "sex" value = "female"/>여성
+			</p>
+			<p>취미(중복선택) :
+				<input type = "checkbox" name = "hobby" value = "read"/>독서
+				<input type = "checkbox" name = "hobby" value = "movie" checked/>영화
+				<input type = "checkbox" name = "hobby" value = "music"/>음악
+				<input type = "checkbox" name = "hobby" value = "sports"/>스포츠
+			</p>
+			<p>직업 : 
+				<select name = "job1" size = "1">
+					<option value = "student" selected>학생</option>
+					<option value = "company">회사원</option>
+					<option value = "teacher">교사</option>
+					<option value = "sales">자영업</option>
+					<option value = "others">기타</option>
+				</select>
+				
+				&nbsp; 직업:
+				<select name = "job1" size = "4" multiple>
+					<option value = "student" selected>학생</option>
+					<option value = "company">회사원</option>
+					<option value = "teacher">교사</option>
+					<option value = "sales">자영업</option>
+					<option value = "others">기타</option>
+				</select>
+			</p>
+		</form>
+	</body>
+</html>

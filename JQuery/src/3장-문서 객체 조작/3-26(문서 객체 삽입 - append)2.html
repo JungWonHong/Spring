@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체 삽입 -->
+		<!-- $(A).append(B) : B를 A의 뒷부분에 추가합니다.
+			 $(A).prepend(B) : B를 A의 앞부분에 추가합니다.
+		 형식) $(selector).append(content, content, ...);
+		 	  $(selector).append(function(index){});
+		 -->
+		<script>
+			$(document).ready(function(){
+				//변수를 선언합니다.
+				var h1 = '<h1>오늘은</h1>';
+				var h2 = '<h1>기다리던</h1>';
+				var h3 = '<h1>금요일입니다.</h1>';
+				var h4 = '<h1>드디어</h1>';
+				var h5 = '<h1>야구장에</h1>';
+				var h6 = '<h1>갑니다.</h1>';
+				//문서 객체를 추가합니다.
+				$('div').append(h1, h2, h1, h2);//h1, h2, h1, h2를 div에 추가
+				$('div').prepend(h3);//h3을 div태그의 맨처음 자식에 추가
+			});
+		</script>
+	</head>
+	<body>
+		<div>내 뒤에 붙어라 - append</div>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+@CHARSET "EUC-KR";
+
+table {
+	margin: 0 auto;
+	width:300px;
+}
+
+tr {
+	background: yellow;
+}
+
+.green {
+	background: green;
+	text-align: center;
+}

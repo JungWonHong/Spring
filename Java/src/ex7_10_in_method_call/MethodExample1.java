@@ -1,0 +1,14 @@
+package ex7_10_in_method_call;
+
+class MethodExample1 {
+
+	public static void main(String[] args) {
+		int arr[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+		Numbers1 obj = new Numbers1(arr);
+		int total = obj.getTotal();
+
+		System.out.println("гу╟Х = " + total);
+
+	}
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3 Property Basic</title>
+		<style>
+			.box {
+					width: 100px; height: 100px;
+			}
+			/*
+			  일반 구조 선택자 - 특정한 위치에 있는 태그를 선택하는 선택자
+			  형식) :nth-child(수열) : 형제 관계 중에서 앞에서 수열번째 태그를 선택
+			  예)  :nth-child(2n)인 경우 : 2, 4, 6 번째 위치하는 태그를 선택
+			  	  :nth-child(2n+1)인 경우 : 1, 3, 5 번째 위치하는 태그를 선택
+			  	  :nth-child(숫자)인 경우 : 숫자번째 위치하는 태그를 선택(양수)
+			  그외 일반 구조 선택자
+			  	  :first-child : 형제 관계 중에서 첫 번째 위치하는 태그를 선택
+			  	  :last-child  : 형제 관계 중에서 마지막에 위치하는 태그를 선택
+			  	  :nth-last-child(수열) : 형제 관계 중에서 뒤에서 수열 번째에
+			  	  						 위치하는 태그를 선택
+			 */
+			 .box:nth-child(1) { /* 클래스 box중 첫 번쨰로 나오는 태그 선택 */
+			 		background-color: red;
+			 }
+			 
+			 .box:nth-child(2) {
+			 		background-color: green;
+			 }
+			 
+			 .box:nth-child(3) {
+			 		background-color: blue;
+			 }
+			 
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</body>
+</html>

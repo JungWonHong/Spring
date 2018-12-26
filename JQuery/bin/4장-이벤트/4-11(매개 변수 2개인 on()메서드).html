@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 매개 변수 2개인 on()메서드 -->
+		<!-- 추가된 h1태그는 클릭해도 이벤트 발생하지 않습니다. -->
+		<script>
+			$(document).ready(function(){
+				$('h1').on('click', function(){
+					var length = $('h1').length; //h1태그의 갯수
+					var targetHTML = $(this).html();
+					
+					//id가 "wrap"인 div태그 안의 마지막 위치에 append 안의 내용이 붙습니다.
+					$('#wrap')
+					.append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>Header1</h1>
+		</div>
+	</body>
+</html>

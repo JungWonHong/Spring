@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 
+			문서 객체 속성 추가 - attr() 메소드
+			형식
+			 1. $(selector).attr(name, value);
+			 2. $(selector).attr(name, function(index, attr){});
+			 3. $(selector).attr(object);
+		 -->
+		<script>
+			$(document).ready(function(){
+				//img 태그의 속성 'width'의 값을 200으로 설정합니다.
+				$('img').attr('width', 200);
+			});
+		</script>
+	</head>
+	<body>
+		<img src="Chrysanthemum.jpg"/>
+		<img src="Desert.jpg"/>
+		<img src="Hydrangeas.jpg"/>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+package report_no5;
+
+import java.util.Scanner;
+
+public class Expression {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int year;
+		String yes_or_no;
+
+		while (true) {
+			System.out.print("년도를 입력하세요?");
+			year = sc.nextInt();
+
+			if ((year % 400 == 0 || year % 4 == 0) && year % 100 != 0)
+				System.out.println("윤년입니다.");
+			else
+				System.out.println("평년입니다.");
+
+			System.out.print("계속 하시겠습니까?(y or n)");
+			yes_or_no = sc.next();
+
+			if (yes_or_no.equals("n"))
+				break;
+		}
+		
+		System.out.println("Done.");
+		
+		sc.close();
+	}
+
+}
+/*
+ * int x; x>10 && x<20
+ * 
+ * char ch; ch!=' '||ch!='\t'
+ * 
+ * ch >= '0' && ch<='9'
+ * 
+ * ch>='a'&&ch<='z'
+ * 
+ * ch>='A'&&ch<='Z'
+ * 
+ * String name; name.equals("honggildong");
+ * 
+ * int year; (year%400==0 || year%4==0) && year%100!=0
+ */

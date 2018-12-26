@@ -1,0 +1,5 @@
+@CHARSET "EUC-KR";
+button{background:#a1e9a1; 
+         width:100px; height:30px;
+         border-radius:2px;
+         border:1px solid green;}

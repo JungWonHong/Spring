@@ -1,0 +1,10 @@
+package ex4_9_assignment_op;
+
+public class AssignmentExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

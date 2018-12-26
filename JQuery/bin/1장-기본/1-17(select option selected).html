@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!--  jQuery 입력 양식 필터 선택자(2)
+			요소 : checked(체크되어 있는 입력 양식을 선택합니다.)
+			요소 : disabled(비활성화된 입력 양식을 선택합니다.)
+			요소 : enabled(활성화된 입력 양식을 선택합니다.)
+			요소 : focus(초점이 맞추어져 있는 입력 양식을 선택합니다.)
+			요소 : selected(option 객체 중 선택된 태그를 선택합니다.)
+		
+		select > option:selected : select자손인 option태그 중에서
+									사용자가 선택한 태그를 선택합니다. -->
+		<script>
+			$(document).ready(function(){
+				// 2초 후에 코드를 실행합니다.
+				setTimeout(function(){
+					//변수를 선언합니다.
+					//var value = $('select > option:selected').val();
+					var value = $('option:selected').val();
+					//출력합니다.
+					alert('선택하신 것은 ' + value + '입니다.');
+				}, 2000);
+			});
+		</script>
+	</head>
+	<body>
+		<select>
+			<option>김밥</option>
+			<option>짜장면</option>
+			<option>냉면</option>
+			<option>비빔밥</option>
+			<option>돈까스</option>
+		</select>
+	</body>
+</html>

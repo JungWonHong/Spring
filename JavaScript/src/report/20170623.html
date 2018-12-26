@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> CSS Access using JavaScript </title>
+		<style>
+		  button {width:70px; height:25px; margin:10px 0 }
+		</style>
+	</head>
+	<body>
+
+		<div id="outerBox" style="background: blue; 
+		                          width: 550px; height:300px;" >
+		
+		<div id="innerBox"
+		     style="background: yellow; width: 450px; height:200px;
+		            position: absolute; left: 50px; top: 50px;">
+		
+		    <img id="img1" src="image/image1.png" width="100px"
+		         style="position: absolute; left: 50px; top: 45px; 
+		         visibility: visible;">
+		
+		    <img id="img2" src="image/image2.png" width="100px"
+		         style="position: absolute; left: 175px; top: 45px; 
+		         visibility: visible;">
+		
+		    <img id="img3" src="image/image3.png" width="100px"
+		         style="position: absolute; left: 300px; top: 45px; 
+		         visibility: visible;">
+		</div>
+		
+		</div>
+		
+		<script>
+		   /* 채우세요  */
+		   function changeInner(){
+			   var inner = document.getElementById("innerBox");
+			   var btn = document.getElementsByTagName('button');
+			   if(btn.nodeValue == "Red")
+			   		inner.style.backgroundColor = 'red';
+			   else if(btn.nodeValue == "Green")
+					inner.style.backgroundColor = 'green';
+			   else if(btn.nodeValue == "Blue")
+					inner.style.backgroundColor = 'blue';
+			   else if(btn.nodeValue == "Gray")
+					inner.style.backgroundColor = 'gray';
+			   else if(btn.nodeValue == "White")
+					inner.style.backgroundColor = 'white';
+		   };
+		   
+		   function changeOuter(){
+			   var outer = document.getElementById("outerBox");
+			   var btn = document.getElementsByTagName('button');
+			   document.write(btn.TextNode);
+			   if(btn.nodeValue == "Red")
+			   		outer.style.backgroundColor = 'red';
+			   else if(btn.nodeValue == "Green")
+					outer.style.backgroundColor = 'green';
+			   else if(btn.nodeValue == "Blue")
+				   	outer.style.backgroundColor = 'blue';
+			   else if(btn.nodeValue == "Gray")
+				   	outer.style.backgroundColor = 'gray';
+			   else if(btn.nodeValue == "White")
+				   	outer.style.backgroundColor = 'white';
+		   };
+		</script>
+		
+		Outer Box:
+		<button onclick = "changeOuter()">    Red    </button>
+		<button onclick = "changeOuter()">  Green  </button>
+		<button onclick = "changeOuter()">   Blue   </button>
+		<button onclick = "changeOuter()">   Gray   </button>
+		<button onclick = "changeOuter()">  White  </button>
+		<br />
+		
+		Inner Box:
+		<button onclick = "changeInner()">    Red    </button>
+		<button onclick = "changeInner()">  Green  </button>
+		<button onclick = "changeInner()">   Blue   </button>
+		<button onclick = "changeInner()">   Gray   </button>
+		<button onclick = "changeInner()">  White  </button>
+		
+	</body>
+</html>

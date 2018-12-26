@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배경관련 속성</title>
+		<style>
+			/* background-color : 배경색 속성 */
+			h3 { color:red; background-color:#90ff90 }
+			h3::after { content: " (ⓒsblim)"; font-size:10pt}
+			
+			/*
+				1. background-image : 배경이미지 속성
+				   url()함수를 이용해서 파일명 지정
+				2. background-repeat : 이미지 반복
+				   repeat-x(x축으로 반복), repeat-y(y축으로 반복),
+				   no-repeat(반복 안함), repeat(반복)
+			*/
+			#first { background-image: url(image/flower.jpg);
+					 background-repeat:repeat-x; }
+			#second{ background-image: url(image/flower.jpg); }
+			
+			/* background-position : 배경 이미지 위치 속성
+			   bottom, center, left, right, top 등의 키워드나 x축, y축을 입력
+			예) background-position: 10px 20px (가로 10px 세로 20px)
+			*/
+			#third { background-image: url(image/flower.jpg);
+					 background-repeat:no-repeat;
+					 background-position: center bottom }
+					 /*배경 이미지를 중앙 하단에 위치시킨다. (x,y) -> (center, bottom) */
+			
+		</style>
+	</head>
+	<body>
+		<h3> CSS 배경관련 속성</h3>
+		<table border="1">
+		<tr>
+			<td id="first"> 배경 이미지<br> &bull; url(파일경로)
+							<br><br>&bull; background-repeat :
+							<br> &nbsp; →repeat-x </td>
+			<td id="second"> 배경 이미지<br> &bull; url(파일경로)
+							<br><br>&bull; background-repeat :
+							<br> &nbsp; →repeat </td>
+			<td id="third"> 배경 이미지<br><br> &bull; background-repeat :
+							<br> &nbsp; →no-repeat,
+							<br><br>&bull; background-position :
+							<br> &nbsp; →center bottom </td>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+package ex7_05_default_contructor;
+
+public class SubscriberInfo {
+	String name, id, password;
+	String phoneNo, address;
+
+	//매개 변수 없는 생성자 추가
+	//자바컴파일러는 클래스에 선언된 생성자가 하나라도 있으면
+	//디폴스 생성자를 추가하지 않습니다.
+	SubscriberInfo(){} // 생성자가 정의되어있으면 디폴트생성자도 따로 정의해줘야한다.
+	
+	SubscriberInfo(String name, String id, String password) {
+		this.name = name;
+		this.id = id;
+		this.password = password;
+	}
+
+	SubscriberInfo(String name, String id, String password, String phoneNo, String address) {
+		this.name = name;
+		this.id = id;
+		this.password = password;
+		this.phoneNo = phoneNo;
+		this.address = address;
+	}
+
+	void changePassword(String password) {
+		this.password = password;
+	}
+
+	void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	void setAddress(String address) {
+		this.address = address;
+	}
+
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- SQL 맵퍼 파일은 xml이기 때문에 제일 먼저 xml 선언이 옵니다. -->
+
+<!-- 태그 규칙을 정의한 DTD 선언이 옵니다. -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- SQL맵퍼 파일은 루트 엘리먼트 <mapper>를 작성하는 것으로 시작합니다.
+	  프로젝트에서 기본적으로 여러개의 <mapper>를 가지기 때문에 중복되는
+	  이름을 가진 SQL문이 존재할 수 있습니다.
+	  따라서 각 <mapper>마다 namespace 속성을 이용하여
+	 <mapper>를 구분합니다.
+	  -->
+<mapper namespace="Member1">
+	<!-- 
+		<select id="list" resultType="Member">
+		id 속성 : SQL문을 작성할 때 각각의 SQL문을 구분하기 위해 id 속성을 사용합니다.
+		
+		resultType 속성 : select 문의 실행 결과를 담을 객체를 지정합니다.
+		- 마이바티스 설정 파일(sqlMapconfig.xml)에 별명이 정의되어 있으면
+                      별명을 사용할 수 있습니다.
+        
+        - 마이바티스는 select 결과를 저장하고자 resultType에 선언된 클래스의 인스턴스를 생성합니다.
+                      그리고 각 칼럼에 대응하는 setter 메서드를 찾아서 호출합니다.
+                      이 때 setter 메서드는 대소문자 구분없이 set을 뺀 메서드의 이름과
+                      컬럼 이름이 같으면 됩니다.
+        
+        - 컬럼의 이름과 일치하는 setter가 없다면 해당 컬럼의 값은 인스턴스에 저장되지 않습니다
+        
+        	문제 발생 : 해결법
+        		1. 컬럼에 별명을 붙이는 방식
+        		2. <resultMap>을 이용하면 컬럼이름과
+        			setter이름의 불일치 문제 해결할 수 있습니다.
+        - <resultMap>을 이용하면 컬럼이름과 setter이름의불일치 문제를 해결할 수 있습니다.
+        	type 속성 : 컬럼 데이터를 저장할 클래스 이름 또는 클래스의 별명입니다.
+        	
+        	<result>엘리먼트 : <resultMap>태그의 자식 태그로서 컬럼과
+        					셋터 메서드의 연결을 정의합니다.
+        	property 속성 : 객체의 프로퍼티 이름을 지정합니다.
+        	column 속성 : 컬럼 이름을 지정합니다.
+        
+		예)
+			1) 컬럼에 별명을 붙이는 방식
+				<select id="list" resultType="Member">
+					select userid as id, userpassword as password
+					from member22
+				</select>
+			
+			2) <resultMap>을 이용
+				<resultMap type="Member" id="ResultMap">
+					<result property="id"		column="userid"/>
+					<result property="password" column="userpassword"/>
+				</resultMap>
+				
+				<select id="select" parameterType="String" resultMap="ResultMap">
+					select * from member22 where userid = #{inputid}
+				</select>
+	 -->
+	 <!-- 
+	 	마이바티스의 입력 매개 변수를 #{프로퍼티명}으로 표시합니다.
+	 	parameterType="String" :
+	 	parameterType은 DAO(MemberDAO)에서
+	 	session.selectOne("select", id); 문장의 두 번째 매개변수의 자료형입니다.
+	 	#{inputid} : id의 값을 사용하기 위해 어떤 이름을 사용해도 무방합니다.
+	  -->
+	<select id="select" parameterType="String" resultType="Member">
+		select * from member22 where id = #{inputid}
+	</select>
+	
+	<!-- 
+      parameterType="Member" 인 경우
+      #{password}는 Member객체의 프로퍼티 값이 정용됩니다. 
+             즉, model/Member.java의
+      
+      public String getPassword() {
+          return password;
+      }
+             
+             의 반환값이 적용됩니다.
+    -->
+    <!-- insert 태그에는 insert SQL문을 사용합니다. -->
+	<insert id="insert" parameterType="Member">
+		insert into member22 values (#{id}, #{password})
+	</insert>
+</mapper>

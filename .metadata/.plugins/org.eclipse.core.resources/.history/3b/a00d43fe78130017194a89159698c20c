@@ -1,0 +1,10 @@
+package report_no4;
+
+public class Calc_switch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

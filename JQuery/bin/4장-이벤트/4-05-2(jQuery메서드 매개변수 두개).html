@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			* { margin: 0px; padding: 0px }
+			div {
+				margin: 5px; padding: 3px;
+				border: 3px solid black;
+				border-radius: 10px;
+			}
+		</style>
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- div 태그를 클릭했을 때 클릭한 div태그 내부의 h1태그와 p태그가 가지는 내용을
+			  출력하려면 어떻게 해야 할까요? -->
+		<script>
+			$(document).ready(function(){
+				
+				//click()메소드 사용
+				$('div').click(function(){
+					// 변수를 선언합니다.
+					// div태그안의 h1태그와 p태그를 선택하고 싶을 때 this 키워드를
+					// 두 번째 매개변수로 넣어줍니다.
+					// this는 이벤트가 발생한 객체를 의미합니다.
+					// 즉, 선택한 div태그 안의 h1태그를 선택해서 텍스트를 가져옵니다.
+					var header = $('h1', this).text();
+					var paragraph = $('p', this).text();
+					
+					//출력합니다.
+					alert(header + '\n' + paragraph);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Header 1</h1>
+			<p>Paragraph</p>
+		</div>
+		<div>
+			<h1>Header 2</h1>
+			<p>Paragraph</p>
+		</div>
+		<div>
+			<h1>Header 3</h1>
+			<p>Paragraph</p>
+		</div>
+	</body>
+</html>

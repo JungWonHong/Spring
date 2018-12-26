@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>transform(변환)</title>
+		<!-- 텍스트나 이미지를 회전이나 확대 등 다양한 기하학적인 모양으로 출력할 수 있다.
+			 변환에서 사용되는 회전 각도의 단위는 deg이며 시계방향으로 회전한다. -->
+		<style>
+			div { 
+				display: inline-block;
+				padding: 5px;
+				color: white;
+				background: olivedrab;
+			}
+			/* 변환 */
+			div#rotate {
+			 	/* 태그를 각도만큼 시계 방향으로 회전 */
+				transform: rotate(20deg);
+			}
+			
+			div#skew {
+				/* 태그를 x축, y축을 기준으로 각도만큼 기울인다 */
+				transform: skew(0deg, -20deg); 
+			}
+			
+			div#translate {
+			 	/* 태그를 Y축으로 지정한 만큼 이동 */
+				transform: translateY(100px);
+			}
+			
+			div#scale {
+				/* 태그의 폭과 높이를 각각 배 만큼 확대 : 가로 3배 세로 1배 */
+				transform: scale(3, 1); 
+			}
+			
+			/* 마우스 올릴 때 추가 변환 */
+			div#rotate:hover {
+				transform: rotate(80deg);
+			}
+			
+			div#skew:hover {
+				transform: skew(0deg, -60deg); 
+			}
+			
+			div#translate:hover {
+				transform: translate(50px, 200px); 
+			}
+			
+			div#scale:hover {
+				transform: scale(4, 2); 
+			}
+			
+			/* 마우스 누를 때 추가 변환 */
+			div#scale:active {
+				transform: scale(1, 5); 
+			}
+		</style>
+	</head>
+	<body>
+		<h3>다양한 Transform</h3>
+		아래는 회전(rotate), 기울인(skew), 이동(translate), 확대/축소(scale)가
+		적용된 사례이다. 또한 마우스를 올리면 추가적 변환이 일어난다.
+		<hr>
+		<br>
+		<br>
+		<br>
+		<div id="rotate">rotate(20deg)->rotate(80deg)</div>
+		<div id="skew">skew(0, -20deg)->skew(0deg, -60deg)</div>
+		<div id="translate">translateY(100px)->translate(50px, 200px)</div>
+		<div id="scale">scale(3, 1)->scale(4, 2)</div>
+	</body>
+</html>

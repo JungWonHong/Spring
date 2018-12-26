@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+ 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
+<!-- 초기화 파라미터는 주로 웹 어플리케이션의 초기화 작업에 필요한 설정 정보를 
+	지정하기 위해 사용됩니다. -->
+	
+	<context-param>
+		<description>아이디</description>
+		<param-name>ID</param-name>
+		<param-value>jspProject</param-value>
+	</context-param>
+	
+	<context-param>
+		<description>비밀번호</description>
+		<param-name>Pass</param-name>
+		<param-value>1111</param-value>
+	</context-param>
+
+</web-app>

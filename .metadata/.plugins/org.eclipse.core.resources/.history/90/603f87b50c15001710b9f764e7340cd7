@@ -1,0 +1,21 @@
+package report_no6;
+
+public class multi_table {
+
+	public static void main(String[] args) {
+		int multi[][] = new int[9][9];
+		
+		for(int i = 0;i<multi.length;i++){
+			for(int j = 0;j<multi[i].length;j++){
+				if((i+1)==1)
+					System.out.print((j+1)+"´Ü\t\t");
+				
+				multi[i][j] = (i+1)*(j+1);
+				System.out.print((j+1)+" x "+(i+1)+" = "+multi[i][j]+"\t");
+			}
+			System.out.print("\n");
+				
+		}
+	}
+
+}

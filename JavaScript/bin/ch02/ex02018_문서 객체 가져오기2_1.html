@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>INDEX</title>
+		<!-- 문서 객체 가져오기(2)
+			-getElementsByName(namevalue)
+			태그의 name속성이 namavalue와 일치하는 문서 객체를 배열로 가져옵니다.
+			
+			-getElementsByTagName(tagName)
+			태그 이름이 tagName과 일치하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+			
+			-getElementsByClassName(className)
+			클래스 속성이 className과 일치하는 문서 객체를 배열로 가져옵니다. 
+		 -->
+		<script>
+			window.onclick = function(){
+				//문서 객체를 가져옵니다.
+				var headers = document.getElementsByTagName('h1');
+				alert("h1 문서 객체의 갯수 = " + headers.length);
+				
+				var input = document.getElementsByName('age');
+				//문서 객체의 속성을 변경합니다.
+				headers[0].innerHTML =
+						'headers[0] with getElementsByTagName';
+				headers[1].innerHTML =
+						'headers[1] with getElementsByTagName';
+				input[0].value = '24살입니다';
+				input[1].focus(); //두 번째 input에 포커스를 줍니다.
+			};
+		</script>
+	</head>
+	<body>
+		<h1 id = "header-1">Header</h1>
+		<h1 id = "header-2">Header</h1>
+		<input type="text" name='age'/>
+		<input type="text" name='age'/>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+package report_0411;
+
+public interface IFunction {
+	String name = null;
+	void callSenderReceive();
+	void canLte();
+	void tvRemoteController();
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>visibility 속성</title>
+		<style>
+			div { 
+				  width: 100px;
+				  height: 100px;
+				}
+				
+			/* visibility 속성 : HTML 태그를 출력할 것인지 숨길 것인지 지정
+				hidden - 숨김
+				visible- 보임
+			*/
+			#box1 { 
+					visibility: hidden; /* 영역은 차지하고 있지만 보이지 않음 */
+					background-color: red;
+			}
+			#box2 {
+					background-color: blue; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id=box1></div>
+		<div id=box2></div>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+package ex11_5_Calendar;
+
+public enum day_of_week {
+	SUNDAY("일요일"), MONDAY("월요일"), TUESDAY("화요일"), WEDNESDAY("수요일"), THURSDAY("목요일"), FRIDAY("금요일"), SATURDAY("토요일");
+	final private String day_name;
+	private day_of_week(String day_name){
+		this.day_name = day_name;
+	}
+	String value(){
+		return day_name;
+	}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>z-index로 앞뒤 배치 : 큰 수가 앞으로 배치된다.</title>
+		<!-- z-index 속성은 하나의 정수 값을 가질 수 있다(양수, 음수 모두 가능하다).
+			 이 값은 해당 엘리먼트의 z축 상의 위치를 나타낸다. 기본값(0) -->
+		<style>
+			div { 
+				  width: 100px;
+				  height: 100px;
+				}
+				
+			#box1 { 
+					position: absolute; /* 절대위치 - 원하는 위치에 배치 */
+					left: 30px; /* 수평 좌표 : 부모 요소(body) 왼쪽 위로부터 오른쪽 30px 떨어져 배치 */
+					top : 50px; /* 수직 좌표 : 부모 요소(body) 왼쪽 위로부터 아래로 50px 떨어져 배치 */
+					background-color: red;
+			}
+			
+			#box2 {
+					position: absolute;
+					left: 55px;
+					top: 75px;
+					background-color: blue; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id=box1></div>
+		<div id=box2></div>
+	</body>
+</html>

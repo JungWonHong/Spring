@@ -1,0 +1,23 @@
+//문자열 추출 메소드
+/*
+ * 주민번호 123456-41234567를 이용하여 남자,여자,외국인을 출력하기
+ */
+package ex11_1_String;
+
+public class StringExample6_1 {
+	public static void main(String[] args) {
+		String str = "123456-41234567";
+
+		for (int cnt = 0; cnt < str.length(); cnt++) {
+			char ch = str.charAt(cnt); // charAt 메서드 호출
+			System.out.println("index = " + cnt + " 문자열 = " + ch);
+		}
+
+		if(str.substring(7, 8).equals("1") || str.substring(7, 8).equals("3"))
+			System.out.println("남자");
+		else if(str.substring(7, 8).equals("2") || str.substring(7, 8).equals("4") )
+			System.out.println("여자");
+		else
+			System.out.println("외쿡인");
+	}
+}

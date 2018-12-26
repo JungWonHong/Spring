@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- attr(속성명)메서드 : 속성의 값을 알아낼 수 있습니다.
+		 -->
+		<script>
+			$(document).ready(function(){
+				// 변수를 선언합니다.
+				var result = $('img').attr('src', function(index){
+					var path = this.src;
+					console.log(path);
+					var lio = path.lastIndexOf("/");
+					console.log(lio);
+					var s = "index = " + index + ", " 
+							+ path.substring(lio+1, path.length);
+					alert(s);
+		        }); 
+			});
+		</script>
+	</head>
+	<body>
+		<img src="Chrysanthemum.jpg"/>
+		<img src="Desert.jpg"/>
+		<img src="Hydrangeas.jpg"/>
+	</body>
+</html>

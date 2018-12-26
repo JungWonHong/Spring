@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../js/jquery-3.2.1.js"></script>
+		<!-- 문서 객체 탐색 종료 메서드
+			end() : 문서 객체 선택을 한 단계 뒤로 돌립니다.
+			
+			체이닝을 사용할 경우 추가한 filter()메서드를 제거하려면
+			end()메서드를 사용합니다.
+			
+			2-5.html와 같은 결과
+			filter()메서드와 end()메서드를 사요
+		 -->
+		<script>
+			$(document).ready(function(){
+				$('h1')
+				.css('background', 'orange')
+				.filter(':even').css('color', 'white')
+				.end()
+				.filter(':odd').css('color', 'red')
+					  
+				/*
+				$('h1')
+				.css('background', 'orange');
+	         	.filter(':even').css('color', 'white');
+	         	$('h1')
+	         	.filter(':odd').css('color', 'red');   
+				*/
+				/* ==> 이렇게 사용해야 하는데 체이닝 기법을 사용하려면
+					두 번째 $('h1')자리에 
+					.end()를 사용하면 됩니다.
+				*/
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Header-0</h1>
+		<h1>Header-1</h1>
+		<h1>Header-2</h1>
+		<h1>Header-3</h1>
+		<h1>Header-4</h1>
+		<h1>Header-5</h1>
+	</body>
+</html>

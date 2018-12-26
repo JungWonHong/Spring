@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>버튼 입력</title>
+	</head>
+	<body>
+		<h3>버튼 입력</h3>
+		<form method = "get" action = "result.html">
+			<p>취미(중복선택) :
+				<input type = "checkbox" name = "hobby" value = "read"/>독서
+				<input type = "checkbox" name = "hobby" value = "movie" checked/>영화
+				<input type = "checkbox" name = "hobby" value = "music"/>음악
+				<input type = "checkbox" name = "hobby" value = "sports"/>스포츠
+			</p>
+			<p>직업 : 
+				<select name = "job1" size = "5" multiple> <!-- size설정으로 5개의 목록
+																multiple -->
+					<option value = "student" selected>학생</option>
+					<option value = "company">회사원</option>
+					<option value = "teacher">교사</option>
+					<option value = "sales">자영업</option>
+					<option value = "others">기타</option>
+				</select>
+			</p>
+				<hr>
+		   <!-- <input type = "submit" value = "전송하기"/> &nbsp; -->
+		   		<input type = "submit"/> &nbsp; <!-- value가 없는 경우 브라우저마다 라벨이 다르다 -->
+		   		<input type = "reset" value = "초기화"/> &nbsp;
+		   		<input type = "button" value = "확인하기" 
+		   				onClick = "alert('입력값 확인')"/> &nbsp;
+		   		
+		   		<!-- button의 디폴트 type은 submit이다. -->
+		   		<button>button태그</button>
+		   		
+		   		<!-- 이미지를 submit하기 위한 버튼으로 사용(이미지태그) -->
+		   		<input type = "image" src = "submit.gif" alt = "전송 버튼"/>
+			
+		</form>
+	</body>
+</html>

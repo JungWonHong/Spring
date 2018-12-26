@@ -1,0 +1,16 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String alph = sc.next();
+		int dial[] = new int[alph.length()];
+		
+		for(int i=0;i<alph.length();i++){
+			
+		}
+		sc.close();
+	}
+}

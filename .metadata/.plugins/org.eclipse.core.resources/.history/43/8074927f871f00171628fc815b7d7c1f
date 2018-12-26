@@ -1,0 +1,41 @@
+package report_no09;
+
+public class Saram_make2 {
+
+	public static void main(String[] args) {
+		//¹æ¹ı1
+		Saram father = new Saram("È«¿ÏÇ¥", 75, 173, 57, "A");
+		Saram mother = new Saram("ÀåÈñÁ¤", 60, 162, 58, "B");
+		Saram sister = new Saram("È«¾Æ¶ó", 48, 164, 30, "AB");
+		Saram hjw = new Saram("È«Á¤¿ø", 68, 173.7, 27, "A");
+
+		Saram[] family = new Saram[] { father, mother, sister, hjw };
+
+		PrintSaram(family);
+		
+		//¹æ¹ı2
+		Saram[] family2 = new Saram[4];
+
+		family2[0] = new Saram("È«¿ÏÇ¥", 75, 173, 57, "A");
+		family2[1] = new Saram("ÀåÈñÁ¤", 60, 162, 58, "B");
+		family2[2] = new Saram("È«¾Æ¶ó", 48, 164, 30, "AB");
+		family2[3] = new Saram("È«Á¤¿ø", 68);
+
+		family2[3].blood = "A";
+		family2[3].ki = 173.7;
+		family2[3].age = 27;
+		
+		PrintSaram(family2);
+	}
+
+	static void PrintSaram(Saram[] a) {
+		for (int i = 0; i < a.length; i++) {
+			System.out.println("ÀÌ¸§:" + a[i].name);
+			System.out.println("¸ö¹«°Ô:" + a[i].w + "kg");
+			System.out.println("Å°:" + a[i].ki + "cm");
+			System.out.println("³ªÀÌ:" + a[i].age + "¼¼");
+			System.out.println("Ç÷¾×Çü:" + a[i].blood + "Çü");
+			System.out.println();
+		}
+	}
+}

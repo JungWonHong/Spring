@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 내장 객체</title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		//변수 선언
+		//컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+		var today = new Date();
+		var answer = prompt("비교할 날짜를 입력하세요.", "2017-01-01");
+		
+		//날짜 형식의 string을 이용해서 날짜를 설정한다.
+		var before = new Date(answer);
+		
+		var t1 = before.getTime();
+		var t2 = today.getTime();
+		
+		var interval = t2 - t1;
+		
+		//1일 = 1000(ms) * 60(s) * 60(m) * 24(h)
+		interval = Math.floor(interval / (1000 * 60 * 60 * 24))
+		
+		//출력
+		alert("날짜 간격은 " + Math.abs(interval) + "일 입니다.");
+		//abs() - 절대값 구하는 메소드
+	</script>
+</html>

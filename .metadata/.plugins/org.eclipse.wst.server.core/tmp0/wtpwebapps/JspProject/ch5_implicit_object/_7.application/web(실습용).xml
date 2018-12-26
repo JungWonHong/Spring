@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+ 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+	<!--  
+		서블릿 규약은 웹 어플리케이션 전체에 걸쳐서 사용할 수 있는 초기화 파라미터를 제공합니다.
+		초기화 파라미터는 주로 웹 어플리케이션의 초기화 작업에 필요한 설정 정보를
+		지정하기 위해 사용됩니다.
+		예를 들어 데이터 베이스 연결과 관련된 설정 파일의 경로나 로깅 설정 파일,
+		또는 웹 어플리케이션의 주요 속성 정보를 담고 있는
+		파일의 경로 등을 지정할 때 사용합니다.
+		아래와 같이 초기화 파라미터를 추가하게 되면 application 객체에서 제공하는 메서드를
+		사용하여 초기화 파라미터를 JSP 페이지에서 사용할 수 있습니다.
+		
+		형식)
+			<context-param>
+				<description>파라미터 설명(필수 아님)</description>
+				<param-name>파라미터 이름</param-name>
+				<param-value>파라미터 값</param-value>
+			</context-param>
+	-->
+	<!-- 파라미터 이름이 logEnabled이고 파라미터 값이 "true"인 초기화 파라미터 추가 -->
+	<context-param>
+		<description>로깅 여부</description>
+		<param-name>logEnabled</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+	<!-- 파라미터 이름이 debugLevel이고 파라미터 값이 "5"인 초기화 파라미터 추가 -->
+	<context-param>
+		<description>디버깅 레벨</description>
+		<param-name>debugLevel</param-name>
+		<param-value>5</param-value>
+	</context-param>
+</web-app>
