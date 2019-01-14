@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+
+	<!-- 자료실 저장 -->
+    <insert id="bbs_insert" parameterType="bbsbean">
+      insert into bbs6 
+          (bbs_num,     bbs_name, bbs_pass,   bbs_subject, 
+           bbs_content, bbs_file, bbs_re_ref, bbs_re_lev,
+           bbs_re_seq,  bbs_readcount, bbs_date, bbs_original)
+      values(bbs6_num_seq.nextval,#{bbs_name},#{bbs_pass},#{bbs_subject},
+             #{bbs_content}, #{bbs_file, jdbcType=VARCHAR},
+             bbs6_num_seq.nextval,0,0,0,sysdate, #{bbs_original, jdbcType=VARCHAR})
+    </insert>
+    
+    <!-- 자료실 총 게시물 수 -->
+    <select id="bbs_count" resultType="int" >
+      select count(*) from bbs6 
+    </select>
+    
+    <!-- 자료실 목록 (page번호를 전달받아서 startRow와 endRow를 구함)-->
+	<select id="bbs_list"  parameterType="int"  resultType="bbsbean">
+	    <![CDATA[
+		select * 
+		from 
+		  (select rownum rnum, bbs_num, bbs_name,   bbs_pass, 
+		   bbs_subject, bbs_content,  bbs_file,     bbs_re_ref,
+		   bbs_re_lev,  bbs_re_seq,   bbs_readcount,bbs_date, bbs_original 
+		   from  
+	  	      (select * from bbs6 
+	  	       order by bbs_re_ref desc, bbs_re_seq asc)
+	  	   ) 
+	   	where rnum >= ((#{page}-1) * 10+1)  and rnum <= (#{page} * 10)
+		]]>
+	</select>	
+    
+    <!-- 자료실 검색 결과 총 게시물 수 -->
+    <select id="bbsfind_cnt" parameterType="java.util.Map" resultType="int">
+    	select count(*) 
+    	from bbs6 
+    	<!-- MyBatis 동적 SQl문
+    		<where>태그는 where절을 반환합니다.
+    		<where>안의 하위 태그를 실행하고 반환값이 있으면 where절을 만들어 반환하고
+    		반환값이 없으면 where절을 반환하지 않습니다.
+    	 -->
+    	<where>
+    		<!-- 검색 조건없는 경우 -->
+    		<if test="find_field==''">
+    		</if>
+    		  			
+    		<!-- 검색 조건이 글쓴이인 경우 -->
+    		<if test="find_field=='bbs_name'">
+    			bbs_name like #{find_name}	
+    		</if>
+    		  			
+    		<!-- 검색 조건이 제목인 경우 -->
+    		<if test="find_field=='bbs_subject'">
+    		  	bbs_subject like #{find_name}
+    		</if>
+    		  			
+    		<!-- 검색 조건이 내용인 경우 -->
+    		<if test="find_field=='bbs_content'">
+    		  	bbs_content like #{find_name}
+    		</if>
+    	</where>
+    </select>
+    
+    <!-- 자료실 내용 가져오기 -->
+    <select id="bbs_cont" resultType="bbsbean" parameterType="int">
+      select * from bbs6 where bbs_num=#{num}
+    </select>
+    
+    <!-- 조회수 증가 -->
+    <update id="bbs_hit" parameterType="int">
+      update bbs6 
+         set bbs_readcount=bbs_readcount+1 
+       where bbs_num=#{num}
+    </update>
+    
+    <!-- 자료실 수정 -->
+    <update id="bbs_edit" parameterType="bbsbean">
+     update bbs6 
+        set bbs_name=#{bbs_name}, bbs_subject=#{bbs_subject},
+            bbs_content=#{bbs_content}, 
+            bbs_file=#{bbs_file, jdbcType=VARCHAR},
+            bbs_original=#{bbs_original, jdbcType=VARCHAR}
+            
+      where bbs_num=#{bbs_num}
+    </update>
+    
+    <!-- 자료실 삭제 -->
+    <delete id="bbs_delete" parameterType="int">
+      delete 
+      from   bbs6 
+      where  bbs_num=#{bbs_num}
+    </delete>
+    
+    <!-- 자료실 검색 목록(page번호를 전달받아서 startRow와 endRow를 구함) -->
+    <select id="bbs_find" parameterType="java.util.Map" resultType="bbsbean">
+    	select *  
+    	from (select 
+    			rownum rnum, bbs_num, bbs_name, 
+    			bbs_pass, bbs_subject, bbs_content, 
+    			bbs_file, bbs_re_ref, bbs_re_lev, 
+    			bbs_re_seq, bbs_readcount, bbs_date, bbs_original 
+    		  from (select * from bbs6 
+    		  
+    		  		<!-- MyBatis 동적 SQL문 -->
+    		  		<where>
+    		  			<!-- 검색 조건없는 경우 -->
+    		  			<if test="find_field==''">
+    		  			</if>
+    		  			
+    		  			<!-- 검색 조건이 글쓴이인 경우 -->
+    		  			<if test="find_field=='bbs_name'">
+    		  				bbs_name like #{find_name} 	
+    		  			</if>
+    		  			
+    		  			<!-- 검색 조건이 제목인 경우 -->
+    		  			<if test="find_field=='bbs_subject'">
+    		  				bbs_subject like #{find_name} 
+    		  			</if>
+    		  			
+    		  			<!-- 검색 조건이 내용인 경우 -->
+    		  			<if test="find_field=='bbs_content'">
+    		  				bbs_content like #{find_name} 
+    		  			</if>
+    		  		</where>
+    		  		order by bbs_re_ref desc, bbs_re_seq asc)
+    		  	) 
+    	where rnum &gt;= ((#{page}-1) * 10 + 1) 
+    	  and rnum &lt;= (#{page} * 10) 
+    </select>
+    
+    <!-- 답변글 레벨 증가 -->
+    <update id="bbs_Level" parameterType="bbsbean">
+        update bbs6 
+           set bbs_re_seq=bbs_re_seq+1
+		 where bbs_re_ref=#{bbs_re_ref}  and bbs_re_seq > #{bbs_re_seq}
+    </update>
+    
+    <!-- 답변글 저장 -->
+    <insert id="bbs_reply" parameterType="bbsbean">   
+       insert into bbs6( 
+              bbs_num, bbs_name,  bbs_subject,bbs_content,
+              bbs_pass,bbs_re_ref,bbs_re_lev, bbs_re_seq,
+              bbs_readcount,      bbs_date) 
+       values(
+              bbs6_num_seq.nextval,#{bbs_name},#{bbs_subject},
+              #{bbs_content},#{bbs_pass},#{bbs_re_ref},#{bbs_re_lev},
+              #{bbs_re_seq},0,sysdate)
+    </insert>
+    
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

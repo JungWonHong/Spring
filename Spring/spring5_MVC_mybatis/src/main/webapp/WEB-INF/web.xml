@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+
+	<display-name>myhome5</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 서블릿에서 값을 받을때 post방식으로넘어올때 request.setCharacterEncoding("UTF-8") 하지 
+		않아도 한글 안깨진다. -->
+
+	<servlet>
+		<servlet-name>info</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>info</servlet-name>
+		<url-pattern>*.nhn</url-pattern>
+	</servlet-mapping>
+	<!-- 스프링 웹 mvc info-servlet.xml 파일 로드 . 웹의 확장자는 nhn 로 끝난다. -->
+    <!-- 
+      <init-param>
+	       <param-name>contextConfigLocation</param-name>
+	       <param-value>WEB-INF/spring/appServlet/bbs-servlet.xml</param-value> 
+	  </init-param> 
+           생략된 경우
+           "WEB-INF/" + "서블릿이름" + "-servlet.xml" 경로를 찾아갑니다.
+           즉,  WEB-INF/info-servlet.xml
+                    파일을 찾습니다.
+    -->
+</web-app>

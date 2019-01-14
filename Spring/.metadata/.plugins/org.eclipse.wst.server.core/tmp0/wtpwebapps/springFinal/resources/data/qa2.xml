@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+
+   <!-- 자료실 저장 -->
+   <insert id="qu_insert" parameterType="qubean">
+      insert into qu_board
+      (qu_num, qu_name, qu_pass, qu_subject,
+      qu_content, qu_file, qu_re_ref, qu_re_lev,
+      qu_re_seq, qu_readcount, qu_date, qu_original)
+      values(qu_board_num_seq.nextval,#{qu_name},#{qu_pass},#{qu_subject},
+      #{qu_content}, #{qu_file, jdbcType=VARCHAR},
+      qu_board_num_seq.nextval,0,0,0,sysdate, #{qu_original, jdbcType=VARCHAR})
+   </insert>
+
+   <!-- 자료실 총 게시물 수 -->
+   <select id="qu_count" resultType="int">
+      select count(*) from qu_board
+   </select>
+
+   <!-- 자료실 목록 (page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="qu_list" parameterType="int" resultType="qubean">
+       <![CDATA[
+      select * 
+      from 
+        (select rownum rnum, qu_num, qu_name,   qu_pass, 
+         qu_subject, qu_content,  qu_file,     qu_re_ref,
+         qu_re_lev,  qu_re_seq,   qu_readcount,qu_date, qu_original 
+         from  
+              (select * from qu_board 
+               order by qu_re_ref desc, qu_re_seq asc)
+           ) 
+         where rnum >= ((#{page}-1) * 10+1)  and rnum <= (#{page} * 10)
+      ]]>
+   </select>
+
+
+   <!-- 자료실 내용 가져오기 -->
+   <select id="qu_cont" resultType="qubean" parameterType="int">
+      select * from qu_board where qu_num=#{num}
+   </select>
+
+   <!-- 조회수 증가 -->
+   <update id="qu_hit" parameterType="int">
+      update qu_board
+      set qu_readcount=qu_readcount+1
+      where qu_num=#{num}
+   </update>
+   
+   
+   
+
+   <!-- 자료실 수정 -->
+   <update id="qu_edit" parameterType="qubean">
+      update qu_board
+      set qu_name=#{qu_name}, qu_subject=#{qu_subject},
+      qu_content=#{qu_content},
+      qu_file=#{qu_file, jdbcType=VARCHAR},
+      qu_original=#{qu_original, jdbcType=VARCHAR}
+
+      where qu_num=#{qu_num}
+   </update>
+
+   <!-- 자료실 삭제 -->
+   <delete id="qu_delete" parameterType="int">
+      delete
+      from qu_board
+      where qu_num=#{qu_num}
+   </delete>
+
+   <!-- 답변글 레벨 증가 -->
+   <update id="qu_Level" parameterType="qubean">
+      update qu_board
+      set qu_re_seq=qu_re_seq+1
+      where qu_re_ref=#{qu_re_ref} and qu_re_seq > #{qu_re_seq}
+   </update>
+
+   <!-- 답변글 저장 -->
+   <insert id="qu_reply" parameterType="qubean">
+      insert into qu_board(
+      qu_num, qu_name, qu_subject,qu_content,
+      qu_pass,qu_re_ref,qu_re_lev, qu_re_seq,
+      qu_readcount, qu_date)
+      values(
+      qu_board_num_seq.nextval,#{qu_name},#{qu_subject},
+      #{qu_content},#{qu_pass},#{qu_re_ref},#{qu_re_lev},
+      #{qu_re_seq},0,sysdate)
+   </insert>
+
+   <!-- 자료실 검색 목록(page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="qu_find" parameterType="java.util.Map" resultType="qubean">
+      select * from (select rownum rnum, qu_num, qu_name, qu_pass,
+      qu_subject, qu_content, qu_file, qu_re_ref, qu_re_lev,
+      qu_re_seq, qu_readcount, qu_date, qu_original from (select * from
+      qu_board 
+      <!-- MyBatis 동적SQL문 -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="find_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="find_field=='qu_name'">
+            qu_name like #{find_name}
+         </if>
+         <if test="find_field=='qu_subject'">
+            qu_subject like #{find_name}
+         </if>
+         <if test="find_field=='qu_content'">
+            qu_content like #{find_name}
+         </if>
+      </where>
+      order by qu_re_ref desc, qu_re_seq asc)
+      )
+      where rnum &gt; = ((#{page} - 1) * 10 + 1)
+      and rnum &lt; = (#{page} * 10)
+   </select>
+
+   <!-- 자료실 검색 결과 총 게시물 수 -->
+   <select id="qufind_cnt" parameterType="java.util.Map"
+      resultType="int">
+      select count(*) from qu_board
+      <!-- MyBatis 동적SQL문
+      <where>태그는 where절을 반환합니다.
+      <where>안의 하위 태그를 실행하고 반환값이 있으면 where절을 만들어 반환하고
+      반환값이 없으면 where절을 반환하지 않습니다. -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="find_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="find_field=='qu_name'">
+            qu_name like #{find_name}
+         </if>
+         <if test="find_field=='qu_subject'">
+            qu_subject like #{find_name}
+         </if>
+         <if test="find_field=='qu_content'">
+            qu_content like #{find_name}
+         </if>
+      </where>
+   </select>
+   
+</mapper>

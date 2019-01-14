@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- bean 생성합니다. -->
+	<bean id="m" class="com.naver.myhome1.sample3.MessageBeanEn"/>
+	
+	<bean id="m1" class="com.naver.myhome1.sample3.MessageBeanKo"/>
+	
+	<bean id="m2" class="com.naver.myhome1.sample4.MessageBeanImpl">
+		<constructor-arg>
+			<value>Spring</value>
+		</constructor-arg>
+		
+		<property name="greeting">
+			<value>안녕하세요!</value>
+		</property>
+	</bean>
+	
+	<bean id="output" class="com.naver.myhome1.sample5.FileOutputter">
+		<property name="filePath">
+			<value>out.txt</value>
+		</property>
+	</bean>
+	
+	<bean id="m3" class="com.naver.myhome1.sample5.MessageBeanImpl">
+		<constructor-arg>
+			<value>Spring</value>
+		</constructor-arg>
+		
+		<property name="greeting">
+			<value>Hello!</value>
+		</property>
+		
+		<property name="outputter">
+			<ref bean="output"/> <!-- 매개변수가 객체이므로 value가 아닌 bean의 id값을 넘겨준다. -->
+		</property>
+		<!-- 쭉읽어보니 ref bean이 있으니 객체생성 해주자! -->
+	</bean>
+</beans>

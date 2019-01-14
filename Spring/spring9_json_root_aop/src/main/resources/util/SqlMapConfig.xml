@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias alias="member" type="com.json.jsonroot.model.BoardVO"/>
+	</typeAliases>
+	
+	<!-- root-context.xml에서 매퍼의 위치를 설정했습니다.
+			<property name="mapperLocations"
+				value="classpath*:sql/*.xml"/>
+	 -->
+</configuration>

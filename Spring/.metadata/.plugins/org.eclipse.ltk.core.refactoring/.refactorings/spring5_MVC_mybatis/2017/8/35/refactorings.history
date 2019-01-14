@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;jquery-3.2.1.js&apos; to &apos;js&apos;&#x0D;&#x0A;- Original project: &apos;spring5_MVC_mybatis&apos;&#x0D;&#x0A;- Destination element: &apos;js&apos;&#x0D;&#x0A;- Original element: &apos;jquery-3.2.1.js&apos;" description="Copy file" element1="src/main/webapp/resources/js/jquery-3.2.1.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1503884300095" target="/spring7_mvc_member/src/main/webapp/resources/js" units="0" version="1.0"/>
+</session>

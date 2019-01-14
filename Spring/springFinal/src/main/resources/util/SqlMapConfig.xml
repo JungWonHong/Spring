@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.khcc.myweb.model.QaBean" alias="qabean" />
+		<typeAlias type="com.khcc.myweb.model.NtBean" alias="ntbean" />
+		<typeAlias type="com.khcc.myweb.model.FaqBean" alias="faqbean" />
+		<typeAlias type="com.khcc.myweb.model.QnaBean" alias="qnabean" />
+		<typeAlias type="com.khcc.myweb.model.MemberBean" alias="member" />
+		<typeAlias type="com.khcc.myweb.model.CardBean" alias="card" />
+		<typeAlias type="com.khcc.myweb.model.ReportBean" alias="report" />
+		<typeAlias type="com.khcc.myweb.model.CarpoolBean" alias="carpool" />
+		<typeAlias type="com.khcc.myweb.model.CpReservationBean" alias="cpreservation" />
+		<typeAlias type="com.khcc.myweb.model.CarBean" alias="car" />
+	</typeAliases>
+	<!-- root-context.xml에서 매퍼의 위치를 설정했습니다. -->
+</configuration>

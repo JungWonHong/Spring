@@ -1,0 +1,154 @@
+@CHARSET "UTF-8";
+
+#qawrite_wrap{
+	width:570px; height:412px;
+	margin-top:70px; margin-left:auto; margin-right:auto;
+	border:0.9px solid #ccc; /* border-radius:20px; */
+	/* box-shadow:1px 1px 1px #ccc; */
+}
+
+#qawrite_wrap2{
+	width:570px; height:350px;
+	margin-top:70px; margin-left:auto; margin-right:auto;
+	border:1px solid #ccc; /* border-radius:20px; */
+	/* box-shadow:1px 1px 1px #ccc; */
+}
+
+#qawrite_wrap .qawrite_title{
+	margin:20px 0 0 220px; width:140px; /* border-radius:15px; */
+	font-size:20px; background:#B1EFED; text-align:center;
+	padding:3px;
+}
+#qawrite_wrap2 .qawrite_title{
+	margin:20px 0 0 220px; width:140px; /* border-radius:15px; */
+	font-size:20px; background:#B1EFED; text-align:center;
+	padding:3px;
+}
+#qawrite_t{margin:20px 0 0 50px;}
+#qawrite_wrap th{background:#B1EFED; /* border-radius:15px; */}
+#qawrite_wrap2 th{background:#B1EFED; /* border-radius:15px; */}
+#qawrite_menu{
+	margin:20px 0 0 220px;
+}
+
+/*자료실 목록*/
+#qalist_wrap{
+	width:800px; height:640px; margin-top:50px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid #ccc; /* border-radius:20px; */
+	box-shadow:1px 1px 1px #ccc;
+}
+
+#qalist_wrap2{
+	width:150px; height:80px; margin-top:20px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid #ccc; /* border-radius:20px; */
+	box-shadow:1px 1px 1px #ccc;
+}
+#qalist_title{
+	margin:20px 30px 0 40px; width:150px; padding:3px;
+	background:#B1EFED; /* border-radius:15px; */font-size:20px;
+	text-align:center;
+}
+#qalist_c{
+	margin:15px 0 0 680px;
+}
+#qalist_t{
+	margin:15px 25px 0 15px;
+}
+#qalist_paging{
+	margin:13px 0 0 190px;
+}
+/* #qalist_w{
+	margin:13px 0 0 450px;
+} */
+
+/*게시물 내용 ui*/
+#qacont_wrap{
+	padding:30px; margin-top:70px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid #ccc; /* border-radius:20px; */
+	box-shadow:1px 1px 1px #ccc; width:620px;
+	align:center;
+}
+#qacont_wrap .qacont_title{
+	margin:0 0 0 115px; width:170px; padding:3px;
+	font-size:20px; text-align:center; background:#B1EFED;
+	/* border-radius:15px; */
+	align:center;
+}
+
+#qacont_t{
+	margin:15px 0 0 30px;
+}
+#qacont_t th{background:#B1EFED; /* border-radius:15px; */}
+#qacont_menu{
+	margin:15px 0 0 90px;
+}
+
+/*게시물 삭제 ui*/
+#del_wrap{
+	width:250px; height:180px; margin-top:70px;
+	margin-left:auto; margin-right:auto;
+	border:1px solid #ccc; /* border-radius:20px; */
+	box-shadow:1px 1px 1px #ccc;
+}
+#del_wrap .del_title{
+	margin:20px 0 0 70px; width:140px; background:#B1EFED;
+	/* border-radius:15px; */ text-align:center; font-size:20px;
+	padding:3px;
+}
+#del_t{
+	margin:20px 0 0 30px;
+}
+#del_t th{
+	background:#B1EFED; /* border-radius:15px; */
+}
+#del_menu{
+	margin:23px 0 0 80px;
+}
+
+/*검색 ui*/
+#qafind{
+	margin:26px 0 0 143px;
+}
+
+#column_color{
+	background:#B1EFED;
+}
+
+.paging .direction{
+	 color: #B1EFED;
+    font-size: 13px;
+     display: inline-block;
+    min-width: 14px;
+    height: 20px;
+    text-align: center;
+    margin: 0;
+    vertical-align: middle;
+    font-weight: 500;
+    width: 20px;
+    background: #fff;
+    border: #ddd 1px solid;
+    line-height: 18px;
+}
+
+.paging .number{
+display: inline-block;
+    font-size: 12px;
+    min-width: 14px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #777;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.paging .number.on{
+    color: #1d1d1d;
+    text-decoration: underline;
+    font-weight: bold;
+}

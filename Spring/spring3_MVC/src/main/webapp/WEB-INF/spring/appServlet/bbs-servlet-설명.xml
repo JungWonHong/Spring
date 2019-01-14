@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 
+		HandlerMapping - SimpleUrlHandlerMapping 방법
+		
+		<prop key="/login_ok.do">bbsWriteController</prop>
+		"/login_ok.do" 요청이 오면 아이디가 bbsWriteController인 객체가 동작합니다.
+		
+	-->
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props><!-- java.util.Properties타입의 값을 설정할 때 사용하는 태그입니다. -->
+				<prop key="/login_ok.do">bbsWriteController</prop>
+			</props>
+		</property>	
+	</bean>
+	
+	<!-- Controller -->
+	<bean id="bbsWriteController"
+		class="com.naver.myhome3.controller.BbsWriteController">
+		<property name="bbsBean">
+			<ref bean="bbs"/>
+		</property>	
+	</bean>
+	
+	<bean id="bbs" class="com.naver.myhome3.model.BbsBean"/>
+	
+	<!-- ViewResolver -->
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>view/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+</beans>

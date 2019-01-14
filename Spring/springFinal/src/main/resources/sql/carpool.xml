@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Carpool">
+	
+	<insert id="cp_insert" parameterType="carpool">
+		insert into carpool 
+		values(cp_num_seq.nextval, #{cp_id}, #{cp_depart}, 
+			   #{cp_arrive}, to_date(#{cp_time}, 'YYYY-MM-DD"T"HH24:MI'), sysdate, #{cp_sum}, 
+			   #{cp_distance}, 0)
+	</insert>
+	
+	<select id="cp_count" resultType="int">
+		select count(*) 
+		from carpool 
+		where cp_valid = 0 and to_char(cp_regdate, 'yyyy/mm/dd') like to_char(sysdate, 'yyyy/mm/dd')
+	</select>
+	
+	<select id="cp_total" resultType="int">
+		select count(*) 
+		from carpool 
+		where cp_valid = 0
+	</select>
+	
+	<select id="cp_list"  parameterType="java.util.Map"  resultType="carpool">
+		select * 
+		from 
+		  (select rownum rnum, cp_num, cp_id, cp_depart, 
+		   cp_arrive, cp_time,  cp_regdate, cp_sum, cp_distance  
+		   from  
+	  	      (select * from carpool 
+	  	       where cp_valid = 0
+	  	       <if test="type=='cp_regdate'">
+	  	       	order by cp_regdate desc
+	  	       </if> 
+	  	       <if test="type=='cp_distance'">
+	  	       	order by cp_distance desc
+	  	       </if>
+	  	       <if test="type=='cp_sum'">
+	  	       	order by cp_sum desc
+	  	       </if>
+	  	      )
+	  	   ) 
+	   	where rnum &gt;= ((#{page}-1) * 10+1)  and rnum &lt;= (#{page} * 10)
+	</select>
+	
+	<!-- 자료실 검색 결과 총 게시물 수 -->
+    <select id="cpfind_count" parameterType="java.util.Map" resultType="int">
+    	select count(*) 
+    	from carpool 
+    	<where>
+    		<!-- 검색 조건없는 경우 -->
+    		<if test="find_field==''">
+    		</if>
+    		  			
+    		<!-- 검색 조건이 출발지인 경우 -->
+    		<if test="find_field=='cp_depart'">
+			    cp_depart like #{find_name}	
+			</if>
+			    		  			
+			<!-- 검색 조건이 도착지인 경우 -->
+			<if test="find_field=='cp_arrive'">
+			    cp_arrive like #{find_name} 
+			</if>
+    		and cp_valid = 0
+    	</where> 
+    </select>
+    
+     <!-- 자료실 검색 목록(page번호를 전달받아서 startRow와 endRow를 구함) -->
+    <select id="cpfind_list" parameterType="java.util.Map" resultType="carpool">
+    	select *  
+    	from (select rownum rnum, cp_num, cp_id, cp_depart, 
+		             cp_arrive, cp_time,  cp_regdate, cp_sum, cp_distance  
+    		  from (select * from carpool 
+    		  		<!-- MyBatis 동적 SQL문 -->
+    		  		<where>
+    		  			<!-- 검색 조건없는 경우 -->
+    		  			<if test="find_field==''">
+    		  			</if>
+    		  			
+    		  			<!-- 검색 조건이 출발지인 경우 -->
+			    		<if test="find_field=='cp_depart'">
+			    			cp_depart like #{find_name}	
+			    		</if>
+			    		  			
+			    		<!-- 검색 조건이 도착지인 경우 -->
+			    		<if test="find_field=='cp_arrive'">
+			    		  	cp_arrive like #{find_name} 
+			    		</if>
+			    		and cp_valid = 0 
+    		  		</where>
+    		  		order by #{type} desc)
+    		  	) 
+    	  where rnum &gt;= ((#{page}-1) * 10 + 1) 
+    	  and rnum &lt;= (#{page} * 10) 
+    </select>
+    
+    <insert id="cpr_insert" parameterType="cpreservation">
+    	insert into cp_reservation values (#{cr_driver}, #{cr_rider}, #{cr_num})
+    </insert>
+    
+    <update id="cp_update" parameterType="String">
+    	update carpool 
+    	set cp_valid = 1 
+    	where cp_num = #{param}
+    </update>
+    
+    <select id="check" parameterType="String" resultType="String">
+    	select m_drivercode 
+    	from member 
+    	where m_email = #{id}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+

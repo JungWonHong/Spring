@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+	1. applicationContext.xml은 스프링 환경 설정 파일입니다.
+	      이곳에서 객체를 생성합니다.
+	      루트 엘리먼트는 <beans>이고 그 아래 엘리먼트는 <bean> 엘리먼트를 이용하여
+	      빈에 관한 정의를 기술합니다.
+	      
+	2. 스프링에서는 자바 객체를 bean이라고 부릅니다.
+	
+	3. 값을 설정해 놓은 것을 주입(Injection)한다라고 합니다.
+		의존성 주입(Dependency Injection : DI) :
+		- 객체 사이의 의존 관계를 자기 자신이 아닌 외부에 의해서 설정된다는 개념입니다.
+		- 의존하는 객체를 직접 생성하지 않고 의존 객체를 전달받는 방식을 사용합니다.
+		
+		(1) 생성자를 이용한 주입(contructor DI) :
+			생성자를 통해서 의존 관계를 연결시키는 것으로 생성자를 사용합니다.
+			- 생성자 argument가 한 개인 경우
+			<constructor-arg>
+				<value>Spring</value>
+			</constructor-arg>
+			같은 의미로
+			<constructor-arg value="Spring"/> 사용합니다.
+			
+			- 생성자 argument가 두 개인 경우
+			 (index 속성을 이용하여 몇 번째 인수에 값을 전달할 것인지를 지정합니다.)
+			<constructor-arg index="0">
+				<value>Spring</value>
+			</constructor-arg>
+			
+			<constructor-arg index="1">
+				<value>25</value>
+			</constructor-arg>
+			
+		(2) property를 이용한 주입(property DI) :
+			클래스의 의존 관계를 연결시키기 위해서 setter 메서드를 이용합니다.
+			반드시 프로퍼티 setter메서드가 있어야 사용 가능합니다.
+			name 속성 : setter 메서드의 프로퍼티 이름
+			
+			<property name="greeting">
+				<value>안녕하세요!</value>
+			</property>
+			같은 의미로
+			<property name="greeting" value="안녕하세요!"/>
+			==> setGreeting()메서드에 값을 저장합니다.
+			
+			//아래 메서드가 존재해야 합니다.
+			//property greeting의 setter 메서드를 호출합니다.
+			public void setGreeting(String greeting) {
+				this.greeting = greeting;
+			}
+			
+	4. IOC(Inversion of Control : 제어의 역행)
+	      지금까지는 메인에서 객체를 생성했지만 환경 설정 파일안에서
+	      객체를 생성하고 있습니다.
+ -->	
+	
+	<!-- bean 생성합니다. -->
+	<bean id="m" class="com.naver.myhome1.sample3.MessageBeanEn"/>
+	<!-- 자바로 표현하면 다음과 같습니다.
+		 import com.naver.myhome1.sample3.MessageBeanEn;
+		 MessageBeanEn m = new MessageBeanEn();
+	 -->
+	<bean id="m1" class="com.naver.myhome1.sample3.MessageBeanKo"/>
+	
+	<bean id="m2" class="com.naver.myhome1.sample4.MessageBeanImpl">
+		<constructor-arg>
+			<value>Spring</value>
+		</constructor-arg>
+		
+		<property name="greeting">
+			<value>안녕하세요!</value>
+		</property>
+		<!-- 위와 같은 표현
+			<property name="greeting" value="안녕하세요!"/> -->
+		<!-- property greeting에 "안녕하세요"를 저장하라는 의미로
+			 setter메서드(setGreeting)를 호출합니다.
+			  값의 타입을 지정하지 않으면 스프링이 알아서 값의 타입을 변환합니다. -->
+	</bean>
+	<!-- 
+		자바로 표현하면 다음과 같습니다.
+		import com.naver.myhome1.sample4.MessageBeanImpl;
+		MessageBeanImpl m2 = new MessageBeanImpl("Spring");
+		m2.setGreeting("안녕하세요!");
+		
+		//생성자 정의
+		public MessageBeanImpl(String name) {
+			this.name = name;
+		}
+		//property greeting의 setter 메서드를 호출합니다.
+		public void setGreeting(String greeting) {
+			
+		}
+	 -->
+	
+	<bean id="m3" class="com.naver.myhome1.sample5.MessageBeanImpl">
+		<constructor-arg>
+			<value>Spring</value>
+		</constructor-arg>
+		
+		<property name="greeting">
+			<value>Hello!</value>
+		</property>
+		
+		<property name="outputter">
+			<ref bean="output"/> <!-- 매개변수가 객체이므로 value가 아닌 bean의 id값을 넘겨준다. -->
+		</property>
+		<!-- 쭉읽어보니 ref bean이 있으니 객체생성 해주자! -->
+		<!-- 다른 빈 아이디 output을 호출합니다.
+			 setter DI 설정관계를 XML로 표현합니다. -->
+	</bean>
+<!-- 	자바로 표현하면 다음과 같습니다.
+		import com.naver.myhome1.sample5.MessageBeanImpl;
+		import com.naver.myhome1.sample5.FileOutputter;
+		
+		MessageBeanImpl m3 = new MessageBeanImpl("Spring");
+		Outputter outputter = new FileOutputter(); //업캐스팅
+		outputter.setFilePath("out.txt");
+		m3.setGreeting("Hello!");
+		m3.setOutputter(outputter);
+		
+		//property outputter의 setter메서드를 호출합니다.
+		public void setOutputter(Outputter outputter) {
+			this.outputter = outputter;
+		} //스프링에서 setter DI 설정
+ -->
+ 
+ 	<bean id="output" class="com.naver.myhome1.sample5.FileOutputter">
+		<property name="filePath">
+			<value>out.txt</value>
+		</property>
+	</bean>
+	<!-- 자바로 표현하면 다음과 같습니다.
+		 import com.naver.myhome1.sample5.FileOutputter;
+		 Outputter outputter = new FileOutputter(); //업캐스팅
+		 outputter.setFilePath("out.txt");
+		 
+		 public void setFilePath(String filePath) {
+		 	this.filePath = filePath; //out.txt	 
+		 }// 스프링에서 setter메서드를 활용한 setter DI 설정
+	 -->
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="spring9_json_root_aop_annotation">
+<aspect-definition advice-class-name="com.json.jsonroot.common.AroundAdvice" advice-method-name="aroundLog(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="26" aspect-name="aroundAdvice" aspect-start-line-number="26" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/spring9_json_root_aop_annotation/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" pointcut-expression="getPointcut()" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:spring9_json_root_aop_annotation|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:10|8:serviceImpl:10" bean-file="/spring9_json_root_aop_annotation/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/spring9_json_root_aop_annotation/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=spring9_json_root_aop_annotation/src\/main\/java&lt;com.json.jsonroot.common{AroundAdvice.java[AroundAdvice~aroundLog~QProceedingJoinPoint;" source-start-line="38" target="=spring9_json_root_aop_annotation/src\/main\/java&lt;com.json.jsonroot.dao{ServiceImpl.java[ServiceImpl~getMaxid" target-start-line="19"/>
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:spring9_json_root_aop_annotation|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:10|8:serviceImpl:10" bean-file="/spring9_json_root_aop_annotation/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/spring9_json_root_aop_annotation/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=spring9_json_root_aop_annotation/src\/main\/java&lt;com.json.jsonroot.common{AroundAdvice.java[AroundAdvice~aroundLog~QProceedingJoinPoint;" source-start-line="38" target="=spring9_json_root_aop_annotation/src\/main\/java&lt;com.json.jsonroot.dao{ServiceImpl.java[ServiceImpl~get_whereid~I" target-start-line="25"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="spring4_MVC_annotation"/>
+<aop-project name="spring3_MVC"/>
+<aop-project name="spring7_mvc_member"/>
+<aop-project name="spring6_mvc_bbs"/>
+<aop-project name="springTest"/>
+<aop-project name="spring9_json_root_aop_before"/>
+<aop-project name="springFinal"/>
+<aop-project name="spring2_DI_init_destroy"/>
+<aop-project name="spring5_MVC_mybatis"/>
+<aop-project name="spring1_DI_annotation"/>
+<aop-project name="spring8_json_root"/>
+<aop-project name="spring9_json_root_aop">
+<aspect-definition advice-class-name="com.json.jsonroot.common.AroundAdvice" advice-method-name="aroundLog" advice-type="AROUND" aspect-end-line-number="61" aspect-name="around" aspect-start-line-number="61" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/spring9_json_root_aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" pointcut-expression="execution(* com.json.jsonroot..*Impl.get*(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:spring9_json_root_aop|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:10|8:serviceImpl:10" bean-file="/spring9_json_root_aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/spring9_json_root_aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=spring9_json_root_aop/src\/main\/java&lt;com.json.jsonroot.common{AroundAdvice.java[AroundAdvice~aroundLog~QProceedingJoinPoint;" source-start-line="23" target="=spring9_json_root_aop/src\/main\/java&lt;com.json.jsonroot.dao{ServiceImpl.java[ServiceImpl~getMaxid" target-start-line="19"/>
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:spring9_json_root_aop|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:10|8:serviceImpl:10" bean-file="/spring9_json_root_aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/spring9_json_root_aop/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=spring9_json_root_aop/src\/main\/java&lt;com.json.jsonroot.common{AroundAdvice.java[AroundAdvice~aroundLog~QProceedingJoinPoint;" source-start-line="23" target="=spring9_json_root_aop/src\/main\/java&lt;com.json.jsonroot.dao{ServiceImpl.java[ServiceImpl~get_whereid~I" target-start-line="25"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="spring1_DI"/>
+</aop-reference-model>

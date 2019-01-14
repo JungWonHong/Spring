@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+
+   <!-- 자료실 저장 -->
+   <insert id="qa_insert" parameterType="qabean">
+      insert into qa_board
+      (qa_num, qa_name, qa_pass, qa_subject,
+      qa_content, qa_file, qa_re_ref, qa_re_lev,
+      qa_re_seq, qa_readcount, qa_date, qa_original)
+      values(qa_board_num_seq.nextval,#{login_email},#{qa_pass},#{qa_subject},
+      #{qa_content}, #{qa_file, jdbcType=VARCHAR},
+      qa_board_num_seq.nextval,0,0,0,sysdate, #{qa_original, jdbcType=VARCHAR})
+   </insert>
+
+   <!-- 자료실 총 게시물 수 -->
+   <select id="qa_count" resultType="int">
+      select count(*) from qa_board
+   </select>
+
+   <!-- 자료실 목록 (page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="qa_list" parameterType="int" resultType="qabean">
+       <![CDATA[
+      select * 
+      from 
+        (select rownum rnum, qa_num, qa_name,   qa_pass, 
+         qa_subject, qa_content,  qa_file,     qa_re_ref,
+         qa_re_lev,  qa_re_seq,   qa_readcount,qa_date, qa_original 
+         from  
+              (select * from qa_board 
+               order by qa_re_ref desc, qa_re_seq asc)
+           ) 
+         where rnum >= ((#{page}-1) * 10+1)  and rnum <= (#{page} * 10)
+      ]]>
+   </select>
+
+
+   <!-- 자료실 내용 가져오기 -->
+   <select id="qa_cont" resultType="qabean" parameterType="int">
+      select * from qa_board where qa_num=#{num}
+   </select>
+
+   <!-- 조회수 증가 -->
+   <update id="qa_hit" parameterType="int">
+      update qa_board
+      set qa_readcount=qa_readcount+1
+      where qa_num=#{num}
+   </update>
+   
+   <!-- 조회수 랭크1 -->
+   <select id="qa_readfirst" resultType="qabean">
+	  select qa_subject,qa_num  from (select rownum as rnum,qa_subject,qa_num from (select qa_subject,qa_num  from qa_board
+	  order by qa_readcount desc))
+	  where rnum = 1
+   </select>
+   
+   <!-- 조회수 랭크2 -->
+   <select id="qa_readsecond" resultType="qabean">
+	  select qa_subject,qa_num  from (select rownum as rnum,qa_subject,qa_num from (select qa_subject,qa_num  from qa_board
+	  order by qa_readcount desc))
+	  where rnum = 2
+   </select>
+   
+   <!-- 조회수 랭크3 -->
+   <select id="qa_readthird" resultType="qabean">
+	  select qa_subject,qa_num  from (select rownum as rnum,qa_subject,qa_num from (select qa_subject,qa_num  from qa_board
+	  order by qa_readcount desc))
+	  where rnum = 3
+   </select>
+   
+   <!-- 이미지파일1 -->
+   <select id="qa_imagefirst" resultType="qabean">
+   	  select qa_file,qa_num  from (select rownum as rnum,qa_file,qa_num from (select qa_file,qa_num  from qa_board
+	  order by qa_readcount desc))
+	  where rnum = 1
+   </select>
+   
+   <!-- 이미지파일2 -->
+   <select id="qa_imagesecond" resultType="qabean">
+   	  select qa_file,qa_num  from (select rownum as rnum,qa_file,qa_num from (select qa_file,qa_num  from qa_board
+	  order by qa_readcount desc))
+	  where rnum = 2
+   </select>
+   
+   <!-- 이미지파일2 -->
+   <select id="qa_imagethird" resultType="qabean">
+   	  select qa_file,qa_num  from (select rownum as rnum,qa_file,qa_num from (select qa_file,qa_num  from qa_board
+	  order by qa_readcount desc))
+	  where rnum = 3
+   </select>
+
+   <!-- 자료실 수정 -->
+   <update id="qa_edit" parameterType="qabean">
+      update qa_board
+      set qa_name=#{login_email}, qa_subject=#{qa_subject},
+      qa_content=#{qa_content},
+      qa_file=#{qa_file, jdbcType=VARCHAR},
+      qa_original=#{qa_original, jdbcType=VARCHAR}
+
+      where qa_num=#{qa_num}
+   </update>
+
+   <!-- 자료실 삭제 -->
+   <delete id="qa_delete" parameterType="int">
+      delete
+      from qa_board
+      where qa_num=#{qa_num}
+   </delete>
+
+   <!-- 답변글 레벨 증가 -->
+   <update id="qa_Level" parameterType="qabean">
+      update qa_board
+      set qa_re_seq=qa_re_seq+1
+      where qa_re_ref=#{qa_re_ref} and qa_re_seq > #{qa_re_seq}
+   </update>
+
+   <!-- 답변글 저장 -->
+   <insert id="qa_reply" parameterType="qabean">
+      insert into qa_board(
+      qa_num, qa_name, qa_subject,qa_content,
+      qa_pass,qa_re_ref,qa_re_lev, qa_re_seq,
+      qa_readcount, qa_date)
+      values(
+      qa_board_num_seq.nextval,#{login_email},#{qa_subject},
+      #{qa_content},#{qa_pass},#{qa_re_ref},#{qa_re_lev},
+      #{qa_re_seq},0,sysdate)
+   </insert>
+
+   <!-- 자료실 검색 목록(page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="qa_find" parameterType="java.util.Map" resultType="qabean">
+      select * from (select rownum rnum, qa_num, qa_name, qa_pass,
+      qa_subject, qa_content, qa_file, qa_re_ref, qa_re_lev,
+      qa_re_seq, qa_readcount, qa_date, qa_original from (select * from
+      qa_board 
+      <!-- MyBatis 동적SQL문 -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="find_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="find_field=='qa_name'">
+            qa_name like #{find_name}
+         </if>
+         <if test="find_field=='qa_subject'">
+            qa_subject like #{find_name}
+         </if>
+         <if test="find_field=='qa_content'">
+            qa_content like #{find_name}
+         </if>
+      </where>
+      order by qa_re_ref desc, qa_re_seq asc)
+      )
+      where rnum &gt; = ((#{page} - 1) * 10 + 1)
+      and rnum &lt; = (#{page} * 10)
+   </select>
+
+   <!-- 자료실 검색 결과 총 게시물 수 -->
+   <select id="qafind_cnt" parameterType="java.util.Map"
+      resultType="int">
+      select count(*) from qa_board
+      <!-- MyBatis 동적SQL문
+      <where>태그는 where절을 반환합니다.
+      <where>안의 하위 태그를 실행하고 반환값이 있으면 where절을 만들어 반환하고
+      반환값이 없으면 where절을 반환하지 않습니다. -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="find_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="find_field=='qa_name'">
+            qa_name like #{find_name}
+         </if>
+         <if test="find_field=='qa_subject'">
+            qa_subject like #{find_name}
+         </if>
+         <if test="find_field=='qa_content'">
+            qa_content like #{find_name}
+         </if>
+      </where>
+   </select>
+   
+   <!-- nt 게시판 추가 -->
+   
+   <!-- 자료실 저장 -->
+   <insert id="nt_insert" parameterType="ntbean">
+      insert into nt_board
+      (nt_num, nt_name, nt_pass, nt_subject,
+      nt_content, nt_file, nt_re_ref, nt_re_lev,
+      nt_re_seq, nt_readcount, nt_date, nt_original)
+      values(nt_board_num_seq.nextval,#{login_email},#{login_email},#{nt_subject},
+      #{nt_content}, #{nt_file, jdbcType=VARCHAR},
+      nt_board_num_seq.nextval,0,0,0,sysdate, #{nt_original, jdbcType=VARCHAR})
+   </insert>
+
+   <!-- 자료실 총 게시물 수 -->
+   <select id="nt_count" resultType="int">
+      select count(*) from nt_board
+   </select>
+
+   <!-- 자료실 목록 (page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="nt_list" parameterType="int" resultType="ntbean">
+       <![CDATA[
+      select * 
+      from 
+        (select rownum rnum, nt_num, nt_name,   nt_pass, 
+         nt_subject, nt_content,  nt_file,     nt_re_ref,
+         nt_re_lev,  nt_re_seq,   nt_readcount,nt_date, nt_original 
+         from  
+              (select * from nt_board 
+               order by nt_re_ref desc, nt_re_seq asc)
+           ) 
+         where rnum >= ((#{ntpage}-1) * 10+1)  and rnum <= (#{ntpage} * 10)
+      ]]>
+   </select>
+
+
+   <!-- 자료실 내용 가져오기 -->
+   <select id="nt_cont" resultType="ntbean" parameterType="int">
+      select * from nt_board where nt_num=#{num}
+   </select>
+
+   <!-- 조회수 증가 -->
+   <update id="nt_hit" parameterType="int">
+      update nt_board
+      set nt_readcount=nt_readcount+1
+      where nt_num=#{num}
+   </update>
+   
+   
+   
+
+   <!-- 자료실 수정 -->
+   <update id="nt_edit" parameterType="ntbean">
+      update nt_board
+      set nt_name=#{nt_name}, nt_subject=#{nt_subject},
+      nt_content=#{nt_content},
+      nt_file=#{nt_file, jdbcType=VARCHAR},
+      nt_original=#{nt_original, jdbcType=VARCHAR}
+
+      where nt_num=#{nt_num}
+   </update>
+
+   <!-- 자료실 삭제 -->
+   <delete id="nt_delete" parameterType="int">
+      delete
+      from nt_board
+      where nt_num=#{nt_num}
+   </delete>
+
+   <!-- 답변글 레벨 증가 -->
+   <update id="nt_Level" parameterType="ntbean">
+      update nt_board
+      set nt_re_seq=nt_re_seq+1
+      where nt_re_ref=#{nt_re_ref} and nt_re_seq > #{nt_re_seq}
+   </update>
+
+   <!-- 답변글 저장 -->
+   <insert id="nt_reply" parameterType="ntbean">
+      insert into nt_board(
+      nt_num, nt_name, nt_subject,nt_content,
+      nt_pass,nt_re_ref,nt_re_lev, nt_re_seq,
+      nt_readcount, nt_date)
+      values(
+      nt_board_num_seq.nextval,#{nt_name},#{nt_subject},
+      #{nt_content},#{nt_pass},#{nt_re_ref},#{nt_re_lev},
+      #{nt_re_seq},0,sysdate)
+   </insert>
+
+   <!-- 자료실 검색 목록(page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="nt_find" parameterType="java.util.Map" resultType="ntbean">
+      select * from (select rownum rnum, nt_num, nt_name, nt_pass,
+      nt_subject, nt_content, nt_file, nt_re_ref, nt_re_lev,
+      nt_re_seq, nt_readcount, nt_date, nt_original from (select * from
+      nt_board 
+      <!-- MyBatis 동적SQL문 -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="ntfind_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="ntfind_field=='nt_name'">
+            nt_name like #{ntfind_name}
+         </if>
+         <if test="ntfind_field=='nt_subject'">
+            nt_subject like #{ntfind_name}
+         </if>
+         <if test="ntfind_field=='nt_content'">
+            nt_content like #{ntfind_name}
+         </if>
+      </where>
+      order by nt_re_ref desc, nt_re_seq asc)
+      )
+      where rnum &gt; = ((#{ntpage} - 1) * 10 + 1)
+      and rnum &lt; = (#{ntpage} * 10)
+   </select>
+
+   <!-- 자료실 검색 결과 총 게시물 수 -->
+   <select id="ntfind_cnt" parameterType="java.util.Map"
+      resultType="int">
+      select count(*) from nt_board
+      <!-- MyBatis 동적SQL문
+      <where>태그는 where절을 반환합니다.
+      <where>안의 하위 태그를 실행하고 반환값이 있으면 where절을 만들어 반환하고
+      반환값이 없으면 where절을 반환하지 않습니다. -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="ntfind_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="ntfind_field=='nt_name'">
+            nt_name like #{ntfind_name}
+         </if>
+         <if test="ntfind_field=='nt_subject'">
+            nt_subject like #{ntfind_name}
+         </if>
+         <if test="ntfind_field=='nt_content'">
+            nt_content like #{ntfind_name}
+         </if>
+      </where>
+   </select>
+   
+   <!-- faq 게시판 추가 -->
+   
+   <!-- 자료실 저장 -->
+   <insert id="faq_insert" parameterType="faqbean">
+      insert into faq_board
+      (faq_num, faq_name, faq_pass, faq_subject,
+      faq_content, faq_file, faq_re_ref, faq_re_lev,
+      faq_re_seq, faq_readcount, faq_date, faq_original)
+      values(faq_board_num_seq.nextval,#{login_email},#{login_email},#{faq_subject},
+      #{faq_content}, #{faq_file, jdbcType=VARCHAR},
+      faq_board_num_seq.nextval,0,0,0,sysdate, #{faq_original, jdbcType=VARCHAR})
+   </insert>
+
+   <!-- 자료실 총 게시물 수 -->
+   <select id="faq_count" resultType="int">
+      select count(*) from faq_board
+   </select>
+
+   <!-- 자료실 목록 (page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="faq_list" parameterType="int" resultType="faqbean">
+       <![CDATA[
+      select * 
+      from 
+        (select rownum rnum, faq_num, faq_name,   faq_pass, 
+         faq_subject, faq_content,  faq_file,     faq_re_ref,
+         faq_re_lev,  faq_re_seq,   faq_readcount,faq_date, faq_original 
+         from  
+              (select * from faq_board 
+               order by faq_re_ref desc, faq_re_seq asc)
+           ) 
+         where rnum >= ((#{faqpage}-1) * 10+1)  and rnum <= (#{faqpage} * 10)
+      ]]>
+   </select>
+
+
+   <!-- 자료실 내용 가져오기 -->
+   <select id="faq_cont" resultType="faqbean" parameterType="int">
+      select * from faq_board where faq_num=#{num}
+   </select>
+
+   <!-- 조회수 증가 -->
+   <update id="faq_hit" parameterType="int">
+      update faq_board
+      set faq_readcount=faq_readcount+1
+      where faq_num=#{num}
+   </update>
+   
+   
+   
+
+   <!-- 자료실 수정 -->
+   <update id="faq_edit" parameterType="faqbean">
+      update faq_board
+      set faq_name=#{faq_name}, faq_subject=#{faq_subject},
+      faq_content=#{faq_content},
+      faq_file=#{faq_file, jdbcType=VARCHAR},
+      faq_original=#{faq_original, jdbcType=VARCHAR}
+
+      where faq_num=#{faq_num}
+   </update>
+
+   <!-- 자료실 삭제 -->
+   <delete id="faq_delete" parameterType="int">
+      delete
+      from faq_board
+      where faq_num=#{faq_num}
+   </delete>
+
+   <!-- 답변글 레벨 증가 -->
+   <update id="faq_Level" parameterType="faqbean">
+      update faq_board
+      set faq_re_seq=faq_re_seq+1
+      where faq_re_ref=#{faq_re_ref} and faq_re_seq > #{faq_re_seq}
+   </update>
+
+   <!-- 답변글 저장 -->
+   <insert id="faq_reply" parameterType="faqbean">
+      insert into faq_board(
+      faq_num, faq_name, faq_subject,faq_content,
+      faq_pass,faq_re_ref,faq_re_lev, faq_re_seq,
+      faq_readcount, faq_date)
+      values(
+      faq_board_num_seq.nextval,#{faq_name},#{faq_subject},
+      #{faq_content},#{faq_pass},#{faq_re_ref},#{faq_re_lev},
+      #{faq_re_seq},0,sysdate)
+   </insert>
+
+   <!-- 자료실 검색 목록(page번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="faq_find" parameterType="java.util.Map" resultType="faqbean">
+      select * from (select rownum rnum, faq_num, faq_name, faq_pass,
+      faq_subject, faq_content, faq_file, faq_re_ref, faq_re_lev,
+      faq_re_seq, faq_readcount, faq_date, faq_original from (select * from
+      faq_board 
+      <!-- MyBatis 동적SQL문 -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="faqfind_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="faqfind_field=='faq_name'">
+            faq_name like #{faqfind_name}
+         </if>
+         <if test="faqfind_field=='faq_subject'">
+            faq_subject like #{faqfind_name}
+         </if>
+         <if test="faqfind_field=='faq_content'">
+            faq_content like #{faqfind_name}
+         </if>
+      </where>
+      order by faq_re_ref desc, faq_re_seq asc)
+      )
+      where rnum &gt; = ((#{faqpage} - 1) * 10 + 1)
+      and rnum &lt; = (#{faqpage} * 10)
+   </select>
+
+   <!-- 자료실 검색 결과 총 게시물 수 -->
+   <select id="faqfind_cnt" parameterType="java.util.Map"
+      resultType="int">
+      select count(*) from faq_board
+      <!-- MyBatis 동적SQL문
+      <where>태그는 where절을 반환합니다.
+      <where>안의 하위 태그를 실행하고 반환값이 있으면 where절을 만들어 반환하고
+      반환값이 없으면 where절을 반환하지 않습니다. -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="faqfind_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="faqfind_field=='faq_name'">
+            faq_name like #{faqfind_name}
+         </if>
+         <if test="faqfind_field=='faq_subject'">
+            faq_subject like #{faqfind_name}
+         </if>
+         <if test="faqfind_field=='faq_content'">
+            faq_content like #{faqfind_name}
+         </if>
+      </where>
+   </select>
+   
+   <!-- QNA 게시판 -->
+   
+   <!-- qna자료실 저장 -->
+   <insert id="qna_insert" parameterType="qnabean">
+      insert into qna_board
+      (qna_num, qna_name, qna_pass, qna_subject,
+      qna_content, qna_file, qna_re_ref, qna_re_lev,
+      qna_re_seq, qna_readcount, qna_date, qna_original)
+      values(qna_board_num_seq.nextval,#{qna_name},#{qna_pass},#{qna_subject},
+      #{qna_content}, #{qna_file, jdbcType=VARCHAR},
+      qna_board_num_seq.nextval,0,0,0,sysdate, #{qna_original, jdbcType=VARCHAR})
+   </insert>
+
+   <!-- 자료실 총 게시물 수 -->
+   <select id="qna_count" resultType="int">
+      select count(*) from qna_board
+   </select>
+
+   <!-- 자료실 목록 (qnapage번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="qna_list" parameterType="int" resultType="qnabean">
+       <![CDATA[
+      select * 
+      from 
+        (select rownum rnum, qna_num, qna_name,   qna_pass, 
+         qna_subject, qna_content,  qna_file,     qna_re_ref,
+         qna_re_lev,  qna_re_seq,   qna_readcount,qna_date, qna_original 
+         from  
+              (select * from qna_board 
+               order by qna_re_ref desc, qna_re_seq asc)
+           ) 
+         where rnum >= ((#{qnapage}-1) * 10+1)  and rnum <= (#{qnapage} * 10)
+      ]]>
+   </select>
+
+
+   <!-- 자료실 내용 가져오기 -->
+   <select id="qna_cont" resultType="qnabean" parameterType="int">
+      select * from qna_board where qna_num=#{num}
+   </select>
+
+   <!-- 조회수 증가 -->
+   <update id="qna_hit" parameterType="int">
+      update qna_board
+      set qna_readcount=qna_readcount+1
+      where qna_num=#{num}
+   </update>
+   
+   <!-- 자료실 수정 -->
+   <update id="qna_edit" parameterType="qnabean">
+      update qna_board
+      set qna_name=#{qna_name}, qna_subject=#{qna_subject},
+      qna_content=#{qna_content},
+      qna_file=#{qna_file, jdbcType=VARCHAR},
+      qna_original=#{qna_original, jdbcType=VARCHAR}
+
+      where qna_num=#{qna_num}
+   </update>
+
+   <!-- 자료실 삭제 -->
+   <delete id="qna_delete" parameterType="int">
+      delete
+      from qna_board
+      where qna_num=#{qna_num}
+   </delete>
+
+   <!-- 답변글 레벨 증가 -->
+   <update id="qna_Level" parameterType="qnabean">
+      update qna_board
+      set qna_re_seq=qna_re_seq+1
+      where qna_re_ref=#{qna_re_ref} and qna_re_seq > #{qna_re_seq}
+   </update>
+
+   <!-- 답변글 저장 -->
+   <insert id="qna_reply" parameterType="qnabean">
+      insert into qna_board(
+      qna_num, qna_name, qna_subject,qna_content,
+      qna_pass,qna_re_ref,qna_re_lev, qna_re_seq,
+      qna_readcount, qna_date)
+      values(
+      qna_board_num_seq.nextval,#{qna_name},#{qna_subject},
+      #{qna_content},#{qna_pass},#{qna_re_ref},#{qna_re_lev},
+      #{qna_re_seq},0,sysdate)
+   </insert>
+
+   <!-- 자료실 검색 목록(qnapage번호를 전달받아서 startRow와 endRow를 구함) -->
+   <select id="qna_find" parameterType="java.util.Map" resultType="qnabean">
+      select * from (select rownum rnum, qna_num, qna_name, qna_pass,
+      qna_subject, qna_content, qna_file, qna_re_ref, qna_re_lev,
+      qna_re_seq, qna_readcount, qna_date, qna_original from (select * from
+      qna_board 
+      <!-- MyBatis 동적SQL문 -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="qnafind_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="qnafind_field=='qna_name'">
+            qna_name like #{qnafind_name}
+         </if>
+         <if test="qnafind_field=='qna_subject'">
+            qna_subject like #{qnafind_name}
+         </if>
+         <if test="qnafind_field=='qna_content'">
+            qna_content like #{qnafind_name}
+         </if>
+      </where>
+      order by qna_re_ref desc, qna_re_seq asc)
+      )
+      where rnum &gt; = ((#{qnapage} - 1) * 10 + 1)
+      and rnum &lt; = (#{qnapage} * 10)
+   </select>
+
+   <!-- 자료실 검색 결과 총 게시물 수 -->
+   <select id="qnafind_cnt" parameterType="java.util.Map"
+      resultType="int">
+      select count(*) from qna_board
+      <!-- MyBatis 동적SQL문
+      <where>태그는 where절을 반환합니다.
+      <where>안의 하위 태그를 실행하고 반환값이 있으면 where절을 만들어 반환하고
+      반환값이 없으면 where절을 반환하지 않습니다. -->
+      <where>
+         <!-- 검색 조건 없는 경우 -->
+         <if test="qnafind_field==''">
+         </if>
+         <!-- 검색 조건이 글쓴이 인 경우 -->
+         <if test="qnafind_field=='qna_name'">
+            qna_name like #{qnafind_name}
+         </if>
+         <if test="qnafind_field=='qna_subject'">
+            qna_subject like #{qnafind_name}
+         </if>
+         <if test="qnafind_field=='qna_content'">
+            qna_content like #{qnafind_name}
+         </if>
+      </where>
+   </select>
+   
+</mapper>

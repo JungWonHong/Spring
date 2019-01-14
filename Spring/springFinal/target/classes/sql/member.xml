@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+
+	<!-- 회원저장 -->
+	<insert id="member_join" parameterType="member">
+		insert into member(
+			m_email, m_password, m_name, m_birth, m_phone, m_state)
+		values(
+			#{m_email}, #{m_password}, #{m_name}, #{m_birth}, #{m_phone}, 1)
+	</insert>
+
+	<!-- 비번 검색 -->
+	<select id="pwd_find" resultType="member" parameterType="java.util.Map">
+		select m_password from member
+		where m_email=#{m_email} and m_name=#{m_name}
+	</select>
+	
+	<!-- 회원가입 아이디 검사 -->
+	<select id="id_check" parameterType="String" resultType="member">
+		select * from member
+		where m_email = #{check_id}
+	</select>
+	
+	<!-- 로그인 인증 -->
+	<select id="login_check" parameterType="String" resultType="member">
+		select * from member
+		where m_email = #{login_email}
+		and m_state = 1
+	</select>
+
+	<!-- 회원수정 -->
+	<update id="member_edit" parameterType="member">
+		update member
+		set m_password=#{m_password}, m_name=#{m_name},
+		m_zip1=#{m_zip1}, m_zip2=#{m_zip2},
+		m_addr1=#{m_addr1}, m_addr2=#{m_addr2},
+		m_phone=#{m_phone}, m_email=#{m_email},
+		where m_email=#{m_email}
+	</update>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="pass_edit" parameterType="java.util.Map">
+		update member
+		set m_password=#{new_pass}
+		where m_email=#{login_email}
+	</update>
+	
+	<!-- 휴대폰 번호 변경 -->
+	<update id="phone_edit" parameterType="java.util.Map">
+		update member
+		set m_phone=#{new_phone}
+		where m_email=#{login_email}
+	</update>
+	
+	<!-- 면허 정보 등록 -->
+	<update id="drivercode_edit" parameterType="java.util.Map">
+		update member
+		set m_drivercode=#{m_drivercode}
+		where m_email=#{login_email}
+	</update>
+	
+	<!-- 주소 등록 -->
+	<update id="addr_update" parameterType="java.util.Map">
+		update member
+		set m_zipcode=#{sample3_postcode}, m_addr1 = #{sample3_address}, m_addr2 = #{sample3_address2}
+		where m_email=#{login_email}
+	</update>
+
+	<!-- 탈퇴 회원 join_state 값을 2로 설정 -->
+	<update id="member_delete" parameterType="member">
+		update member set m_state=2
+		where m_email=#{m_email}
+	</update>
+	
+	<!-- 카드 등록 -->
+	<insert id="reg_card" parameterType="member">
+		insert into card(
+			owner, c_name, c_num, c_expdate, c_birth, c_pass)
+		values(
+			#{owner}, #{c_name}, #{c_num}, #{c_expdate}, #{c_birth}, #{c_pass})
+	</insert>
+	
+	<!-- 카드 정보 조회 -->
+	<select id="Card_select" parameterType="String" resultType="member">
+		select * from card
+		where owner = #{login_email}
+	</select>
+	
+	<!-- 카드 삭제 -->
+	<delete id="delete_card" parameterType="java.util.Map">
+		delete card where c_num = #{c_num} and c_expdate = #{c_expdate}
+	</delete>
+	
+	<!-- 결제 내역 조회 -->
+	<select id="select_pay" parameterType="java.util.Map" resultType="member">
+		select * from reservation_pay where RES_ID = #{login_email}
+	</select>
+	
+	<!-- 회원 리스트 -->
+	<select id="memlist" resultType="member">
+		select * from member order by m_penalty desc
+	</select>
+</mapper>

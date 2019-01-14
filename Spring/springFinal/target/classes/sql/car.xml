@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+	<!-- 자동차 정보 검색 -->
+	<select id="select_car" parameterType="String" resultType="car">
+		select * from car
+		where c_place = #{title}
+	</select>
+	
+	<!-- 결제할 차 정보 검색 -->
+	<select id="pay_car" parameterType="String" resultType="car">
+		select * from car
+		where c_id = #{c_id}
+	</select>
+	
+	<!-- 결제 정보 등록 -->
+	<insert id="insert_pay" parameterType="java.util.Map">
+		insert into RESERVATION_pay(
+			RES_ID, c_kind, c_model, c_place, startDate, startTime,
+			endDate, endTime, tot_price)
+		values (
+			#{login_email},#{c_kind}, #{c_model}, #{c_place}, #{startDate}, #{startTime},
+			#{endDate}, #{endTime}, #{tot_price}
+		)
+	</insert>
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 기존에서 추가된 부분(annotation 이용위해)
+	 xmlns:context="http://www.springframework.org/schema/context"
+	 http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context.xsd"
+	  -->
+	  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 추가된 부분 -->
+	<context:annotation-config/> <!-- annotation 인식해주세요! -->
+	
+	<!-- 위에서부터 아래로 가기때문에 FileOutputter가 먼저 실행됩니다. -->
+	<bean id="output" class="com.naver.myhome1.sample6.FileOutputter">
+		<property name="filePath">
+			<value>out6.txt</value>
+		</property>
+	</bean>
+	
+	<!-- bean 생성합니다. -->
+	<bean id="m3" class="com.naver.myhome1.sample6.MessageBeanImpl">
+		<constructor-arg>
+			<value>Spring</value>
+		</constructor-arg>
+		
+		<property name="greeting">
+			<value>Hello!</value>
+		</property>
+		
+		<!-- 삭제되는 부분 (@Resource 적용 부분)
+		<property name="outputter">
+			<ref bean="output"/>
+		</property>
+		-->
+		<!-- 쭉읽어보니 ref bean이 있으니 객체생성 해주자! -->
+	</bean>
+	
+</beans>

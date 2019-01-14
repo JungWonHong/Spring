@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- destroy-method 속성은 스프링 컨테이너가 객체를 삭제하기 직전에 호출될
+		임의의 메서드를 지정할 수 있습니다. -->
+	<bean id="output" class="com.naver.myhome2.sample5.FileOutputter"
+		destroy-method="destroyMethod">
+		<property name="filePath">
+			<value>out.txt</value>
+		</property>
+	</bean>
+	
+	<!-- init-method 속성에서 정의한 메서드는 class속성에 설정된 클래스를 객체 생성한 후에
+		호출합니다. -->
+	<bean id="m3" class="com.naver.myhome2.sample5.MessageBeanImpl"
+		init-method="initMethod">
+		<constructor-arg>
+			<value>Spring</value>
+		</constructor-arg>
+		
+		<property name="greeting">
+			<value>Hello!</value>
+		</property>
+		
+		<property name="outputter">
+			<ref bean="output"/> <!-- 매개변수가 객체이므로 value가 아닌 bean의 id값을 넘겨준다. -->
+		</property>
+		<!-- 쭉읽어보니 ref bean이 있으니 객체생성 해주자! -->
+	</bean>
+</beans>

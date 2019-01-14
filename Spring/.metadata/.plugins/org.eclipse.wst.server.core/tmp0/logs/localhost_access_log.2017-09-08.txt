@@ -1,0 +1,15 @@
+127.0.0.1 - - [08/Sep/2017:09:12:08 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:12:10 +0900] "GET /myweb/index.jsp HTTP/1.1" 200 12428
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:12:10 +0900] "GET /myweb/resources/js/carpool_driver.js HTTP/1.1" 200 1635
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:12:10 +0900] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:12:13 +0900] "GET /myweb/carpool_request?cp_num=2&time=2017-09-12&depart=%EA%B0%95%EB%82%A8%EC%97%AD&arrive=%EC%8B%A0%EB%85%BC%ED%98%84%EC%97%AD&sum=80000&distance=1 HTTP/1.1" 200 761
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:12:28 +0900] "GET /myweb/cprequest_ok?cp_num=2 HTTP/1.1" 500 9188
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:13:20 +0900] "GET /myweb/carpool_request?cp_num=2&time=2017-09-12&depart=%EA%B0%95%EB%82%A8%EC%97%AD&arrive=%EC%8B%A0%EB%85%BC%ED%98%84%EC%97%AD&sum=80000&distance=1 HTTP/1.1" 200 761
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:13:52 +0900] "GET /myweb/carpool_request?cp_num=2&time=2017-09-12&depart=%EA%B0%95%EB%82%A8%EC%97%AD&arrive=%EC%8B%A0%EB%85%BC%ED%98%84%EC%97%AD&sum=80000&distance=1 HTTP/1.1" 200 761
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:16:30 +0900] "GET /myweb/index.jsp HTTP/1.1" 200 1776
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:16:30 +0900] "GET /myweb/resources/js/carpool_rider.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:16:50 +0900] "GET /myweb/rider_add?date=2017-09-27T12:58&start=%EC%84%9C%EC%9A%B8%EC%97%AD&end=%EA%B0%95%EB%82%A8&duration=52%EB%B6%84&distance=11.9%20km HTTP/1.1" 200 729
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:17:10 +0900] "GET /myweb/carpool_add HTTP/1.1" 500 9130
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:32:14 +0900] "GET /myweb/rider_add?date=2017-09-27T12:58&start=%EC%97%AC%EC%9D%98%EB%8F%84&end=%EA%B0%95%EB%82%A8&duration=55%EB%B6%84&distance=19.6%20km HTTP/1.1" 200 731
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:32:50 +0900] "GET /myweb/rider_add?date=2017-09-27T12:58&start=%EC%97%AC%EC%9D%98%EB%8F%84%EC%97%AD&end=%EA%B0%95%EB%82%A8&duration=44%EB%B6%84&distance=13.3%20km HTTP/1.1" 200 735
+0:0:0:0:0:0:0:1 - - [08/Sep/2017:09:34:07 +0900] "GET /myweb/rider_add?date=2017-09-27T12:58&start=%EC%97%AC%EC%9D%98%EB%8F%84%EC%97%AD&end=%EA%B0%95%EB%82%A8&duration=44%EB%B6%84&distance=13.3%20km HTTP/1.1" 200 735

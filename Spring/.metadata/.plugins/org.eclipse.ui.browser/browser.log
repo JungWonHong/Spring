@@ -1,0 +1,99 @@
+
+8월 25, 2017 14:02:02.55 NEW SESSION
+8월 25, 2017 14:02:02.55 [4172:3112:0825/140202.527:ERROR:default_component_installer.cc(276)] Failed to read manifest or verify installation for Signed Tree Heads (C:\Users\user1\AppData\Local\Google\Chrome\User Data\CertificateTransparency\487).: 지정된 파일을 찾을 수 없습니다. (0x2)
+
+8월 29, 2017 10:52:44.73 NEW SESSION
+8월 29, 2017 10:52:44.73 [3004:4896:0829/105244.633:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+8월 29, 2017 13:01:57.54 [3004:4896:0829/130157.540:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+8월 29, 2017 13:02:06.93 [3004:4896:0829/130206.931:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+8월 29, 2017 13:20:15.08 [3004:2860:0829/132015.085:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+
+8월 29, 2017 21:47:17.73 NEW SESSION
+8월 29, 2017 21:47:17.73 
+8월 29, 2017 21:47:17.74 KLIB_SelfTest return : KLR_OK
+
+8월 29, 2017 21:57:09.08 NEW SESSION
+8월 29, 2017 21:57:09.08 
+8월 29, 2017 21:57:09.08 KLIB_SelfTest return : KLR_OK
+
+9월 01, 2017 10:52:36.41 NEW SESSION
+9월 01, 2017 10:52:36.41 [4316:3724:0901/105236.416:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 01, 2017 12:00:20.79 [4316:4904:0901/120020.794:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.
+
+9월 04, 2017 10:23:08.42 NEW SESSION
+9월 04, 2017 10:23:08.42 [1072:5060:0904/102308.426:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 04, 2017 10:23:08.79 [1072:5060:0904/102308.451:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 04, 2017 10:44:35.61 [1072:3720:0904/104435.614:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+9월 04, 2017 13:03:23.96 [1072:5060:0904/130323.927:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 04, 2017 13:04:47.47 [1072:5060:0904/130447.477:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+
+9월 06, 2017 14:20:04.10 NEW SESSION
+9월 06, 2017 14:20:04.10 [4404:2488:0906/142004.041:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 06, 2017 14:23:57.60 [4404:2488:0906/142357.606:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 06, 2017 15:00:32.09 [4404:2488:0906/150032.095:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 06, 2017 15:03:15.72 [4404:4960:0906/150315.720:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+9월 06, 2017 15:03:16.58 [4404:2488:0906/150316.579:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 06, 2017 15:03:17.57 [4404:2488:0906/150317.576:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+9월 06, 2017 15:03:17.64 [4404:2488:0906/150317.647:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+
+9월 25, 2017 21:58:50.52 NEW SESSION
+9월 25, 2017 21:58:50.52 
+9월 25, 2017 21:58:50.53 KLIB_SelfTest return : KLR_OK
+
+9월 26, 2017 09:29:03.85 NEW SESSION
+9월 26, 2017 09:29:03.85 [3940:4912:0926/092903.849:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+9월 26, 2017 10:56:46.08 [3940:4912:0926/105646.085:ERROR:CONSOLE(0)] "null", source:  (0)
+9월 26, 2017 11:10:40.92 [3940:832:0926/111040.922:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+
+9월 26, 2017 16:10:34.62 NEW SESSION
+9월 26, 2017 16:10:34.62 
+9월 26, 2017 16:10:34.62 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 16:17:46.95 
+9월 26, 2017 16:17:46.95 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 16:59:44.55 
+9월 26, 2017 16:59:44.56 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 17:13:52.07 
+9월 26, 2017 17:13:52.07 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 17:24:57.16 
+9월 26, 2017 17:24:57.16 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 17:25:55.67 [1088:10528:0926/172555.678:ERROR:service_manager.cc(142)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+9월 26, 2017 18:14:24.14 
+9월 26, 2017 18:14:24.14 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 18:20:20.44 [4084:15112:0926/182020.441:ERROR:service_manager.cc(142)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+9월 26, 2017 18:50:08.06 
+9월 26, 2017 18:50:08.07 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 18:52:01.22 
+9월 26, 2017 18:52:01.23 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 18:54:16.85 
+9월 26, 2017 18:54:16.85 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 18:57:15.34 [9776:7192:0926/185715.342:ERROR:socket_stream.cc(210)] Closing stream with result -100
+9월 26, 2017 18:58:10.10 
+9월 26, 2017 18:58:10.11 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 18:59:36.73 
+9월 26, 2017 18:59:36.73 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 19:59:22.40 
+9월 26, 2017 19:59:22.41 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 19:59:54.98 [6560:9552:0926/195954.983:ERROR:service_manager.cc(142)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+9월 26, 2017 20:26:11.86 
+9월 26, 2017 20:26:11.87 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 20:29:29.41 
+9월 26, 2017 20:29:29.41 KLIB_SelfTest return : KLR_OK
+9월 26, 2017 20:50:52.45 
+9월 26, 2017 20:50:52.45 KLIB_SelfTest return : KLR_OK
+
+9월 27, 2017 23:45:15.43 NEW SESSION
+9월 27, 2017 23:45:15.43 
+9월 27, 2017 23:45:15.44 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 23:49:19.36 
+9월 27, 2017 23:49:19.36 KLIB_SelfTest return : KLR_OK
+9월 27, 2017 23:55:27.17 
+9월 27, 2017 23:55:27.17 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 24:32:25.66 
+9월 28, 2017 24:32:25.67 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 24:39:19.36 
+9월 28, 2017 24:39:19.36 KLIB_SelfTest return : KLR_OK
+9월 28, 2017 24:41:07.81 
+9월 28, 2017 24:41:07.81 KLIB_SelfTest return : KLR_OK
+
+9월 28, 2017 10:24:00.24 NEW SESSION
+9월 28, 2017 10:24:00.24 [2380:4076:0928/102400.207:ERROR:CONSOLE(4801)] "Uncaught (in promise) TypeError: Cannot read property 'script' of null", source: chrome-devtools://devtools/bundled/inspector.js (4801)

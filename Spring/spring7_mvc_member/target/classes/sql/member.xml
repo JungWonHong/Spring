@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+
+    <!-- 우편번호 검색 -->
+    <select id="zipcodeList" parameterType="String" 
+            resultType="Zipcode">
+      select  *    from     zipcode 
+      where   dong like #{dong}
+    </select>  
+   
+    <!-- 회원저장 -->
+    <insert id="member_join" parameterType="member">
+     insert into join_member 
+       (join_code, 
+        join_id,join_pwd,join_name,
+        join_zip1,join_zip2,
+        join_addr1,join_addr2,join_tel,
+        join_phone,join_email,
+        join_file, 
+        join_original,
+        join_regdate, join_state)
+      values(
+        join_member_joincode_seq.nextval,
+        #{join_id},#{join_pwd},#{join_name},
+        #{join_zip1},#{join_zip2},
+        #{join_addr1},#{join_addr2},#{join_tel},
+        #{join_phone},#{join_email},
+        #{join_file, jdbcType=VARCHAR},
+        #{join_original, jdbcType=VARCHAR},
+        sysdate,1)
+    </insert>
+     
+    <!-- 비번 검색 -->
+    <select id="pwd_find" resultType="member" parameterType="java.util.Map">
+     select join_pwd  from join_member 
+     where join_id=#{id} and join_name=#{name}
+    </select>
+    
+    <!-- 로그인 인증 -->
+    <select id="login_check" parameterType="String" 
+            resultType="member">
+     select * from join_member 
+      where   join_id=#{id} 
+        and   join_state=1
+    </select> 
+    
+    <!-- 회원수정 -->
+    <update id="member_edit" parameterType="member">
+     update join_member
+        set join_pwd=#{join_pwd},     join_name=#{join_name},
+            join_zip1=#{join_zip1},   join_zip2=#{join_zip2},
+            join_addr1=#{join_addr1}, join_addr2=#{join_addr2},
+            join_tel=#{join_tel},     join_phone=#{join_phone},
+            join_email=#{join_email}, 
+            join_file=#{join_file, jdbcType=VARCHAR} ,
+            join_original=#{join_original, jdbcType=VARCHAR} 
+     where join_id=#{join_id}
+    </update>    
+    
+    <!-- 탈퇴 회원 join_state 값을 2로 설정-->
+    <update id="member_delete" parameterType="member">
+      update join_member 
+         set join_delcont=#{join_delcont}, join_state=2,
+             join_deldate=sysdate 
+       where join_id=#{join_id}
+    </update>
+</mapper>
+
+
+
+
+
+
+
+

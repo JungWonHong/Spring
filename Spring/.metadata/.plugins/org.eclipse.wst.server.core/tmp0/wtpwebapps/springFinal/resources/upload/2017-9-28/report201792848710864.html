@@ -1,0 +1,39 @@
+<!DOCTYPE HEML> 
+<THML> 
+<HEAD> 
+<link rel="stlesheet" href="css/main.css" type = "text/css"> 
+</HEAD> 
+
+<BODY> 
+<from> 
+<fieldset><legend>납품자정보</legend> 
+<ol> 
+<li> 
+<label for="goodirum">상품명:</label> 
+<input type="text" name="goodirum" list="goodlist"> 
+<datalist id=goodlist"> 
+<option value="dog1004">도그1004</option> 
+<option value="catchicken">고양이치킨</option> 
+<option value="milk">우유</option> 
+</datalist> 
+</li><p> 
+<li> 
+<label for="number">납품수량</label> 
+
+
+<input type"number" name="number" min="10" 
+max="100" step="10" placeholder="최소10이상"></li><p> 
+
+<li> 
+<label for="range">납품등급:</label> 
+<input type="range" name="range" min="0" max="10" step="2"> 
+</li><p> 
+</li> 
+<label for="message">기타상항:</label> 
+<textarea name="message" required></textarea></li> 
+</ul> 
+</fieldset><p> 
+<input type="submit" value="send message"> 
+</form> 
+</BODY> 
+</HTML>
